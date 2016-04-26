@@ -11,6 +11,10 @@
 		AC89B3CB1CC59CD900965227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3C91CC59CD900965227 /* Main.storyboard */; };
 		AC89B3CD1CC59CD900965227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3CC1CC59CD900965227 /* Assets.xcassets */; };
 		AC89B3D01CC59CD900965227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3CE1CC59CD900965227 /* LaunchScreen.storyboard */; };
+		ACA0FA031CD027AA00DE066E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0FA011CD027AA00DE066E /* Bolts.framework */; };
+		ACA0FA041CD027AA00DE066E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0FA021CD027AA00DE066E /* Parse.framework */; };
+		ACA0FA061CD027B500DE066E /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0FA011CD027AA00DE066E /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ACA0FA081CD027B900DE066E /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0FA021CD027AA00DE066E /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; };
 		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
@@ -25,6 +29,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */,
+				ACA0FA081CD027B900DE066E /* Parse.framework in Embed Frameworks */,
+				ACA0FA061CD027B500DE066E /* Bolts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,6 +44,8 @@
 		AC89B3CC1CC59CD900965227 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC89B3CF1CC59CD900965227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC89B3D11CC59CD900965227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACA0FA011CD027AA00DE066E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		ACA0FA021CD027AA00DE066E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -49,6 +57,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */,
+				ACA0FA031CD027AA00DE066E /* Bolts.framework in Frameworks */,
+				ACA0FA041CD027AA00DE066E /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +68,8 @@
 		AC89B3B91CC59CD900965227 = {
 			isa = PBXGroup;
 			children = (
+				ACA0FA011CD027AA00DE066E /* Bolts.framework */,
+				ACA0FA021CD027AA00DE066E /* Parse.framework */,
 				ACF1210A1CCFE647000ED06F /* Eureka.framework */,
 				AC89B3C41CC59CD900965227 /* ForRent */,
 				AC89B3C31CC59CD900965227 /* Products */,

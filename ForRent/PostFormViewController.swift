@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Eureka
+import Parse
 
 
 class PostFormViewController: FormViewController {
@@ -16,6 +17,9 @@ class PostFormViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .Plain, target: self, action: #selector(PostFormViewController.submit(_:)))
         
         form +++= Section("Contact")
             <<< PhoneRow() {
@@ -48,7 +52,7 @@ class PostFormViewController: FormViewController {
             }
             <<< DecimalRow(){
                 $0.useFormatterDuringInput = true
-                $0.title = "Currency style"
+                $0.title = "Monthly Rent"
                 $0.value = 0
                 let formatter = CurrencyFormatter()
                 formatter.locale = .currentLocale()
@@ -81,11 +85,22 @@ class PostFormViewController: FormViewController {
             }
         
         
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("Object has been saved.")
+        }
+        
+        
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func submit(_: UIBarButtonItem!) {
+        
     }
 }
