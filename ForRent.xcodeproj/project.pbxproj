@@ -14,6 +14,7 @@
 		ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; };
 		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
+		ACF121141CCFF469000ED06F /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		AC89B3D11CC59CD900965227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
+		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				AC89B3C51CC59CD900965227 /* AppDelegate.swift */,
 				ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */,
+				ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */,
 				AC89B3C91CC59CD900965227 /* Main.storyboard */,
 				AC89B3CC1CC59CD900965227 /* Assets.xcassets */,
 				AC89B3CE1CC59CD900965227 /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */,
+				ACF121141CCFF469000ED06F /* CurrencyFormatter.swift in Sources */,
 				AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
