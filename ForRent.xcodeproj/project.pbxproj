@@ -8,20 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89B3C51CC59CD900965227 /* AppDelegate.swift */; };
-		AC89B3C81CC59CD900965227 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89B3C71CC59CD900965227 /* ViewController.swift */; };
 		AC89B3CB1CC59CD900965227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3C91CC59CD900965227 /* Main.storyboard */; };
 		AC89B3CD1CC59CD900965227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3CC1CC59CD900965227 /* Assets.xcassets */; };
 		AC89B3D01CC59CD900965227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3CE1CC59CD900965227 /* LaunchScreen.storyboard */; };
+		ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; };
+		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ACF1210F1CCFE889000ED06F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AC89B3C21CC59CD900965227 /* ForRent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForRent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC89B3C51CC59CD900965227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC89B3C71CC59CD900965227 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC89B3CA1CC59CD900965227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC89B3CC1CC59CD900965227 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC89B3CF1CC59CD900965227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC89B3D11CC59CD900965227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 		AC89B3B91CC59CD900965227 = {
 			isa = PBXGroup;
 			children = (
+				ACF1210A1CCFE647000ED06F /* Eureka.framework */,
 				AC89B3C41CC59CD900965227 /* ForRent */,
 				AC89B3C31CC59CD900965227 /* Products */,
 			);
@@ -55,7 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				AC89B3C51CC59CD900965227 /* AppDelegate.swift */,
-				AC89B3C71CC59CD900965227 /* ViewController.swift */,
+				ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */,
 				AC89B3C91CC59CD900965227 /* Main.storyboard */,
 				AC89B3CC1CC59CD900965227 /* Assets.xcassets */,
 				AC89B3CE1CC59CD900965227 /* LaunchScreen.storyboard */,
@@ -74,6 +93,7 @@
 				AC89B3BE1CC59CD900965227 /* Sources */,
 				AC89B3BF1CC59CD900965227 /* Frameworks */,
 				AC89B3C01CC59CD900965227 /* Resources */,
+				ACF1210F1CCFE889000ED06F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,7 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC89B3C81CC59CD900965227 /* ViewController.swift in Sources */,
+				ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */,
 				AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +270,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ForRent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.ForRent;
@@ -261,6 +285,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ForRent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.ForRent;
@@ -287,6 +315,7 @@
 				AC89B3D61CC59CD900965227 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
