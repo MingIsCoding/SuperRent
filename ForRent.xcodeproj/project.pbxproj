@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */; };
+		AC4A7F891CD14008009A13C0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */; };
+		AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */; };
 		AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89B3C51CC59CD900965227 /* AppDelegate.swift */; };
 		AC89B3CB1CC59CD900965227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3C91CC59CD900965227 /* Main.storyboard */; };
 		AC89B3CD1CC59CD900965227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3CC1CC59CD900965227 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		AC89B3C21CC59CD900965227 /* ForRent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForRent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC89B3C51CC59CD900965227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC89B3CA1CC59CD900965227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4A7F891CD14008009A13C0 /* FBSDKLoginKit.framework in Frameworks */,
+				AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */,
 				ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */,
 				ACA0FA031CD027AA00DE066E /* Bolts.framework in Frameworks */,
 				ACA0FA041CD027AA00DE066E /* Parse.framework in Frameworks */,
@@ -70,6 +76,8 @@
 		AC89B3B91CC59CD900965227 = {
 			isa = PBXGroup;
 			children = (
+				AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */,
+				AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */,
 				ACA0FA011CD027AA00DE066E /* Bolts.framework */,
 				ACA0FA021CD027AA00DE066E /* Parse.framework */,
 				ACF1210A1CCFE647000ED06F /* Eureka.framework */,
@@ -290,13 +298,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ForRent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.ForRent;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.SuperRent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -305,13 +315,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ForRent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.ForRent;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.SuperRent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

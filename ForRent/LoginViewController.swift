@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
@@ -18,5 +20,9 @@ class LoginViewController: UIViewController {
         
         launchImage.image = UIImage(named: "launch.png")
         launchImage.contentMode = UIViewContentMode.ScaleToFill
+        
+        let loginButton = FBSDKLoginButton()
+        loginButton.center = self.view.center
+        self.view.addSubview(loginButton)
     }
 }
