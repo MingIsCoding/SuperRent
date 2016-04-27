@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="btB-DB-jts">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PZo-YT-rnT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -35,12 +35,45 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="osp-gP-ZUp"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hh4-eF-mTl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdC-cV-e50" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="201" y="194"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="2BF-16-dkc">
+            <objects>
+                <viewController id="PZo-YT-rnT" customClass="LoginViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Psx-92-bNh"/>
+                        <viewControllerLayoutGuide type="bottom" id="7J4-X3-FEo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sdh-9d-9uC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xgw-vz-ULf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xgw-vz-ULf" firstAttribute="top" secondItem="Sdh-9d-9uC" secondAttribute="top" id="317-VK-Bd0"/>
+                            <constraint firstItem="xgw-vz-ULf" firstAttribute="leading" secondItem="Sdh-9d-9uC" secondAttribute="leading" id="UxO-5d-G6m"/>
+                            <constraint firstItem="7J4-X3-FEo" firstAttribute="top" secondItem="xgw-vz-ULf" secondAttribute="bottom" id="bMM-5k-Ot8"/>
+                            <constraint firstAttribute="trailing" secondItem="xgw-vz-ULf" secondAttribute="trailing" id="bSS-UR-OyL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="N8b-3R-85j"/>
+                    <connections>
+                        <outlet property="launchImage" destination="xgw-vz-ULf" id="A3e-Sb-pr7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="twE-26-b2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="385" y="1046"/>
         </scene>
     </scenes>
 </document>
