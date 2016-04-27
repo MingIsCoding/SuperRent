@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "btn_google_light_normal_ios.png",
       "scale" : "1x"
     },
     {

@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "FB-f-Logo__blue_42.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "FB-f-Logo__blue_92@2x.png",
+      "filename" : "FB-f-Logo__blue_42@2x.png",
       "scale" : "2x"
     },
     {

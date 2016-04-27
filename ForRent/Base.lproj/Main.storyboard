@@ -51,29 +51,64 @@
                         <viewControllerLayoutGuide type="bottom" id="7J4-X3-FEo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sdh-9d-9uC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xgw-vz-ULf">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blr-J3-SaG">
+                                <rect key="frame" x="56" y="161" width="46" height="46"/>
+                                <state key="normal" image="btn_google_light_normal_ios"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V63-cH-r2w">
+                                <rect key="frame" x="118" y="166" width="139" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Google Sign In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ga-DT-bIW">
+                                <rect key="frame" x="118" y="229" width="164" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Facebook Sign In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zj-jx-ES8">
+                                <rect key="frame" x="58" y="226" width="42" height="42"/>
+                                <state key="normal" image="FB-f-Logo__blue_42"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xgw-vz-ULf" firstAttribute="top" secondItem="Sdh-9d-9uC" secondAttribute="top" id="317-VK-Bd0"/>
+                            <constraint firstItem="V63-cH-r2w" firstAttribute="top" secondItem="Psx-92-bNh" secondAttribute="bottom" constant="146" id="BoN-Kc-Z2X"/>
+                            <constraint firstItem="6Ga-DT-bIW" firstAttribute="leading" secondItem="5Zj-jx-ES8" secondAttribute="trailing" constant="18" id="Nqj-AE-Mbx"/>
+                            <constraint firstItem="V63-cH-r2w" firstAttribute="centerX" secondItem="Sdh-9d-9uC" secondAttribute="centerX" id="Tey-dL-agr"/>
                             <constraint firstItem="xgw-vz-ULf" firstAttribute="leading" secondItem="Sdh-9d-9uC" secondAttribute="leading" id="UxO-5d-G6m"/>
+                            <constraint firstItem="5Zj-jx-ES8" firstAttribute="centerY" secondItem="6Ga-DT-bIW" secondAttribute="centerY" id="WQp-Nl-njz"/>
                             <constraint firstItem="7J4-X3-FEo" firstAttribute="top" secondItem="xgw-vz-ULf" secondAttribute="bottom" id="bMM-5k-Ot8"/>
                             <constraint firstAttribute="trailing" secondItem="xgw-vz-ULf" secondAttribute="trailing" id="bSS-UR-OyL"/>
+                            <constraint firstItem="V63-cH-r2w" firstAttribute="leading" secondItem="blr-J3-SaG" secondAttribute="trailing" constant="16" id="beZ-r4-AY2"/>
+                            <constraint firstItem="6Ga-DT-bIW" firstAttribute="leading" secondItem="V63-cH-r2w" secondAttribute="leading" id="dD4-4m-2yT"/>
+                            <constraint firstItem="blr-J3-SaG" firstAttribute="centerY" secondItem="V63-cH-r2w" secondAttribute="centerY" id="eim-xL-ek6"/>
+                            <constraint firstItem="6Ga-DT-bIW" firstAttribute="top" secondItem="V63-cH-r2w" secondAttribute="bottom" constant="27" id="u1Y-wr-lvp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="N8b-3R-85j"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="launchImage" destination="xgw-vz-ULf" id="A3e-Sb-pr7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twE-26-b2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="1046"/>
+            <point key="canvasLocation" x="384.5" y="1045.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="FB-f-Logo__blue_42" width="42" height="42"/>
+        <image name="btn_google_light_normal_ios" width="46" height="46"/>
+    </resources>
 </document>
