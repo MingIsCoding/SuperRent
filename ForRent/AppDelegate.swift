@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize sign-in for Google
         GIDSignIn.sharedInstance().clientID = "428874353126-t91r9ghpgkr7nj1aplurn3ojfqe98310.apps.googleusercontent.com"
         
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         return true
     }
 
@@ -58,13 +60,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // added for fb sdk
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        // to add custom logic
+        return handled
     }
+    
     
     // added for google sdk
     func application(application: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
-        return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String, annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+        
+        let fromGoogle = GIDSignIn.sharedInstance().handleURL(url, sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String, annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+        let fromFacebook = FBSDKApplicationDelegate.sharedInstance().application(
+        application, openURL: url, sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as! String, annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+        
+        if fromGoogle {
+            return true
+        } else if fromFacebook {
+            return true
+        }
+        
+        return false
     }
+    
     
     
 

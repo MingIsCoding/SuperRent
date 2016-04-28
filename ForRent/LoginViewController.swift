@@ -20,6 +20,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         
         fbSDKLoginManager = FBSDKLoginManager.init()
         GIDSignIn.sharedInstance().delegate = self
+        
+        if let token = FBSDKAccessToken.currentAccessToken() {
+            // user is logged in
+            print("user is logged in already; " + token.userID)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,6 +38,22 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     
     
     @IBAction func facebookButtonTouched(sender: AnyObject) {
+        FBSDKProfile.enableUpdatesOnAccessTokenChange(false)
+        self.fbSDKLoginManager.logInWithReadPermissions(["public_profile", "email"], fromViewController: nil) { (result, error) -> Void in
+            if (error != nil) {
+                print("Facebook login error")
+                print(error.localizedDescription)
+                self.fbLoginViewError(result, error: error)
+            } else if result.isCancelled {
+                print("Facebook login cancelled")
+                self.fbLoginViewError(result, error: error)
+            } else {
+                print("Facebook logged in")
+                self.fbLoggedInUser(result)
+                print(result.description)
+            }
+            
+        }
     }
     
     
@@ -85,6 +106,32 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
     
     @objc func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+        
+    }
+    
+    //Facebook Delegates
+    func fbLoggedInUser(loginResult:FBSDKLoginManagerLoginResult){
+        let params = ["fields": "id, name, first_name, last_name, email"]
+        let graphRequest = FBSDKGraphRequest(graphPath: "me", parameters: params)
+        graphRequest.startWithCompletionHandler({
+            (connection, result, error) -> Void in
+            if error != nil {
+                print("Error: \(error)")
+            }
+            else {
+                print("graph request result: \n")
+                print(result.valueForKey("id") as? String)
+                print(result.valueForKey("name"))
+                print(result.valueForKey("email"))
+            }
+        })
+    }
+    
+    func fbLoggedOutUser(){
+        
+    }
+    
+    func fbLoginViewError(loginResult:FBSDKLoginManagerLoginResult?, error:NSError?){
         
     }
   
