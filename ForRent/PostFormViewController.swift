@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Eureka
+import Parse
 
 
 class PostFormViewController: FormViewController {
@@ -17,53 +18,202 @@ class PostFormViewController: FormViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        form +++= Section("Contact")
-            <<< PhoneRow() {
-                $0.title = "Phone"
+        // add a 'Submit' button in the navigation bar
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .Plain, target: self, action: #selector(PostFormViewController.submit(_:)))
+        
+        loadForms()
+    }
+    
+    func submit(_: UIBarButtonItem!) {
+        let values = form.values()
+        print(values)
+        let rentalObject = PFObject(className: "Rental")
+        
+        var phone: String! {
+            if let value = values["phone"] {
+                return value as! String!
+            } else {
+                return "Not Available"
             }
-            <<< EmailRow() {
+        }
+        
+        var email: String! {
+            if let value = values["email"] {
+                return value as! String!
+            } else {
+                return "Not Available"
+            }
+        }
+        
+        var date: NSDate! {
+            if let value = values["date"] {
+                return value as! NSDate!
+            } else {
+                return NSDate()
+            }
+        }
+        
+        var type: String! {
+            if let value = values["type"] {
+                return value as! String!
+            } else {
+                return "House"
+            }
+        }
+        
+        var bedroomCnt: String! {
+            if let value = values["bedroom"] {
+                return value! as! String
+            } else {
+                return "one"
+            }
+        }
+        
+        var bathCnt: String! {
+            if let value = values["bathroom"] {
+                return value as! String
+            } else {
+                return "one"
+            }
+        }
+        
+        var rent: Double! {
+            if let value = values["rent"] {
+                return value as! Double
+            } else {
+                return 0.0
+            }
+        }
+        
+        var description: String! {
+            if let value = values["description"] {
+                return value as! String
+            } else {
+                return "Not Available"
+            }
+        }
+        
+        var address: Eureka.PostalAddress! = values["address"]! as! PostalAddress
+        
+        var street: String! {
+            if let value = address.street {
+                return value
+            } else {
+                return "Not Available"
+            }
+        }
+        
+        var city: String! {
+            if let value = address.city {
+                return value
+            } else {
+                return "Not Available"
+            }
+        }
+        
+        var state: String! {
+            if let value = address.state {
+                return value
+            } else {
+                return "Not Available"
+            }
+        }
+        
+        var zip: String! {
+            if let value = address.postalCode {
+                return value
+            } else {
+                return "Not Available"
+            }
+        }
+        
+        var country: String! {
+            if let value = address.country {
+                return value
+            } else {
+                return "Not Available"
+            }
+        }
+        
+        if let value = values["image"] {
+            let imageData = UIImagePNGRepresentation(value as! UIImage!)
+            let imageFile = PFFile(name: "image.png", data: imageData!)
+            rentalObject["imageName"] = "Rental Image"
+            rentalObject["imageFile"] = imageFile
+        }
+        
+        rentalObject["phone"] = phone
+        rentalObject["email"] = email
+        rentalObject["date"] = date
+        rentalObject["type"] = type
+        rentalObject["bedroomCnt"] = bedroomCnt
+        rentalObject["bathCnt"] = bathCnt
+        rentalObject["rent"] = rent
+        rentalObject["description"] = description
+        rentalObject["street"] = street
+        rentalObject["city"] = city
+        rentalObject["state"] = state
+        rentalObject["zip"] = zip
+        rentalObject["country"] = country
+        rentalObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                print("saved!")
+            } else {
+                print("error!")
+            }
+        }
+        
+    }
+    
+    private func loadForms() {
+        form +++= Section("Contact")
+            <<< PhoneRow("phone") {
+                $0.title = "Phone"
+                $0.placeholder = "555-555-5555"
+            }
+            <<< EmailRow("email") {
                 $0.title = "Email"
+                $0.placeholder = "abc@example.com"
         }
         
         form +++= Section("Rental Info")
-            <<< DateRow() {
+            <<< DateRow("date") {
                 $0.value = NSDate()
                 $0.title = "Available Date"
             }
-            <<< ActionSheetRow<String>() {
+            <<< ActionSheetRow<String>("type") {
                 $0.title = "Property Type"
                 $0.selectorTitle = "Type of your property?"
                 $0.options = ["House", "Townhouse", "Condo", "Apartment"]
                 $0.value = "House"
             }
-            <<< SegmentedRow<String>(){
+            <<< SegmentedRow<String>("bedroom"){
                 $0.title = "Bedroom"
                 $0.options = ["one", "two", "three", "four"]
                 $0.value = "one"
             }
-            <<< SegmentedRow<String>(){
+            <<< SegmentedRow<String>("bathroom"){
                 $0.title = "Bathroom"
                 $0.options = ["one", "two", "three", "four"]
                 $0.value = "one"
             }
-            <<< DecimalRow(){
+            <<< DecimalRow("rent"){
                 $0.useFormatterDuringInput = true
-                $0.title = "Currency style"
+                $0.title = "Monthly Rent"
                 $0.value = 0
                 let formatter = CurrencyFormatter()
                 formatter.locale = .currentLocale()
                 formatter.numberStyle = .CurrencyStyle
                 $0.formatter = formatter
             }
-            <<< ImageRow(){
+            <<< ImageRow("image"){
                 $0.title = "Image"
             }
-            <<< TextRow() {
+            <<< TextRow("description") {
                 $0.title = "Description"
                 $0.placeholder = "optional"
             }
-        
-            <<< PostalAddressRow(){
+            <<< PostalAddressRow("address"){
                 $0.title = "Address"
                 $0.streetPlaceholder = "Street"
                 $0.statePlaceholder = "State"
@@ -78,10 +228,7 @@ class PostFormViewController: FormViewController {
                     city: "",
                     country: "US"
                 )
-            }
-        
-        
-        
+        }
     }
     
     override func didReceiveMemoryWarning() {

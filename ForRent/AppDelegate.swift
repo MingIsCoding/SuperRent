@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import Parse
+import FBSDKCoreKit
+import FBSDKLoginKit
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "myAppId"
+            $0.server = "https://superrent.herokuapp.com/parse"
+        }
+        Parse.initializeWithConfiguration(configuration)
+        
+        // Initialize sign-in for Google
+        GIDSignIn.sharedInstance().clientID = "428874353126-t91r9ghpgkr7nj1aplurn3ojfqe98310.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        
+        
         return true
     }
 
@@ -35,11 +51,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    // added for fb sdk
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    // added for google sdk
+    func application(application: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
+        return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String, annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
+    }
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        if (error == nil) {
+            // Perform any operations on signed in user here.
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            print("userId: \(userId) \n")
+            print("idToken: \(idToken) \n")
+            print("fullName: \(fullName) \n")
+            print("givenName: \(givenName) \n")
+            print("familyName: \(familyName) \n")
+            print("email: \(email) \n")
+            
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                "ToggleAuthUINotification",
+                object: nil,
+                userInfo: ["statusText": "Signed in user:\n\(fullName)"])
+        } else {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
+    // [START disconnect_handler]
+    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
+                withError error: NSError!) {
+        // Perform any operations when the user disconnects from app here.
+        // [START_EXCLUDE]
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            "ToggleAuthUINotification",
+            object: nil,
+            userInfo: ["statusText": "User has disconnected."])
+        // [END_EXCLUDE]
+    }
+    // [END disconnect_handler]
 
 
 }

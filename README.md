@@ -4,9 +4,9 @@ An iOS application for rental information posting &amp; searching written in Swi
 Made with ❤️.
 
 ##### Dependency libraries
-+ [Eureka](https://github.com/xmartlabs/Eureka): a library to create dynamic table-view forms from a [DSL] specification in Swift.
-
 + [Carthage](https://github.com/Carthage/Carthage): a simple, decentralized dependency manager for Cocoa.
+
++ [Eureka](https://github.com/xmartlabs/Eureka): a library to create dynamic table-view forms from a [DSL] specification in Swift.
 
 To specify the dependency of Eureka into project's `Cartfile`:
 
