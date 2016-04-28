@@ -3,5 +3,6 @@
 //
 
 #import <GoogleSignIn/GoogleSignIn.h>
+#import <ParseUI/ParseUI.h>
 
 

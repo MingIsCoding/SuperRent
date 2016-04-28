@@ -1,3 +1,2 @@
 github "xmartlabs/Eureka" ~> 1.5
 github "ParsePlatform/Parse-SDK-iOS-OSX"
-github "ParsePlatform/ParseUI-iOS"

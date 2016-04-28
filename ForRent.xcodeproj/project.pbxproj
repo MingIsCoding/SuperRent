@@ -25,6 +25,7 @@
 		ACA4FA971CD175050066396E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA961CD175050066396E /* SafariServices.framework */; };
 		ACA4FA991CD1750B0066396E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */; };
 		ACA4FA9B1CD17A400066396E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA9A1CD17A400066396E /* libz.tbd */; };
+		ACA4FA9D1CD18EB00066396E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA9C1CD18EB00066396E /* ParseUI.framework */; };
 		ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; };
 		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
@@ -67,6 +68,7 @@
 		ACA4FA961CD175050066396E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		ACA4FA9A1CD17A400066396E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		ACA4FA9C1CD18EB00066396E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA4FA9D1CD18EB00066396E /* ParseUI.framework in Frameworks */,
 				ACA4FA9B1CD17A400066396E /* libz.tbd in Frameworks */,
 				ACA4FA991CD1750B0066396E /* SystemConfiguration.framework in Frameworks */,
 				ACA4FA971CD175050066396E /* SafariServices.framework in Frameworks */,
@@ -97,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA4FA9A1CD17A400066396E /* libz.tbd */,
+				ACA4FA9C1CD18EB00066396E /* ParseUI.framework */,
 				ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */,
 				ACA4FA961CD175050066396E /* SafariServices.framework */,
 				ACA4FA941CD174FE0066396E /* AddressBook.framework */,
