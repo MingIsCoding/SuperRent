@@ -26,6 +26,8 @@
 		ACA4FA991CD1750B0066396E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */; };
 		ACA4FA9B1CD17A400066396E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA9A1CD17A400066396E /* libz.tbd */; };
 		ACA4FA9D1CD18EB00066396E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA9C1CD18EB00066396E /* ParseUI.framework */; };
+		ACA4FAA11CD1BA010066396E /* Chewy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACA4FAA01CD1BA010066396E /* Chewy.ttf */; };
+		ACA4FAA31CD1D6B30066396E /* PFLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4FAA21CD1D6B30066396E /* PFLoginViewController.swift */; };
 		ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; };
 		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
@@ -69,6 +71,8 @@
 		ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		ACA4FA9A1CD17A400066396E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		ACA4FA9C1CD18EB00066396E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		ACA4FAA01CD1BA010066396E /* Chewy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chewy.ttf; sourceTree = "<group>"; };
+		ACA4FAA21CD1D6B30066396E /* PFLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFLoginViewController.swift; sourceTree = "<group>"; };
 		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 		AC89B3B91CC59CD900965227 = {
 			isa = PBXGroup;
 			children = (
+				ACA4FAA01CD1BA010066396E /* Chewy.ttf */,
 				ACA4FA9A1CD17A400066396E /* libz.tbd */,
 				ACA4FA9C1CD18EB00066396E /* ParseUI.framework */,
 				ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */,
@@ -131,6 +136,7 @@
 				AC89B3C51CC59CD900965227 /* AppDelegate.swift */,
 				ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */,
 				AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */,
+				ACA4FAA21CD1D6B30066396E /* PFLoginViewController.swift */,
 				ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */,
 				AC89B3C91CC59CD900965227 /* Main.storyboard */,
 				AC89B3CC1CC59CD900965227 /* Assets.xcassets */,
@@ -203,6 +209,7 @@
 			files = (
 				AC4A7F8C1CD142DC009A13C0 /* GoogleSignIn.bundle in Resources */,
 				AC89B3D01CC59CD900965227 /* LaunchScreen.storyboard in Resources */,
+				ACA4FAA11CD1BA010066396E /* Chewy.ttf in Resources */,
 				AC4A7F901CD14534009A13C0 /* GoogleService-Info.plist in Resources */,
 				AC89B3CD1CC59CD900965227 /* Assets.xcassets in Resources */,
 				AC89B3CB1CC59CD900965227 /* Main.storyboard in Resources */,
@@ -218,6 +225,7 @@
 			files = (
 				AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */,
 				ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */,
+				ACA4FAA31CD1D6B30066396E /* PFLoginViewController.swift in Sources */,
 				ACF121141CCFF469000ED06F /* CurrencyFormatter.swift in Sources */,
 				AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */,
 			);
