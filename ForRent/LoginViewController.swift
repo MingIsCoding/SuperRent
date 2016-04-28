@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: PFLogInViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var launchImage: UIImageView!
     
@@ -21,8 +22,14 @@ class LoginViewController: UIViewController {
         launchImage.image = UIImage(named: "launch.png")
         launchImage.contentMode = UIViewContentMode.ScaleToFill
         
-        let loginButton = FBSDKLoginButton()
-        loginButton.center = self.view.center
-        self.view.addSubview(loginButton)
+//        let loginButton = FBSDKLoginButton()
+//        loginButton.center = self.view.center
+//        self.view.addSubview(loginButton)
+        
+        // for Google
+        GIDSignIn.sharedInstance().uiDelegate = self
+        // Uncomment to automatically sign in the user.
+        //GIDSignIn.sharedInstance().signInSilently()
+        
     }
 }

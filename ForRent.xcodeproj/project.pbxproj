@@ -10,6 +10,8 @@
 		AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */; };
 		AC4A7F891CD14008009A13C0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */; };
 		AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */; };
+		AC4A7F8C1CD142DC009A13C0 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC4A7F8B1CD142DC009A13C0 /* GoogleSignIn.bundle */; };
+		AC4A7F901CD14534009A13C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC4A7F8F1CD14534009A13C0 /* GoogleService-Info.plist */; };
 		AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89B3C51CC59CD900965227 /* AppDelegate.swift */; };
 		AC89B3CB1CC59CD900965227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3C91CC59CD900965227 /* Main.storyboard */; };
 		AC89B3CD1CC59CD900965227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3CC1CC59CD900965227 /* Assets.xcassets */; };
@@ -18,6 +20,11 @@
 		ACA0FA041CD027AA00DE066E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0FA021CD027AA00DE066E /* Parse.framework */; };
 		ACA0FA061CD027B500DE066E /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0FA011CD027AA00DE066E /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACA0FA081CD027B900DE066E /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0FA021CD027AA00DE066E /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ACA4FA911CD172B80066396E /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F8D1CD1437A009A13C0 /* GoogleSignIn.framework */; };
+		ACA4FA951CD174FE0066396E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA941CD174FE0066396E /* AddressBook.framework */; };
+		ACA4FA971CD175050066396E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA961CD175050066396E /* SafariServices.framework */; };
+		ACA4FA991CD1750B0066396E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */; };
+		ACA4FA9B1CD17A400066396E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA9A1CD17A400066396E /* libz.tbd */; };
 		ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; };
 		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
@@ -44,6 +51,10 @@
 		AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		AC4A7F8B1CD142DC009A13C0 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
+		AC4A7F8D1CD1437A009A13C0 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		AC4A7F8F1CD14534009A13C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AC4A7F911CD161AE009A13C0 /* ForRent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForRent-Bridging-Header.h"; sourceTree = "<group>"; };
 		AC89B3C21CC59CD900965227 /* ForRent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForRent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC89B3C51CC59CD900965227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC89B3CA1CC59CD900965227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +63,10 @@
 		AC89B3D11CC59CD900965227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACA0FA011CD027AA00DE066E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		ACA0FA021CD027AA00DE066E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		ACA4FA941CD174FE0066396E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		ACA4FA961CD175050066396E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ACA4FA9A1CD17A400066396E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -62,6 +77,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA4FA9B1CD17A400066396E /* libz.tbd in Frameworks */,
+				ACA4FA991CD1750B0066396E /* SystemConfiguration.framework in Frameworks */,
+				ACA4FA971CD175050066396E /* SafariServices.framework in Frameworks */,
+				ACA4FA951CD174FE0066396E /* AddressBook.framework in Frameworks */,
+				ACA4FA911CD172B80066396E /* GoogleSignIn.framework in Frameworks */,
 				AC4A7F891CD14008009A13C0 /* FBSDKLoginKit.framework in Frameworks */,
 				AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */,
 				ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */,
@@ -76,6 +96,12 @@
 		AC89B3B91CC59CD900965227 = {
 			isa = PBXGroup;
 			children = (
+				ACA4FA9A1CD17A400066396E /* libz.tbd */,
+				ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */,
+				ACA4FA961CD175050066396E /* SafariServices.framework */,
+				ACA4FA941CD174FE0066396E /* AddressBook.framework */,
+				AC4A7F8D1CD1437A009A13C0 /* GoogleSignIn.framework */,
+				AC4A7F8B1CD142DC009A13C0 /* GoogleSignIn.bundle */,
 				AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */,
 				AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */,
 				ACA0FA011CD027AA00DE066E /* Bolts.framework */,
@@ -83,6 +109,7 @@
 				ACF1210A1CCFE647000ED06F /* Eureka.framework */,
 				AC89B3C41CC59CD900965227 /* ForRent */,
 				AC89B3C31CC59CD900965227 /* Products */,
+				AC4A7F911CD161AE009A13C0 /* ForRent-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +131,7 @@
 				AC89B3C91CC59CD900965227 /* Main.storyboard */,
 				AC89B3CC1CC59CD900965227 /* Assets.xcassets */,
 				AC89B3CE1CC59CD900965227 /* LaunchScreen.storyboard */,
+				AC4A7F8F1CD14534009A13C0 /* GoogleService-Info.plist */,
 				AC89B3D11CC59CD900965227 /* Info.plist */,
 			);
 			path = ForRent;
@@ -169,7 +197,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4A7F8C1CD142DC009A13C0 /* GoogleSignIn.bundle in Resources */,
 				AC89B3D01CC59CD900965227 /* LaunchScreen.storyboard in Resources */,
+				AC4A7F901CD14534009A13C0 /* GoogleService-Info.plist in Resources */,
 				AC89B3CD1CC59CD900965227 /* Assets.xcassets in Resources */,
 				AC89B3CB1CC59CD900965227 /* Main.storyboard in Resources */,
 			);
@@ -251,6 +281,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -298,6 +329,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,8 +338,11 @@
 				);
 				INFOPLIST_FILE = ForRent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.SuperRent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ForRent-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -315,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -325,6 +361,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.SuperRent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ForRent-Bridging-Header.h";
 			};
 			name = Release;
 		};
