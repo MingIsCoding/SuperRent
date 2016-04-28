@@ -42,7 +42,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         self.fbSDKLoginManager.logInWithReadPermissions(["public_profile", "email"], fromViewController: nil) { (result, error) -> Void in
             if (error != nil) {
                 print("Facebook login error")
-                print(error.localizedDescription)
                 self.fbLoginViewError(result, error: error)
             } else if result.isCancelled {
                 print("Facebook login cancelled")
@@ -50,7 +49,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             } else {
                 print("Facebook logged in")
                 self.fbLoggedInUser(result)
-                print(result.description)
             }
             
         }
@@ -135,6 +133,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         
     }
   
+    @IBAction func continueButtonClicked(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 
 }

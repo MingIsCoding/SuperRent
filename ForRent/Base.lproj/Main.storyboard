@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PZo-YT-rnT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MAi-kO-7eA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Chewy.ttf">
+            <string>Chewy</string>
             <string>Chewy</string>
             <string>Chewy</string>
             <string>Chewy</string>
@@ -31,23 +32,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838.5" y="266.5"/>
+            <point key="canvasLocation" x="726.5" y="-241.5"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Nxf-np-04c">
+        <!--Tenant-->
+        <scene sceneID="uns-la-vEt">
             <objects>
-                <navigationController id="btB-DB-jts" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gkI-bU-zPR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hh4-eF-mTl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hdC-cV-e50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="8IQ-ek-aaN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D5H-Bb-Xho"/>
+                        <viewControllerLayoutGuide type="bottom" id="tE1-T1-Gvc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nCu-Ag-bze">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tenant" image="ic_person_pin_48pt" id="pXx-Nu-hgm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqV-Fm-O33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="194"/>
+            <point key="canvasLocation" x="1" y="725"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="s14-3m-Zab">
+            <objects>
+                <tabBarController id="MAi-kO-7eA" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="cmg-Y6-kCo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="91O-zG-H28" kind="relationship" relationship="viewControllers" id="D4X-sU-7Hq"/>
+                        <segue destination="8IQ-ek-aaN" kind="relationship" relationship="viewControllers" id="3zJ-Qm-1s5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWW-xS-HUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-819" y="391"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="2BF-16-dkc">
@@ -104,10 +126,21 @@
                                     <action selector="googleButtonTouched:" destination="PZo-YT-rnT" eventType="touchUpInside" id="epC-Wd-a37"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfp-4e-et7">
+                                <rect key="frame" x="107" y="622" width="161" height="32"/>
+                                <fontDescription key="fontDescription" name="Chewy" family="Chewy" pointSize="15"/>
+                                <state key="normal" title="Continue without signing in">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonClicked:" destination="PZo-YT-rnT" eventType="touchUpInside" id="0iC-cG-Rxj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xgw-vz-ULf" firstAttribute="top" secondItem="Sdh-9d-9uC" secondAttribute="top" id="317-VK-Bd0"/>
+                            <constraint firstItem="7J4-X3-FEo" firstAttribute="top" secondItem="wfp-4e-et7" secondAttribute="bottom" constant="13" id="BIs-Ya-vmL"/>
                             <constraint firstItem="V63-cH-r2w" firstAttribute="top" secondItem="Psx-92-bNh" secondAttribute="bottom" constant="213" id="BoN-Kc-Z2X"/>
                             <constraint firstItem="6Ga-DT-bIW" firstAttribute="leading" secondItem="5Zj-jx-ES8" secondAttribute="trailing" constant="18" id="Nqj-AE-Mbx"/>
                             <constraint firstItem="V63-cH-r2w" firstAttribute="centerX" secondItem="Sdh-9d-9uC" secondAttribute="centerX" id="Tey-dL-agr"/>
@@ -118,6 +151,7 @@
                             <constraint firstItem="V63-cH-r2w" firstAttribute="leading" secondItem="blr-J3-SaG" secondAttribute="trailing" constant="16" id="beZ-r4-AY2"/>
                             <constraint firstItem="6Ga-DT-bIW" firstAttribute="leading" secondItem="V63-cH-r2w" secondAttribute="leading" id="dD4-4m-2yT"/>
                             <constraint firstItem="blr-J3-SaG" firstAttribute="centerY" secondItem="V63-cH-r2w" secondAttribute="centerY" id="eim-xL-ek6"/>
+                            <constraint firstItem="wfp-4e-et7" firstAttribute="centerX" secondItem="Sdh-9d-9uC" secondAttribute="centerX" id="pQk-qs-VpC"/>
                             <constraint firstItem="6Ga-DT-bIW" firstAttribute="top" secondItem="V63-cH-r2w" secondAttribute="bottom" constant="27" id="u1Y-wr-lvp"/>
                         </constraints>
                     </view>
@@ -126,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twE-26-b2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392.5" y="1021.5"/>
+            <point key="canvasLocation" x="780.5" y="1389.5"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="eCQ-20-6XB">
@@ -146,12 +180,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IO2-Xu-IEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191.5" y="1345.5"/>
+            <point key="canvasLocation" x="-539.5" y="1541.5"/>
+        </scene>
+        <!--Landlord-->
+        <scene sceneID="R0b-hJ-mcj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="91O-zG-H28" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Landlord" image="ic_location_city_48pt" id="jbf-Q4-ehY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="crP-13-2Tc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iqD-Zr-IpF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smr-nq-iUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77" y="-225"/>
         </scene>
     </scenes>
     <resources>
         <image name="FB-f-Logo__blue_42" width="42" height="42"/>
         <image name="btn_google_light_normal_ios" width="46" height="46"/>
+        <image name="ic_location_city_48pt" width="34" height="34"/>
+        <image name="ic_person_pin_48pt" width="34" height="34"/>
         <image name="launch" width="851" height="1286"/>
     </resources>
 </document>
