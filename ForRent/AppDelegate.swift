@@ -13,7 +13,7 @@ import FBSDKLoginKit
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -29,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         // Initialize sign-in for Google
         GIDSignIn.sharedInstance().clientID = "428874353126-t91r9ghpgkr7nj1aplurn3ojfqe98310.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
-        
         
         return true
     }
@@ -68,43 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String, annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
     }
     
-    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
-        if (error == nil) {
-            // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            let givenName = user.profile.givenName
-            let familyName = user.profile.familyName
-            let email = user.profile.email
-            print("userId: \(userId) \n")
-            print("idToken: \(idToken) \n")
-            print("fullName: \(fullName) \n")
-            print("givenName: \(givenName) \n")
-            print("familyName: \(familyName) \n")
-            print("email: \(email) \n")
-            
-            NSNotificationCenter.defaultCenter().postNotificationName(
-                "ToggleAuthUINotification",
-                object: nil,
-                userInfo: ["statusText": "Signed in user:\n\(fullName)"])
-        } else {
-            print("\(error.localizedDescription)")
-        }
-    }
     
-    // [START disconnect_handler]
-    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
-                withError error: NSError!) {
-        // Perform any operations when the user disconnects from app here.
-        // [START_EXCLUDE]
-        NSNotificationCenter.defaultCenter().postNotificationName(
-            "ToggleAuthUINotification",
-            object: nil,
-            userInfo: ["statusText": "User has disconnected."])
-        // [END_EXCLUDE]
-    }
-    // [END disconnect_handler]
 
 
 }
