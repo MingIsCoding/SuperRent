@@ -93,6 +93,8 @@ class PostFormViewController: FormViewController {
             }
         }
         
+        
+        
         var address: Eureka.PostalAddress! = values["address"]! as! PostalAddress
         
         var street: String! {
@@ -135,12 +137,18 @@ class PostFormViewController: FormViewController {
             }
         }
         
-        if let value = values["image"] {
-            let imageData = UIImagePNGRepresentation(value as! UIImage!)
+        let image = values["image"]
+        
+        switch image {
+        case let i as UIImage:
+            let imageData = UIImagePNGRepresentation(i)
             let imageFile = PFFile(name: "image.png", data: imageData!)
             rentalObject["imageName"] = "Rental Image"
             rentalObject["imageFile"] = imageFile
+        default:
+            print("No image selected.")
         }
+        
         
         rentalObject["phone"] = phone
         rentalObject["email"] = email
@@ -170,10 +178,12 @@ class PostFormViewController: FormViewController {
             <<< PhoneRow("phone") {
                 $0.title = "Phone"
                 $0.placeholder = "555-555-5555"
+                $0.value = ""
             }
             <<< EmailRow("email") {
                 $0.title = "Email"
                 $0.placeholder = "abc@example.com"
+                $0.value = ""
         }
         
         form +++= Section("Rental Info")
@@ -211,7 +221,8 @@ class PostFormViewController: FormViewController {
             }
             <<< TextRow("description") {
                 $0.title = "Description"
-                $0.placeholder = "optional"
+                $0.placeholder = "optional info to share"
+                $0.value = ""
             }
             <<< PostalAddressRow("address"){
                 $0.title = "Address"
