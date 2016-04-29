@@ -28,6 +28,7 @@
 		ACA4FA9D1CD18EB00066396E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA9C1CD18EB00066396E /* ParseUI.framework */; };
 		ACA4FAA11CD1BA010066396E /* Chewy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACA4FAA01CD1BA010066396E /* Chewy.ttf */; };
 		ACA4FAA31CD1D6B30066396E /* PFLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4FAA21CD1D6B30066396E /* PFLoginViewController.swift */; };
+		ACF065D01CD335BC004D7B57 /* SuperRentLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */; };
 		ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; };
 		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
@@ -73,6 +74,7 @@
 		ACA4FA9C1CD18EB00066396E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		ACA4FAA01CD1BA010066396E /* Chewy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chewy.ttf; sourceTree = "<group>"; };
 		ACA4FAA21CD1D6B30066396E /* PFLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFLoginViewController.swift; sourceTree = "<group>"; };
+		ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperRentLogoView.swift; sourceTree = "<group>"; };
 		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -133,11 +135,11 @@
 		AC89B3C41CC59CD900965227 /* ForRent */ = {
 			isa = PBXGroup;
 			children = (
+				ACF065CC1CD33579004D7B57 /* library */,
 				AC89B3C51CC59CD900965227 /* AppDelegate.swift */,
 				ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */,
 				AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */,
 				ACA4FAA21CD1D6B30066396E /* PFLoginViewController.swift */,
-				ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */,
 				AC89B3C91CC59CD900965227 /* Main.storyboard */,
 				AC89B3CC1CC59CD900965227 /* Assets.xcassets */,
 				AC89B3CE1CC59CD900965227 /* LaunchScreen.storyboard */,
@@ -145,6 +147,15 @@
 				AC89B3D11CC59CD900965227 /* Info.plist */,
 			);
 			path = ForRent;
+			sourceTree = "<group>";
+		};
+		ACF065CC1CD33579004D7B57 /* library */ = {
+			isa = PBXGroup;
+			children = (
+				ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */,
+				ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */,
+			);
+			name = library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +238,7 @@
 				ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */,
 				ACA4FAA31CD1D6B30066396E /* PFLoginViewController.swift in Sources */,
 				ACF121141CCFF469000ED06F /* CurrencyFormatter.swift in Sources */,
+				ACF065D01CD335BC004D7B57 /* SuperRentLogoView.swift in Sources */,
 				AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

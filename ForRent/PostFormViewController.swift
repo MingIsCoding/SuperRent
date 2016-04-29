@@ -174,7 +174,9 @@ class PostFormViewController: FormViewController {
     }
     
     private func loadForms() {
-        form +++= Section("Contact")
+        form +++= Section() {
+                $0.header = HeaderFooterView<SuperRentLogoView>(HeaderFooterProvider.Class)
+            }
             <<< PhoneRow("phone") {
                 $0.title = "Phone"
                 $0.placeholder = "555-555-5555"
@@ -184,9 +186,9 @@ class PostFormViewController: FormViewController {
                 $0.title = "Email"
                 $0.placeholder = "abc@example.com"
                 $0.value = ""
-        }
+            }
         
-        form +++= Section("Rental Info")
+        form +++= Section(footer: "by Team 9 with ❤️")
             <<< DateRow("date") {
                 $0.value = NSDate()
                 $0.title = "Available Date"
