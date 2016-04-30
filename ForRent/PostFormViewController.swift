@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Eureka
 import Parse
+import Notie
 
 
 
@@ -34,6 +35,21 @@ class PostFormViewController: FormViewController {
     }
     
     func submit(_: UIBarButtonItem!) {
+        
+        if !checkIfUserLoggedIn() {
+            let notie = Notie(view: self.view, message: "Please sign in before posting.", style: .Confirm)
+            notie.leftButtonAction = {
+                self.askForLoggingIn()
+                notie.dismiss()
+            }
+            
+            notie.rightButtonAction = {
+                notie.dismiss()
+            }
+            notie.show()
+            return
+        }
+        
         let progressBar = LinearProgressBar()
         self.view.addSubview(progressBar)
         progressBar.startAnimation()
@@ -183,8 +199,18 @@ class PostFormViewController: FormViewController {
                 print("error!")
             }
             progressBar.stopAnimation()
-//            let alert = UIAlertController(title: "ha", message: "done", preferredStyle: UIAlertControllerStyle.Alert)
-//            self.presentViewController(alert, animated: true, completion: nil)
+            
+            let notie = Notie(view: self.view, message: "Posted successfully!", style: .Confirm)
+            notie.leftButtonAction = {
+                // Add your left button action here
+                notie.dismiss()
+            }
+            
+            notie.rightButtonAction = {
+                // Add your right button action here
+                notie.dismiss()
+            }
+            notie.show()
             
         }
         
@@ -264,6 +290,22 @@ class PostFormViewController: FormViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func checkIfUserLoggedIn() -> Bool {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if userDefaults.objectForKey("loggedIn") != nil {
+            if userDefaults.boolForKey("loggedIn") {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func askForLoggingIn() {
+        let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
+        let viewController = appDelegate.window!.rootViewController as! TabBarViewController
+        viewController.presentLoginView()
     }
     
     

@@ -13,6 +13,11 @@ class TabBarViewController: UITabBarController, LoginViewControllerDelegate {
     var userAsGuest: Bool = false
     var userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("asGuest")
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         

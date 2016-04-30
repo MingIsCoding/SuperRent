@@ -31,6 +31,8 @@
 		ACF065D01CD335BC004D7B57 /* SuperRentLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */; };
 		ACF065D21CD55151004D7B57 /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065D11CD55151004D7B57 /* LinearProgressBar.swift */; };
 		ACF065D41CD55768004D7B57 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065D31CD55768004D7B57 /* TabBarViewController.swift */; };
+		ACF065D61CD57391004D7B57 /* Notie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF065D51CD57391004D7B57 /* Notie.framework */; };
+		ACF065D71CD57391004D7B57 /* Notie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF065D51CD57391004D7B57 /* Notie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; };
 		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
@@ -46,6 +48,7 @@
 			files = (
 				ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */,
 				ACA0FA081CD027B900DE066E /* Parse.framework in Embed Frameworks */,
+				ACF065D71CD57391004D7B57 /* Notie.framework in Embed Frameworks */,
 				ACA0FA061CD027B500DE066E /* Bolts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -79,6 +82,7 @@
 		ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperRentLogoView.swift; sourceTree = "<group>"; };
 		ACF065D11CD55151004D7B57 /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
 		ACF065D31CD55768004D7B57 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		ACF065D51CD57391004D7B57 /* Notie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Notie.framework; path = Carthage/Build/iOS/Notie.framework; sourceTree = "<group>"; };
 		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */,
 				ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */,
 				ACA0FA031CD027AA00DE066E /* Bolts.framework in Frameworks */,
+				ACF065D61CD57391004D7B57 /* Notie.framework in Frameworks */,
 				ACA0FA041CD027AA00DE066E /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +114,7 @@
 		AC89B3B91CC59CD900965227 = {
 			isa = PBXGroup;
 			children = (
+				ACF065D51CD57391004D7B57 /* Notie.framework */,
 				ACA4FAA01CD1BA010066396E /* Chewy.ttf */,
 				ACA4FA9A1CD17A400066396E /* libz.tbd */,
 				ACA4FA9C1CD18EB00066396E /* ParseUI.framework */,
