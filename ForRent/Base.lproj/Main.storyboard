@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="1" y="725"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="s14-3m-Zab">
             <objects>
-                <tabBarController id="MAi-kO-7eA" sceneMemberID="viewController">
+                <tabBarController id="MAi-kO-7eA" customClass="TabBarViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cmg-Y6-kCo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -74,7 +74,7 @@
         <!--Login View Controller-->
         <scene sceneID="2BF-16-dkc">
             <objects>
-                <viewController id="PZo-YT-rnT" customClass="LoginViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="PZo-YT-rnT" customClass="LoginViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Psx-92-bNh"/>
                         <viewControllerLayoutGuide type="bottom" id="7J4-X3-FEo"/>
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twE-26-b2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780.5" y="1389.5"/>
+            <point key="canvasLocation" x="-1394.5" y="902.5"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="eCQ-20-6XB">
@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IO2-Xu-IEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-539.5" y="1541.5"/>
+            <point key="canvasLocation" x="-1394.5" y="1741.5"/>
         </scene>
         <!--Landlord-->
         <scene sceneID="R0b-hJ-mcj">

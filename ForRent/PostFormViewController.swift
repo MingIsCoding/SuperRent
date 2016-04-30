@@ -12,6 +12,7 @@ import Eureka
 import Parse
 
 
+
 class PostFormViewController: FormViewController {
     
     override func viewDidLoad() {
@@ -20,11 +21,20 @@ class PostFormViewController: FormViewController {
         
         // add a 'Submit' button in the navigation bar
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .Plain, target: self, action: #selector(PostFormViewController.submit(_:)))
-        
+    
         loadForms()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     func submit(_: UIBarButtonItem!) {
+        let bar = LinearProgressBar()
+        self.view.addSubview(bar)
+        bar.startAnimation()
+        
         let values = form.values()
         print(values)
         let rentalObject = PFObject(className: "Rental")
@@ -169,6 +179,7 @@ class PostFormViewController: FormViewController {
             } else {
                 print("error!")
             }
+            bar.stopAnimation()
         }
         
     }
@@ -248,4 +259,6 @@ class PostFormViewController: FormViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 }

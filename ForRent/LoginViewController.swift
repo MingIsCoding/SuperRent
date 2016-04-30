@@ -11,9 +11,14 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+@objc protocol LoginViewControllerDelegate: class {
+    @objc optional func loggedIn(loginMethod: Int)
+}
+
 class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     
     var fbSDKLoginManager: FBSDKLoginManager!
+    var delegate: LoginViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,7 +139,12 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
   
     @IBAction func continueButtonClicked(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        delegate.loggedIn!(2)
+        
+        // save this info in the NSUserDefaults, otherwise the login view will keep poping up from the tab bar controller
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setBool(true, forKey: "asGuest")
+        userDefaults.synchronize()
     }
     
 
