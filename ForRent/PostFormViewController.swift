@@ -19,6 +19,9 @@ class PostFormViewController: FormViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // setting navigationBar to be opaque, so progress bar will not be hidden
+        self.navigationController?.navigationBar.translucent = false
+        
         // add a 'Submit' button in the navigation bar
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .Plain, target: self, action: #selector(PostFormViewController.submit(_:)))
     
@@ -31,9 +34,9 @@ class PostFormViewController: FormViewController {
     }
     
     func submit(_: UIBarButtonItem!) {
-        let bar = LinearProgressBar()
-        self.view.addSubview(bar)
-        bar.startAnimation()
+        let progressBar = LinearProgressBar()
+        self.view.addSubview(progressBar)
+        progressBar.startAnimation()
         
         let values = form.values()
         print(values)
@@ -179,7 +182,10 @@ class PostFormViewController: FormViewController {
             } else {
                 print("error!")
             }
-            bar.stopAnimation()
+            progressBar.stopAnimation()
+//            let alert = UIAlertController(title: "ha", message: "done", preferredStyle: UIAlertControllerStyle.Alert)
+//            self.presentViewController(alert, animated: true, completion: nil)
+            
         }
         
     }

@@ -30,11 +30,11 @@ class TabBarViewController: UITabBarController, LoginViewControllerDelegate {
     func presentLoginView() {
         let loginView = self.storyboard?.instantiateViewControllerWithIdentifier("loginVC") as! LoginViewController
         loginView.delegate = self
-        self.presentViewController(loginView, animated: false, completion: nil)
+        self.presentViewController(loginView, animated: true, completion: nil)
     }
     
     // for log in view controller delegate
     func loggedIn(method: Int) {
-        self.dismissViewControllerAnimated(false, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

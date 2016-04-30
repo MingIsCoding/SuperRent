@@ -20,6 +20,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     var fbSDKLoginManager: FBSDKLoginManager!
     var delegate: LoginViewControllerDelegate!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +29,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
         
         if let token = FBSDKAccessToken.currentAccessToken() {
             // user is logged in
-            print("user is logged in already; " + token.userID)
+            print("user is logged in already (facebook); " + token.userID)
         }
     }
     
