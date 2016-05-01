@@ -309,5 +309,8 @@ class PostFormViewController: FormViewController {
         viewController.presentLoginView()
     }
     
+    @IBAction func toggleLeftMenuButton(sender: AnyObject) {
+        toggleSideMenuView()
+    }
     
 }
