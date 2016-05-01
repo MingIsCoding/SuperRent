@@ -26,6 +26,7 @@ class PostFormViewController: FormViewController {
         // add a 'Submit' button in the navigation bar
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .Plain, target: self, action: #selector(PostFormViewController.submit(_:)))
     
+    
         loadForms()
     }
     

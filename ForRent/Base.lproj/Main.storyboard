@@ -26,7 +26,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Post New Rental" id="FoX-0n-rTC"/>
+                    <navigationItem key="navigationItem" title="Post New Rental" id="FoX-0n-rTC">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_60" id="1rW-R4-irg"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -168,7 +170,7 @@
         <!--Landlord-->
         <scene sceneID="R0b-hJ-mcj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="91O-zG-H28" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="91O-zG-H28" customClass="LandlordNavigationViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Landlord" image="ic_location_city_48pt" id="jbf-Q4-ehY"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -190,6 +192,7 @@
         <image name="FB-f-Logo__blue_42" width="42" height="42"/>
         <image name="btn_google_light_normal_ios" width="46" height="46"/>
         <image name="ic_location_city_48pt" width="34" height="34"/>
+        <image name="ic_menu_60" width="30" height="30"/>
         <image name="ic_person_pin_48pt" width="34" height="34"/>
         <image name="launch" width="851" height="1286"/>
     </resources>
