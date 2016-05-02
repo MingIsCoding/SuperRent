@@ -37,6 +37,7 @@
 		ACF065DD1CD57DDA004D7B57 /* LandlordNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065DC1CD57DDA004D7B57 /* LandlordNavigationViewController.swift */; };
 		ACF065DF1CD58026004D7B57 /* LandlordMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065DE1CD58026004D7B57 /* LandlordMenuTableViewController.swift */; };
 		ACF065E11CD6ACEF004D7B57 /* LandlordManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065E01CD6ACEF004D7B57 /* LandlordManagementViewController.swift */; };
+		ACF065E41CD6D13A004D7B57 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065E31CD6D13A004D7B57 /* AppConstants.swift */; };
 		ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; };
 		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
@@ -91,6 +92,7 @@
 		ACF065DC1CD57DDA004D7B57 /* LandlordNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandlordNavigationViewController.swift; sourceTree = "<group>"; };
 		ACF065DE1CD58026004D7B57 /* LandlordMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandlordMenuTableViewController.swift; sourceTree = "<group>"; };
 		ACF065E01CD6ACEF004D7B57 /* LandlordManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandlordManagementViewController.swift; sourceTree = "<group>"; };
+		ACF065E31CD6D13A004D7B57 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		AC89B3C41CC59CD900965227 /* ForRent */ = {
 			isa = PBXGroup;
 			children = (
+				ACF065E31CD6D13A004D7B57 /* AppConstants.swift */,
 				ACF065E21CD6B5AF004D7B57 /* landlord */,
 				ACF065CC1CD33579004D7B57 /* library */,
 				AC89B3C51CC59CD900965227 /* AppDelegate.swift */,
@@ -276,6 +279,7 @@
 				ACF121141CCFF469000ED06F /* CurrencyFormatter.swift in Sources */,
 				ACF065DD1CD57DDA004D7B57 /* LandlordNavigationViewController.swift in Sources */,
 				ACF065DB1CD57D5D004D7B57 /* ENSideMenu.swift in Sources */,
+				ACF065E41CD6D13A004D7B57 /* AppConstants.swift in Sources */,
 				ACF065D01CD335BC004D7B57 /* SuperRentLogoView.swift in Sources */,
 				AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */,
 			);

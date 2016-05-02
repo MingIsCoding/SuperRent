@@ -23,11 +23,11 @@ class TabBarViewController: UITabBarController, LoginViewControllerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if userDefaults.objectForKey("asGuest") != nil {
-            userAsGuest = userDefaults.boolForKey("asGuest")
+        if userDefaults.objectForKey(AppConstants.guestKey) != nil {
+            userAsGuest = userDefaults.boolForKey(AppConstants.guestKey)
         }
         
-        if userDefaults.objectForKey("loginUserEmail") != nil {
+        if userDefaults.objectForKey(AppConstants.userEmailKey) != nil {
             userLoggedIn = true
         }
         
@@ -46,16 +46,16 @@ class TabBarViewController: UITabBarController, LoginViewControllerDelegate {
     
     // for log in view controller delegate
     func loggedIn(loginMethod: String, loginUserEmail: String?, loginUserName: String?) {
-        if loginMethod != "guest" {
-            userDefaults.setBool(false, forKey: "asGuest")
-            userDefaults.setValue(loginUserEmail, forKey: "loginUserEmail")
-            userDefaults.setValue(loginUserName, forKey: "loginUserName")
+        if loginMethod != AppConstants.LoginMethod.Guest {
+            userDefaults.setBool(false, forKey: AppConstants.guestKey)
+            userDefaults.setValue(loginUserEmail, forKey: AppConstants.userEmailKey)
+            userDefaults.setValue(loginUserName, forKey: AppConstants.userNamekey)
             userDefaults.synchronize()
         }
         
         self.dismissViewControllerAnimated(true, completion: nil)
         
-        if loginMethod != "guest" {
+        if loginMethod != AppConstants.LoginMethod.Guest {
             let notie = Notie(view: self.view, message: "Signed in through \(loginMethod)\nas \(loginUserName!) (\(loginUserEmail!))", style: .Confirm)
             notie.leftButtonAction = {
                 notie.dismiss()

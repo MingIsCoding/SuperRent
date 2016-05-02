@@ -81,7 +81,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             print("familyName: \(familyName)")
             print("email: \(email) \n")
             
-            self.delegate.loggedIn!("Google", loginUserEmail: email, loginUserName: fullName)
+            self.delegate.loggedIn!(AppConstants.LoginMethod.Google, loginUserEmail: email, loginUserName: fullName)
             
             NSNotificationCenter.defaultCenter().postNotificationName(
                 "ToggleAuthUINotification",
@@ -134,7 +134,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
                 print(id)
                 print(name)
                 print(email)
-                self.delegate.loggedIn!("Facebook", loginUserEmail: email, loginUserName: name)
+                self.delegate.loggedIn!(AppConstants.LoginMethod.Facebook, loginUserEmail: email, loginUserName: name)
                 
             }
         })
@@ -149,11 +149,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
   
     @IBAction func continueButtonClicked(sender: UIButton) {
-        delegate.loggedIn!("guest", loginUserEmail: "", loginUserName: "")
+        delegate.loggedIn!(AppConstants.LoginMethod.Guest, loginUserEmail: "", loginUserName: "")
         
         // save this info in the NSUserDefaults, otherwise the login view will keep poping up from the tab bar controller
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setBool(true, forKey: "asGuest")
+        userDefaults.setBool(true, forKey: AppConstants.guestKey)
         userDefaults.synchronize()
     }
     

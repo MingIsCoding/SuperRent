@@ -305,7 +305,7 @@ class PostFormViewController: FormViewController {
 //        } else {
 //            return nil
 //        }
-        return userDefaults.valueForKey("loginUserEmail") as? String
+        return userDefaults.valueForKey(AppConstants.userEmailKey) as? String
         
     }
     
