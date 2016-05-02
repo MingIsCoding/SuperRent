@@ -2,3 +2,4 @@ github "xmartlabs/Eureka" ~> 1.5
 github "ParsePlatform/Parse-SDK-iOS-OSX"
 github "thii/Notie"
 github "Dershowitz011/ZYYT"
+github "almassapargali/LocationPicker"

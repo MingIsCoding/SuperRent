@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class TenantFavoriteViewController: UIViewController {
     
     @IBAction func toggleSideMenu(sender: AnyObject) {

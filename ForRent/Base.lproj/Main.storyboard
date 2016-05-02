@@ -73,6 +73,12 @@
                     <view key="view" contentMode="scaleToFill" id="3Zk-Ve-Gru">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="luW-iG-CD7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search Rentals" id="FIQ-Nh-Ozb">
@@ -81,8 +87,16 @@
                                 <action selector="toggleSideMenuButtonClicked:" destination="G9A-2A-Sfz" id="2gG-lQ-IcJ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ic_location_on" id="oDB-2r-yiY">
+                            <connections>
+                                <action selector="locationButtonClicked:" destination="G9A-2A-Sfz" id="WGS-pp-t9y"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="searchBar" destination="luW-iG-CD7" id="Jcp-tU-BGW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceh-SJ-ddh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,6 +342,7 @@
         <image name="FB-f-Logo__blue_42" width="42" height="42"/>
         <image name="btn_google_light_normal_ios" width="46" height="46"/>
         <image name="ic_location_city_48pt" width="34" height="34"/>
+        <image name="ic_location_on" width="27" height="27"/>
         <image name="ic_menu_60" width="30" height="30"/>
         <image name="ic_person_pin_48pt" width="34" height="34"/>
         <image name="launch" width="851" height="1286"/>
