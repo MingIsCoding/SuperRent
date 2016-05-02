@@ -10,6 +10,9 @@
             <string>Chewy</string>
             <string>Chewy</string>
             <string>Chewy</string>
+            <string>Chewy</string>
+            <string>Chewy</string>
+            <string>Chewy</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -59,24 +62,114 @@
             </objects>
             <point key="canvasLocation" x="400.5" y="-93.5"/>
         </scene>
-        <!--Tenant-->
-        <scene sceneID="uns-la-vEt">
+        <!--Search Rentals-->
+        <scene sceneID="j3z-bd-Grk">
             <objects>
-                <viewController id="8IQ-ek-aaN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchVC" id="G9A-2A-Sfz" customClass="SearchViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="D5H-Bb-Xho"/>
-                        <viewControllerLayoutGuide type="bottom" id="tE1-T1-Gvc"/>
+                        <viewControllerLayoutGuide type="top" id="AhZ-lx-Ieo"/>
+                        <viewControllerLayoutGuide type="bottom" id="yVZ-JS-sdM"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nCu-Ag-bze">
+                    <view key="view" contentMode="scaleToFill" id="3Zk-Ve-Gru">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tenant" image="ic_person_pin_48pt" id="pXx-Nu-hgm"/>
+                    <navigationItem key="navigationItem" title="Search Rentals" id="FIQ-Nh-Ozb">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_60" id="oY0-Un-FYK">
+                            <connections>
+                                <action selector="toggleSideMenuButtonClicked:" destination="G9A-2A-Sfz" id="2gG-lQ-IcJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cqV-Fm-O33" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceh-SJ-ddh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203.5" y="716.5"/>
+            <point key="canvasLocation" x="400.5" y="716.5"/>
+        </scene>
+        <!--My Account-->
+        <scene sceneID="0CJ-mc-MZT">
+            <objects>
+                <viewController storyboardIdentifier="accountVC" id="dz1-oY-Dj9" customClass="AccountViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SLt-jg-9lg"/>
+                        <viewControllerLayoutGuide type="bottom" id="EKY-Lc-Bby"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N2p-RA-cTl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnE-vX-Uda">
+                                <rect key="frame" x="98" y="133" width="179" height="29"/>
+                                <fontDescription key="fontDescription" name="Chewy" family="Chewy" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signed in as:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7r-mv-Ed3">
+                                <rect key="frame" x="148" y="186" width="80" height="22"/>
+                                <fontDescription key="fontDescription" name="Chewy" family="Chewy" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LO2-ae-5Xh">
+                                <rect key="frame" x="169" y="222" width="37" height="22"/>
+                                <fontDescription key="fontDescription" name="Chewy" family="Chewy" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LO2-ae-5Xh" firstAttribute="centerX" secondItem="N2p-RA-cTl" secondAttribute="centerX" id="1qD-U4-xyu"/>
+                            <constraint firstItem="d7r-mv-Ed3" firstAttribute="centerX" secondItem="N2p-RA-cTl" secondAttribute="centerX" id="3Ns-3N-TMm"/>
+                            <constraint firstItem="LO2-ae-5Xh" firstAttribute="top" secondItem="d7r-mv-Ed3" secondAttribute="bottom" constant="14" id="IjS-GR-Jg7"/>
+                            <constraint firstItem="JnE-vX-Uda" firstAttribute="top" secondItem="SLt-jg-9lg" secondAttribute="bottom" constant="113" id="Jhp-E8-5Vf"/>
+                            <constraint firstItem="JnE-vX-Uda" firstAttribute="centerX" secondItem="N2p-RA-cTl" secondAttribute="centerX" id="XZe-G5-eB6"/>
+                            <constraint firstItem="d7r-mv-Ed3" firstAttribute="top" secondItem="JnE-vX-Uda" secondAttribute="bottom" constant="24" id="lhK-bd-ro5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Account" id="JB6-qc-i7O">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_60" id="kHb-1S-wCS">
+                            <connections>
+                                <action selector="toggleButton:" destination="dz1-oY-Dj9" id="YZ0-HW-GeR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="userLabel" destination="LO2-ae-5Xh" id="vCW-p2-Ibu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5DH-1e-4xS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-203.5" y="1526.5"/>
+        </scene>
+        <!--My Favorites-->
+        <scene sceneID="Kv3-US-Jzn">
+            <objects>
+                <viewController storyboardIdentifier="favoriteVC" id="XaS-HY-lJf" customClass="TenantFavoriteViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dxd-Ee-aBD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ncp-U8-l8p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bf8-6z-WKV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Favorites" id="Aa5-Zi-n61">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_60" id="c4X-W5-98F">
+                            <connections>
+                                <action selector="toggleSideMenu:" destination="XaS-HY-lJf" id="TaW-oe-Q9y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OzE-4J-xNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400.5" y="1526.5"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="s14-3m-Zab">
@@ -90,7 +183,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="91O-zG-H28" kind="relationship" relationship="viewControllers" id="D4X-sU-7Hq"/>
-                        <segue destination="8IQ-ek-aaN" kind="relationship" relationship="viewControllers" id="3zJ-Qm-1s5"/>
+                        <segue destination="EkA-Md-Uqx" kind="relationship" relationship="viewControllers" id="yuh-5c-tzU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWW-xS-HUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -209,6 +302,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smr-nq-iUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-203.5" y="-93.5"/>
+        </scene>
+        <!--Tenant-->
+        <scene sceneID="bWb-lY-ZGp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EkA-Md-Uqx" customClass="TenantNavigationViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tenant" image="ic_person_pin_48pt" id="nMs-KZ-p9V"/>
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F2S-cJ-Rk0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G9A-2A-Sfz" kind="relationship" relationship="rootViewController" id="ba7-eK-e55"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VbS-Nb-jA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-203.5" y="716.5"/>
         </scene>
     </scenes>
     <resources>

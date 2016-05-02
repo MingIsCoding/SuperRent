@@ -1,14 +1,15 @@
 //
-//  LandlordMenuTableViewController.swift
+//  TenantMenuTableViewController.swift
 //  ForRent
 //
-//  Created by Jianxin Gao on 4/30/16.
+//  Created by Jianxin Gao on 5/1/16.
 //  Copyright © 2016 sjsu. All rights reserved.
 //
 
 import Foundation
 
-class LandlordMenuTableViewController: UITableViewController {
+
+class TenantMenuTableViewController: UITableViewController {
     var selectedMenuItem : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +58,11 @@ class LandlordMenuTableViewController: UITableViewController {
         
         //cell!.textLabel?.text = "ViewController #\(indexPath.row+1)"
         if indexPath.row == 0 {
-            cell!.textLabel?.text = "New Post"
+            cell!.textLabel?.text = "Search"
         }
         
         if indexPath.row == 1 {
-            cell!.textLabel?.text = "My Posts"
+            cell!.textLabel?.text = "Favorites"
         }
         
         if indexPath.row == 2 {
@@ -90,12 +91,12 @@ class LandlordMenuTableViewController: UITableViewController {
         var destViewController : UIViewController
         switch (indexPath.row) {
         case 0:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("postRentalVC")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("searchVC")
             break
         case 1:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("landlordManagementVC")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("favoriteVC")
             break
-
+            
         default:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("accountVC")
             break

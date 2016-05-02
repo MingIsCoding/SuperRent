@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC02EA461CD7307600A61DA9 /* TenantFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */; };
 		AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */; };
 		AC4A7F891CD14008009A13C0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */; };
 		AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */; };
@@ -14,6 +15,10 @@
 		AC4A7F901CD14534009A13C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC4A7F8F1CD14534009A13C0 /* GoogleService-Info.plist */; };
 		AC78218F1CD6F4CE008348EA /* ZYTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC78218E1CD6F4CE008348EA /* ZYTT.framework */; };
 		AC7821901CD6F4CE008348EA /* ZYTT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC78218E1CD6F4CE008348EA /* ZYTT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AC7821A01CD7191B008348EA /* TenantNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC78219F1CD7191B008348EA /* TenantNavigationViewController.swift */; };
+		AC7821A21CD7198C008348EA /* TenantMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7821A11CD7198C008348EA /* TenantMenuTableViewController.swift */; };
+		AC7821A61CD71BDD008348EA /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7821A51CD71BDD008348EA /* AccountViewController.swift */; };
+		AC7821A81CD72873008348EA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7821A71CD72873008348EA /* SearchViewController.swift */; };
 		AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89B3C51CC59CD900965227 /* AppDelegate.swift */; };
 		AC89B3CB1CC59CD900965227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3C91CC59CD900965227 /* Main.storyboard */; };
 		AC89B3CD1CC59CD900965227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3CC1CC59CD900965227 /* Assets.xcassets */; };
@@ -65,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenantFavoriteViewController.swift; sourceTree = "<group>"; };
 		AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -74,6 +80,10 @@
 		AC4A7F911CD161AE009A13C0 /* ForRent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForRent-Bridging-Header.h"; sourceTree = "<group>"; };
 		AC78218E1CD6F4CE008348EA /* ZYTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZYTT.framework; path = Carthage/Build/iOS/ZYTT.framework; sourceTree = "<group>"; };
 		AC7821941CD70515008348EA /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = file; path = LocationPicker.framework; sourceTree = "<group>"; };
+		AC78219F1CD7191B008348EA /* TenantNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenantNavigationViewController.swift; sourceTree = "<group>"; };
+		AC7821A11CD7198C008348EA /* TenantMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenantMenuTableViewController.swift; sourceTree = "<group>"; };
+		AC7821A51CD71BDD008348EA /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		AC7821A71CD72873008348EA /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AC89B3C21CC59CD900965227 /* ForRent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForRent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC89B3C51CC59CD900965227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC89B3CA1CC59CD900965227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +170,10 @@
 		AC78218D1CD6F4A0008348EA /* tenant */ = {
 			isa = PBXGroup;
 			children = (
+				AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */,
+				AC7821A71CD72873008348EA /* SearchViewController.swift */,
+				AC78219F1CD7191B008348EA /* TenantNavigationViewController.swift */,
+				AC7821A11CD7198C008348EA /* TenantMenuTableViewController.swift */,
 			);
 			name = tenant;
 			sourceTree = "<group>";
@@ -193,6 +207,7 @@
 				AC89B3C51CC59CD900965227 /* AppDelegate.swift */,
 				AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */,
 				AC89B3C91CC59CD900965227 /* Main.storyboard */,
+				AC7821A51CD71BDD008348EA /* AccountViewController.swift */,
 				ACF065D31CD55768004D7B57 /* TabBarViewController.swift */,
 				AC89B3CC1CC59CD900965227 /* Assets.xcassets */,
 				AC89B3CE1CC59CD900965227 /* LaunchScreen.storyboard */,
@@ -303,16 +318,21 @@
 			files = (
 				ACF065D91CD57D2F004D7B57 /* ENSideMenuNavigationController.swift in Sources */,
 				ACF065D41CD55768004D7B57 /* TabBarViewController.swift in Sources */,
+				AC7821A61CD71BDD008348EA /* AccountViewController.swift in Sources */,
+				AC7821A81CD72873008348EA /* SearchViewController.swift in Sources */,
 				AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */,
 				ACF065DF1CD58026004D7B57 /* LandlordMenuTableViewController.swift in Sources */,
 				ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */,
+				AC7821A21CD7198C008348EA /* TenantMenuTableViewController.swift in Sources */,
 				ACF065E11CD6ACEF004D7B57 /* LandlordManagementViewController.swift in Sources */,
 				ACF065D21CD55151004D7B57 /* LinearProgressBar.swift in Sources */,
 				ACF121141CCFF469000ED06F /* CurrencyFormatter.swift in Sources */,
 				ACF065DD1CD57DDA004D7B57 /* LandlordNavigationViewController.swift in Sources */,
 				ACF065DB1CD57D5D004D7B57 /* ENSideMenu.swift in Sources */,
 				ACF065E41CD6D13A004D7B57 /* AppConstants.swift in Sources */,
+				AC02EA461CD7307600A61DA9 /* TenantFavoriteViewController.swift in Sources */,
 				ACF065D01CD335BC004D7B57 /* SuperRentLogoView.swift in Sources */,
+				AC7821A01CD7191B008348EA /* TenantNavigationViewController.swift in Sources */,
 				AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
