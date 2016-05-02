@@ -153,14 +153,11 @@
 		AC89B3C41CC59CD900965227 /* ForRent */ = {
 			isa = PBXGroup;
 			children = (
+				ACF065E21CD6B5AF004D7B57 /* landlord */,
 				ACF065CC1CD33579004D7B57 /* library */,
-				ACF065DE1CD58026004D7B57 /* LandlordMenuTableViewController.swift */,
-				ACF065DC1CD57DDA004D7B57 /* LandlordNavigationViewController.swift */,
 				AC89B3C51CC59CD900965227 /* AppDelegate.swift */,
-				ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */,
 				AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */,
 				AC89B3C91CC59CD900965227 /* Main.storyboard */,
-				ACF065E01CD6ACEF004D7B57 /* LandlordManagementViewController.swift */,
 				ACF065D31CD55768004D7B57 /* TabBarViewController.swift */,
 				AC89B3CC1CC59CD900965227 /* Assets.xcassets */,
 				AC89B3CE1CC59CD900965227 /* LaunchScreen.storyboard */,
@@ -180,6 +177,17 @@
 				ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */,
 			);
 			name = library;
+			sourceTree = "<group>";
+		};
+		ACF065E21CD6B5AF004D7B57 /* landlord */ = {
+			isa = PBXGroup;
+			children = (
+				ACF065DE1CD58026004D7B57 /* LandlordMenuTableViewController.swift */,
+				ACF065DC1CD57DDA004D7B57 /* LandlordNavigationViewController.swift */,
+				ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */,
+				ACF065E01CD6ACEF004D7B57 /* LandlordManagementViewController.swift */,
+			);
+			name = landlord;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

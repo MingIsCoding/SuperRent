@@ -37,7 +37,11 @@ class PostFormViewController: FormViewController {
     
     func submit(_: UIBarButtonItem!) {
         
-        if !checkIfUserLoggedIn() {
+        var userEmail: String!
+        
+        if let value = checkUserEmail() {
+            userEmail = value
+        } else {
             let notie = Notie(view: self.view, message: "Please sign in before posting.", style: .Confirm)
             notie.leftButtonAction = {
                 self.askForLoggingIn()
@@ -193,6 +197,7 @@ class PostFormViewController: FormViewController {
         rentalObject["state"] = state
         rentalObject["zip"] = zip
         rentalObject["country"] = country
+        rentalObject["loginEmail"] = userEmail
         rentalObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if (success) {
                 print("saved!")
@@ -293,15 +298,17 @@ class PostFormViewController: FormViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func checkIfUserLoggedIn() -> Bool {
+    func checkUserEmail() -> String? {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        if userDefaults.objectForKey("loggedIn") != nil {
-            if userDefaults.boolForKey("loggedIn") {
-                return true
-            }
-        }
-        return false
+//        if let email = userDefaults.valueForKey("userEmail") {
+//            return email as? String
+//        } else {
+//            return nil
+//        }
+        return userDefaults.valueForKey("loginUserEmail") as? String
+        
     }
+    
     
     func askForLoggingIn() {
         let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate

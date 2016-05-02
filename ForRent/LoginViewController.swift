@@ -12,7 +12,9 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 @objc protocol LoginViewControllerDelegate: class {
-    @objc optional func loggedIn(loginMethod: Int)
+    // delegate method for Login VC to call when the user finishes logging in
+    // to dismiss itself (login VC); implemented by TabBarVC
+    @objc optional func loggedIn(loginMethod: String, loginUserEmail: String?, loginUserName: String?)
 }
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
@@ -74,10 +76,12 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
             let email = user.profile.email
             print("userId: \(userId) \n")
             print("idToken: \(idToken) \n")
-            print("fullName: \(fullName) \n")
-            print("givenName: \(givenName) \n")
-            print("familyName: \(familyName) \n")
+            print("fullName: \(fullName)")
+            print("givenName: \(givenName)")
+            print("familyName: \(familyName)")
             print("email: \(email) \n")
+            
+            self.delegate.loggedIn!("Google", loginUserEmail: email, loginUserName: fullName)
             
             NSNotificationCenter.defaultCenter().postNotificationName(
                 "ToggleAuthUINotification",
@@ -123,10 +127,15 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
                 print("Error: \(error)")
             }
             else {
+                let id = result.valueForKey("id") as? String
+                let name = result.valueForKey("name") as? String
+                let email = result.valueForKey("email") as? String
                 print("graph request result: \n")
-                print(result.valueForKey("id") as? String)
-                print(result.valueForKey("name"))
-                print(result.valueForKey("email"))
+                print(id)
+                print(name)
+                print(email)
+                self.delegate.loggedIn!("Facebook", loginUserEmail: email, loginUserName: name)
+                
             }
         })
     }
@@ -140,7 +149,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDeleg
     }
   
     @IBAction func continueButtonClicked(sender: UIButton) {
-        delegate.loggedIn!(2)
+        delegate.loggedIn!("guest", loginUserEmail: "", loginUserName: "")
         
         // save this info in the NSUserDefaults, otherwise the login view will keep poping up from the tab bar controller
         let userDefaults = NSUserDefaults.standardUserDefaults()
