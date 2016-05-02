@@ -73,6 +73,7 @@
 		AC4A7F8F1CD14534009A13C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC4A7F911CD161AE009A13C0 /* ForRent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForRent-Bridging-Header.h"; sourceTree = "<group>"; };
 		AC78218E1CD6F4CE008348EA /* ZYTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZYTT.framework; path = Carthage/Build/iOS/ZYTT.framework; sourceTree = "<group>"; };
+		AC7821941CD70515008348EA /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = file; path = LocationPicker.framework; sourceTree = "<group>"; };
 		AC89B3C21CC59CD900965227 /* ForRent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForRent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC89B3C51CC59CD900965227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC89B3CA1CC59CD900965227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 		AC78218B1CD6F43E008348EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC7821941CD70515008348EA /* LocationPicker.framework */,
 				AC78218E1CD6F4CE008348EA /* ZYTT.framework */,
 				ACA4FA9A1CD17A400066396E /* libz.tbd */,
 				ACA4FA9C1CD18EB00066396E /* ParseUI.framework */,
