@@ -1,0 +1,19 @@
+language: objective-c
+osx_image: xcode7.3
+xcode_project: ZYTT.xcodeproj
+# xcode_workspace: <WORKSPACE_PLACEHOLDER> 
+xcode_sdk: iphonesimulator9.3
+xcode_scheme: ZYTT
+env:
+  global: 
+    - FRAMEWORK_NAME= ZYTT
+before_install:
+  - brew update
+  - brew install carthage
+before_script:
+  # bootstrap the dependencies for the project
+  # you can remove if you don't have dependencies
+ # - carthage bootstrap  
+before_deploy:
+  - carthage build --no-skip-current
+  - carthage archive $FRAMEWORK_NAME

@@ -12,6 +12,8 @@
 		AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */; };
 		AC4A7F8C1CD142DC009A13C0 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC4A7F8B1CD142DC009A13C0 /* GoogleSignIn.bundle */; };
 		AC4A7F901CD14534009A13C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC4A7F8F1CD14534009A13C0 /* GoogleService-Info.plist */; };
+		AC78218F1CD6F4CE008348EA /* ZYTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC78218E1CD6F4CE008348EA /* ZYTT.framework */; };
+		AC7821901CD6F4CE008348EA /* ZYTT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC78218E1CD6F4CE008348EA /* ZYTT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89B3C51CC59CD900965227 /* AppDelegate.swift */; };
 		AC89B3CB1CC59CD900965227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3C91CC59CD900965227 /* Main.storyboard */; };
 		AC89B3CD1CC59CD900965227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC89B3CC1CC59CD900965227 /* Assets.xcassets */; };
@@ -54,6 +56,7 @@
 				ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */,
 				ACA0FA081CD027B900DE066E /* Parse.framework in Embed Frameworks */,
 				ACF065D71CD57391004D7B57 /* Notie.framework in Embed Frameworks */,
+				AC7821901CD6F4CE008348EA /* ZYTT.framework in Embed Frameworks */,
 				ACA0FA061CD027B500DE066E /* Bolts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -69,6 +72,7 @@
 		AC4A7F8D1CD1437A009A13C0 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
 		AC4A7F8F1CD14534009A13C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC4A7F911CD161AE009A13C0 /* ForRent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForRent-Bridging-Header.h"; sourceTree = "<group>"; };
+		AC78218E1CD6F4CE008348EA /* ZYTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZYTT.framework; path = Carthage/Build/iOS/ZYTT.framework; sourceTree = "<group>"; };
 		AC89B3C21CC59CD900965227 /* ForRent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForRent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC89B3C51CC59CD900965227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC89B3CA1CC59CD900965227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 				ACA4FA9B1CD17A400066396E /* libz.tbd in Frameworks */,
 				ACA4FA991CD1750B0066396E /* SystemConfiguration.framework in Frameworks */,
 				ACA4FA971CD175050066396E /* SafariServices.framework in Frameworks */,
+				AC78218F1CD6F4CE008348EA /* ZYTT.framework in Frameworks */,
 				ACA4FA951CD174FE0066396E /* AddressBook.framework in Frameworks */,
 				ACA4FA911CD172B80066396E /* GoogleSignIn.framework in Frameworks */,
 				AC4A7F891CD14008009A13C0 /* FBSDKLoginKit.framework in Frameworks */,
@@ -121,11 +126,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC89B3B91CC59CD900965227 = {
+		AC78218B1CD6F43E008348EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ACF065D51CD57391004D7B57 /* Notie.framework */,
-				ACA4FAA01CD1BA010066396E /* Chewy.ttf */,
+				AC78218E1CD6F4CE008348EA /* ZYTT.framework */,
 				ACA4FA9A1CD17A400066396E /* libz.tbd */,
 				ACA4FA9C1CD18EB00066396E /* ParseUI.framework */,
 				ACA4FA981CD1750B0066396E /* SystemConfiguration.framework */,
@@ -138,6 +142,31 @@
 				ACA0FA011CD027AA00DE066E /* Bolts.framework */,
 				ACA0FA021CD027AA00DE066E /* Parse.framework */,
 				ACF1210A1CCFE647000ED06F /* Eureka.framework */,
+				ACF065D51CD57391004D7B57 /* Notie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC78218C1CD6F46D008348EA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				ACA4FAA01CD1BA010066396E /* Chewy.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		AC78218D1CD6F4A0008348EA /* tenant */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = tenant;
+			sourceTree = "<group>";
+		};
+		AC89B3B91CC59CD900965227 = {
+			isa = PBXGroup;
+			children = (
+				AC78218C1CD6F46D008348EA /* Font */,
+				AC78218B1CD6F43E008348EA /* Frameworks */,
 				AC89B3C41CC59CD900965227 /* ForRent */,
 				AC89B3C31CC59CD900965227 /* Products */,
 				AC4A7F911CD161AE009A13C0 /* ForRent-Bridging-Header.h */,
@@ -155,6 +184,7 @@
 		AC89B3C41CC59CD900965227 /* ForRent */ = {
 			isa = PBXGroup;
 			children = (
+				AC78218D1CD6F4A0008348EA /* tenant */,
 				ACF065E31CD6D13A004D7B57 /* AppConstants.swift */,
 				ACF065E21CD6B5AF004D7B57 /* landlord */,
 				ACF065CC1CD33579004D7B57 /* library */,

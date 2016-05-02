@@ -9,7 +9,7 @@
 import Foundation
 
 
-class LandlordManagementViewController: UIViewController {
+class LandlordManagementViewController: UITableViewController {
     
     @IBAction func toggleMenuButton(sender: AnyObject) {
         toggleSideMenuView()
