@@ -39,12 +39,12 @@ class PostFormViewController: FormViewController {
         
         var userEmail: String!
         
-        if let value = checkUserEmail() {
+        if let value = Util.checkUserEmail() {
             userEmail = value
         } else {
             let notie = Notie(view: self.view, message: "Please sign in before posting.", style: .Confirm)
             notie.leftButtonAction = {
-                self.askForLoggingIn()
+                Util.askForLoggingIn()
                 notie.dismiss()
             }
             
@@ -298,23 +298,6 @@ class PostFormViewController: FormViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func checkUserEmail() -> String? {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-//        if let email = userDefaults.valueForKey("userEmail") {
-//            return email as? String
-//        } else {
-//            return nil
-//        }
-        return userDefaults.valueForKey(AppConstants.userEmailKey) as? String
-        
-    }
-    
-    
-    func askForLoggingIn() {
-        let appDelegate  = UIApplication.sharedApplication().delegate as! AppDelegate
-        let viewController = appDelegate.window!.rootViewController as! TabBarViewController
-        viewController.presentLoginView()
-    }
     
     @IBAction func toggleLeftMenuButton(sender: AnyObject) {
         toggleSideMenuView()
