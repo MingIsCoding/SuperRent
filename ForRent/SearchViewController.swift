@@ -35,7 +35,7 @@ class SearchViewController: FormViewController {
         
         let searchBar = UISearchBar()
         searchBar.sizeToFit()
-        searchBar.placeholder = "Search for rentals"
+        searchBar.placeholder = "Search"
         navigationItem.titleView = searchBar
         
         loadFilterForms()
@@ -88,11 +88,15 @@ class SearchViewController: FormViewController {
     private func loadFilterForms() {
         
         
-        form +++ Section("Rental Type")
+        form +++ Section()
             
-            <<< SegmentedRow<String>() {
-                $0.options = ["All", "House", "Townhouse", "Aptmnt", "Condo"]
-                $0.value = "All"
+            <<< MultipleSelectorRow<String>("type") {
+                $0.title = "Rental Type"
+                $0.options = ["🏡 House", "🏚 Townhouse", "🏢 Apartment", "🏤 Condo"]
+                $0.value = ["🏡 House"]
+                }
+                .onPresent { from, to in
+                    to.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: from, action: #selector(self.multipleSelectorDone(_:)))
             }
             
             +++ Section()
@@ -138,13 +142,17 @@ class SearchViewController: FormViewController {
     private func formatLocationString(location: LocationItem) -> [String] {
         var address: [String] = [String]()
         let dic = location.addressDictionary
-        address.append(dic!["Street"] as! String)
-        address.append(dic!["City"] as! String)
+        address.append(dic!["Street"] != nil ? (dic!["Street"] as! String) : "")
+        address.append(dic!["City"] != nil ? (dic!["City"] as! String) : "")
         address.append(dic!["State"] as! String)
         address.append(dic!["ZIP"] as! String)
         address.append(address[0] + "\n" + address[1] + " " + address[2] + " " + address[3])
         
         return address
+    }
+    
+    func multipleSelectorDone(item:UIBarButtonItem) {
+        navigationController?.popViewControllerAnimated(true)
     }
 
 }
