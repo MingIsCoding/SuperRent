@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AC02EA461CD7307600A61DA9 /* TenantFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */; };
+		AC1876271CDC49F0008D8C6F /* LocationPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1876261CDC49F0008D8C6F /* LocationPicker.framework */; };
+		AC1876281CDC49F0008D8C6F /* LocationPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC1876261CDC49F0008D8C6F /* LocationPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */; };
 		AC4A7F891CD14008009A13C0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */; };
 		AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */; };
@@ -50,8 +52,6 @@
 		ACF1210E1CCFE889000ED06F /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF1210A1CCFE647000ED06F /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */; };
 		ACF121141CCFF469000ED06F /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */; };
-		ACF3D1551CD74CCE005517A0 /* LocationPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF3D1541CD74CCE005517A0 /* LocationPicker.framework */; };
-		ACF3D1561CD74CCE005517A0 /* LocationPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF3D1541CD74CCE005517A0 /* LocationPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF3D1581CD74D2C005517A0 /* CustomLocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3D1571CD74D2C005517A0 /* CustomLocationPicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,7 +67,7 @@
 				ACF065D71CD57391004D7B57 /* Notie.framework in Embed Frameworks */,
 				AC7821901CD6F4CE008348EA /* ZYTT.framework in Embed Frameworks */,
 				ACA0FA061CD027B500DE066E /* Bolts.framework in Embed Frameworks */,
-				ACF3D1561CD74CCE005517A0 /* LocationPicker.framework in Embed Frameworks */,
+				AC1876281CDC49F0008D8C6F /* LocationPicker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenantFavoriteViewController.swift; sourceTree = "<group>"; };
+		AC1876261CDC49F0008D8C6F /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LocationPicker.framework; sourceTree = "<group>"; };
 		AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		ACF1210A1CCFE647000ED06F /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFormViewController.swift; sourceTree = "<group>"; };
 		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
-		ACF3D1541CD74CCE005517A0 /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LocationPicker.framework; sourceTree = "<group>"; };
 		ACF3D1571CD74D2C005517A0 /* CustomLocationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationPicker.swift; sourceTree = "<group>"; };
 		ACF599561CD964630045713C /* ForRent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ForRent.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,7 +137,7 @@
 				AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */,
 				ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */,
 				ACA0FA031CD027AA00DE066E /* Bolts.framework in Frameworks */,
-				ACF3D1551CD74CCE005517A0 /* LocationPicker.framework in Frameworks */,
+				AC1876271CDC49F0008D8C6F /* LocationPicker.framework in Frameworks */,
 				ACF065D61CD57391004D7B57 /* Notie.framework in Frameworks */,
 				ACA0FA041CD027AA00DE066E /* Parse.framework in Frameworks */,
 			);
@@ -149,7 +149,7 @@
 		AC78218B1CD6F43E008348EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ACF3D1541CD74CCE005517A0 /* LocationPicker.framework */,
+				AC1876261CDC49F0008D8C6F /* LocationPicker.framework */,
 				AC78218E1CD6F4CE008348EA /* ZYTT.framework */,
 				ACA4FA9A1CD17A400066396E /* libz.tbd */,
 				ACA4FA9C1CD18EB00066396E /* ParseUI.framework */,
