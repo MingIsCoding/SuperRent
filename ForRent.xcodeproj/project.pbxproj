@@ -118,6 +118,7 @@
 		ACF121131CCFF469000ED06F /* CurrencyFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		ACF3D1541CD74CCE005517A0 /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LocationPicker.framework; sourceTree = "<group>"; };
 		ACF3D1571CD74D2C005517A0 /* CustomLocationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLocationPicker.swift; sourceTree = "<group>"; };
+		ACF599561CD964630045713C /* ForRent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ForRent.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +209,7 @@
 		AC89B3C41CC59CD900965227 /* ForRent */ = {
 			isa = PBXGroup;
 			children = (
+				ACF599561CD964630045713C /* ForRent.entitlements */,
 				AC78218D1CD6F4A0008348EA /* tenant */,
 				ACF065E31CD6D13A004D7B57 /* AppConstants.swift */,
 				ACF065E21CD6B5AF004D7B57 /* landlord */,
@@ -284,6 +286,11 @@
 					AC89B3C11CC59CD900965227 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 7A4PH7F224;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -461,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -471,6 +479,7 @@
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.SuperRent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ForRent-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -482,6 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -491,6 +501,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.sjsu.cmpe277.SuperRent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ForRent-Bridging-Header.h";
 			};
 			name = Release;
