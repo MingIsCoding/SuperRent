@@ -3,23 +3,29 @@ An iOS application for rental information posting &amp; searching written in Swi
 
 Made with ❤️.
 
+We used [Carthage](https://github.com/Carthage/Carthage) (a simple, decentralized dependency manager for Cocoa) to manage dependencies for this project.
+
 ##### Dependency libraries
-+ [Carthage](https://github.com/Carthage/Carthage): a simple, decentralized dependency manager for Cocoa.
 
 + [Eureka](https://github.com/xmartlabs/Eureka): a library to create dynamic table-view forms from a [DSL] specification in Swift.
++ [Notie](https://github.com/thii/Notie): in-app notification in Swift, with customizable buttons and input text field.
++ [Parse](https://github.com/ParsePlatform/Parse-SDK-iOS-OSX): a library that gives you access to the powerful Parse cloud platform from your iOS or OS X app.
++ [LocationPicker](https://github.com/JeromeTan1997/LocationPicker): a library for ready-to-use and fully customizable location picker.
 
-To specify the dependency of Eureka into project's `Cartfile`:
+##### Instructions
+
+To run this project, Carthage should be first installed using [Homebrew](http://brew.sh/). In terminal:
 
 ```ogdl
-github "xmartlabs/Eureka" ~> 1.5
+brew install Carthage
 ```
 
-Then in terminal issue the following command:
+Then locate to the project directory, issue:
 
-```ogdl
+```
 carthage update
 ```
 
-Eureka framework also needs to be mannually associated with this project in Xcode:
-Under General -> Embedded Binaries, drag and drop the .framework file found in (project_path)/Carthage/Build/iOS/Eureka.framework
+This will fetch dependencies into a (project_path)/Carthage/Checkouts folder and build each one. Built .framework files can be found in (project_path)/Carthage/Build/iOS/ folder.
 
+Note that LocationPicker library can only be compiled for an actualy iOS device and not emulators.
