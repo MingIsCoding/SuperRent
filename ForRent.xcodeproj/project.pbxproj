@@ -38,7 +38,6 @@
 		ACA4FA9D1CD18EB00066396E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA9C1CD18EB00066396E /* ParseUI.framework */; };
 		ACA4FAA11CD1BA010066396E /* Chewy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACA4FAA01CD1BA010066396E /* Chewy.ttf */; };
 		ACA5A2E81CDD7EAE00D659A7 /* RentalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5A2E71CDD7EAE00D659A7 /* RentalCell.swift */; };
-		ACA5A2EA1CDDC1F400D659A7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACA5A2E91CDDC1F400D659A7 /* Default-568h@2x.png */; };
 		ACF065D01CD335BC004D7B57 /* SuperRentLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */; };
 		ACF065D21CD55151004D7B57 /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065D11CD55151004D7B57 /* LinearProgressBar.swift */; };
 		ACF065D41CD55768004D7B57 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065D31CD55768004D7B57 /* TabBarViewController.swift */; };
@@ -107,7 +106,6 @@
 		ACA4FA9C1CD18EB00066396E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		ACA4FAA01CD1BA010066396E /* Chewy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chewy.ttf; sourceTree = "<group>"; };
 		ACA5A2E71CDD7EAE00D659A7 /* RentalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalCell.swift; sourceTree = "<group>"; };
-		ACA5A2E91CDDC1F400D659A7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperRentLogoView.swift; sourceTree = "<group>"; };
 		ACF065D11CD55151004D7B57 /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
 		ACF065D31CD55768004D7B57 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 		AC89B3B91CC59CD900965227 = {
 			isa = PBXGroup;
 			children = (
-				ACA5A2E91CDDC1F400D659A7 /* Default-568h@2x.png */,
 				AC78218C1CD6F46D008348EA /* Font */,
 				AC78218B1CD6F43E008348EA /* Frameworks */,
 				AC89B3C41CC59CD900965227 /* ForRent */,
@@ -328,7 +325,6 @@
 				ACA4FAA11CD1BA010066396E /* Chewy.ttf in Resources */,
 				AC4A7F901CD14534009A13C0 /* GoogleService-Info.plist in Resources */,
 				AC89B3CD1CC59CD900965227 /* Assets.xcassets in Resources */,
-				ACA5A2EA1CDDC1F400D659A7 /* Default-568h@2x.png in Resources */,
 				AC89B3CB1CC59CD900965227 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

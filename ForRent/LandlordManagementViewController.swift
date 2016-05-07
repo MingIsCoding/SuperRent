@@ -146,4 +146,43 @@ class LandlordManagementViewController: UITableViewController {
             return 1
         }
     }
+    
+    // delete feature
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            let rentalToDelete = rentalObjects[indexPath.row]
+            
+            let title = "Delete Post"
+            let message = "Are you sure you want to delete this rental posting?"
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) -> Void in
+                self.rentalObjects.removeAtIndex(indexPath.row)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                rentalToDelete.deleteInBackgroundWithBlock {
+                    (success: Bool, error: NSError?) -> Void in
+                    if success {
+                        let notie = Notie(view: self.view, message: "Rental posting deleted from the server.", style: .Confirm)
+                        notie.leftButtonAction = {
+                            // Add your left button action here
+                            notie.dismiss()
+                        }
+                        
+                        notie.rightButtonAction = {
+                            // Add your right button action here
+                            notie.dismiss()
+                        }
+                        notie.show()
+                    }
+                }
+            })
+            ac.addAction(cancelAction)
+            ac.addAction(deleteAction)
+            
+            presentViewController(ac, animated: true, completion: nil)
+        }
+    }
+
 }
