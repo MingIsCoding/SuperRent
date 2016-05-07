@@ -13,7 +13,6 @@ import Parse
 import Notie
 
 
-
 class PostFormViewController: FormViewController {
     
     override func viewDidLoad() {

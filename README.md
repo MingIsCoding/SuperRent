@@ -11,6 +11,7 @@ We used [Carthage](https://github.com/Carthage/Carthage) (a simple, decentralize
 + [Notie](https://github.com/thii/Notie): in-app notification in Swift, with customizable buttons and input text field.
 + [Parse](https://github.com/ParsePlatform/Parse-SDK-iOS-OSX): a library that gives you access to the powerful Parse cloud platform from your iOS or OS X app.
 + [LocationPicker](https://github.com/JeromeTan1997/LocationPicker): a library for ready-to-use and fully customizable location picker.
++ [Linear Progress Bar](https://github.com/PhilippeBoisney/LinearProgressBar): a simple Linear Progress Bar for IOS (Swift 2.0), inspired by Material Design.
 
 ##### Instructions
 
