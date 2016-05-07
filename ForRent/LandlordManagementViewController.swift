@@ -14,12 +14,15 @@ class LandlordManagementViewController: UITableViewController {
     
     var userEmail: String?
     
-    @IBAction func toggleMenuButton(sender: AnyObject) {
+    func toggleMenuButton(sender: AnyObject) {
         toggleSideMenuView()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationItem.title = "My Posts"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_60"), style: .Plain, target: self, action: #selector(LandlordManagementViewController.toggleMenuButton(_:)))
         
         if let value = Util.checkUserEmail() {
             userEmail = value
