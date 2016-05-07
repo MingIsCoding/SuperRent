@@ -26,53 +26,80 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RentalCell" rowHeight="70" id="9ly-NB-ST5" customClass="RentalCell" customModule="ForRent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RentalCell" rowHeight="86" id="9ly-NB-ST5" customClass="RentalCell" customModule="ForRent" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ly-NB-ST5" id="GZg-Xt-8ht">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AB4-Lk-UA5">
-                                            <rect key="frame" x="8" y="4" width="60" height="61.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AB4-Lk-UA5" customClass="PFImageView">
+                                            <rect key="frame" x="16" y="11" width="64" height="64"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="eDP-lT-z8A"/>
-                                                <constraint firstAttribute="height" constant="61.5" id="rLB-Ov-Cpw"/>
+                                                <constraint firstAttribute="width" constant="64" id="eDP-lT-z8A"/>
+                                                <constraint firstAttribute="height" constant="64" id="rLB-Ov-Cpw"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-y7-5ck">
-                                            <rect key="frame" x="86" y="4" width="35.5" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <rect key="frame" x="96" y="11" width="40" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVt-3A-S5M">
-                                            <rect key="frame" x="86" y="49" width="57.5" height="16"/>
+                                            <rect key="frame" x="96" y="58.5" width="57.5" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaJ-FI-GNG">
+                                            <rect key="frame" x="321" y="38.5" width="38" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0f-U2-JJK">
+                                            <rect key="frame" x="332" y="58.5" width="27" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u39-th-7TI">
+                                            <rect key="frame" x="323.5" y="11.5" width="35.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imh-aR-uvz">
-                                            <rect key="frame" x="86" y="32" width="55.5" height="16"/>
+                                            <rect key="frame" x="96" y="38.5" width="55.5" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zaJ-FI-GNG" secondAttribute="trailing" constant="8" id="3fe-9T-97S"/>
                                         <constraint firstItem="AB4-Lk-UA5" firstAttribute="centerY" secondItem="GZg-Xt-8ht" secondAttribute="centerY" id="4UP-oc-OlM"/>
+                                        <constraint firstItem="f0f-U2-JJK" firstAttribute="trailing" secondItem="zaJ-FI-GNG" secondAttribute="trailing" id="4WP-hI-h8P"/>
+                                        <constraint firstItem="f0f-U2-JJK" firstAttribute="bottom" secondItem="eVt-3A-S5M" secondAttribute="bottom" id="Abk-1M-Hra"/>
+                                        <constraint firstItem="u39-th-7TI" firstAttribute="centerY" secondItem="QkE-y7-5ck" secondAttribute="centerY" id="RyT-8U-BZr"/>
                                         <constraint firstItem="eVt-3A-S5M" firstAttribute="bottom" secondItem="AB4-Lk-UA5" secondAttribute="bottom" id="VpP-Aj-YAw"/>
-                                        <constraint firstItem="AB4-Lk-UA5" firstAttribute="leading" secondItem="GZg-Xt-8ht" secondAttribute="leadingMargin" id="brU-Pn-Sqf"/>
+                                        <constraint firstItem="zaJ-FI-GNG" firstAttribute="centerY" secondItem="imh-aR-uvz" secondAttribute="centerY" id="Zgy-BL-LIE"/>
+                                        <constraint firstItem="AB4-Lk-UA5" firstAttribute="leading" secondItem="GZg-Xt-8ht" secondAttribute="leadingMargin" constant="8" id="brU-Pn-Sqf"/>
                                         <constraint firstItem="imh-aR-uvz" firstAttribute="leading" secondItem="QkE-y7-5ck" secondAttribute="leading" id="bzG-xs-44s"/>
                                         <constraint firstItem="eVt-3A-S5M" firstAttribute="leading" secondItem="QkE-y7-5ck" secondAttribute="leading" id="d0z-Ce-QHj"/>
-                                        <constraint firstItem="QkE-y7-5ck" firstAttribute="leading" secondItem="AB4-Lk-UA5" secondAttribute="trailing" constant="18" id="dkQ-a8-ONn"/>
-                                        <constraint firstItem="eVt-3A-S5M" firstAttribute="top" secondItem="imh-aR-uvz" secondAttribute="bottom" constant="1" id="yMe-el-zsW"/>
+                                        <constraint firstItem="QkE-y7-5ck" firstAttribute="leading" secondItem="AB4-Lk-UA5" secondAttribute="trailing" constant="16" id="dkQ-a8-ONn"/>
+                                        <constraint firstItem="u39-th-7TI" firstAttribute="trailing" secondItem="zaJ-FI-GNG" secondAttribute="trailing" id="rF8-Iw-oOh"/>
+                                        <constraint firstItem="eVt-3A-S5M" firstAttribute="top" secondItem="imh-aR-uvz" secondAttribute="bottom" constant="4" id="yMe-el-zsW"/>
                                         <constraint firstItem="QkE-y7-5ck" firstAttribute="top" secondItem="AB4-Lk-UA5" secondAttribute="top" id="zI1-aE-X8g"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="address1Label" destination="imh-aR-uvz" id="bj2-nL-su2"/>
                                     <outlet property="address2Label" destination="eVt-3A-S5M" id="tE9-kp-8Jx"/>
+                                    <outlet property="dateLabel" destination="f0f-U2-JJK" id="XY7-DR-Ad7"/>
+                                    <outlet property="phoneLabel" destination="zaJ-FI-GNG" id="dp4-80-481"/>
+                                    <outlet property="rentLabel" destination="u39-th-7TI" id="4j4-mt-3yW"/>
                                     <outlet property="rentalImageView" destination="AB4-Lk-UA5" id="dSD-c2-NtB"/>
                                     <outlet property="typeLabel" destination="QkE-y7-5ck" id="gJY-6A-Kar"/>
                                 </connections>

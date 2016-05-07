@@ -12,7 +12,10 @@ import UIKit
 class RentalCell: UITableViewCell {
     
     @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var rentalImageView: UIImageView!
+    @IBOutlet weak var rentalImageView: PFImageView!
     @IBOutlet weak var address1Label: UILabel!
     @IBOutlet weak var address2Label: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var rentLabel: UILabel!
 }

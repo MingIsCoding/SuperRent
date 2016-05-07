@@ -21,7 +21,7 @@ class LandlordManagementViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 68
+        tableView.rowHeight = 86
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -29,6 +29,9 @@ class LandlordManagementViewController: UITableViewController {
         
         self.navigationItem.title = "My Posts"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_60"), style: .Plain, target: self, action: #selector(LandlordManagementViewController.toggleMenuButton(_:)))
+        
+        // add a 'Edit' button in the navigation bar
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(LandlordManagementViewController.toggleEdittingMode))
         
         if let value = Util.checkUserEmail() {
             userEmail = value
@@ -82,8 +85,65 @@ class LandlordManagementViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("RentalCell", forIndexPath: indexPath) as! RentalCell
         
         let rental = rentalObjects[indexPath.row]
-        cell.address1Label.text = rental.valueForKey("date") as? String
-        cell.typeLabel.text = rental.valueForKey("type") as? String
+        // for date label
+        if let date = rental.valueForKey("date") as? NSDate {
+            let df = NSDateFormatter()
+            df.dateStyle = .MediumStyle
+            df.timeStyle = .NoStyle
+            let dateStr = df.stringFromDate(date)
+            //cell.dateLabel.text = "Date: \(dateStr)"
+            cell.dateLabel.text = dateStr
+        }
+        // for type label: including type + bed# & bath#
+        let type = rental.valueForKey("type") as! String
+        let bedCnt = strToNum(rental.valueForKey("bedroomCnt") as! String)
+        let bathCnt = strToNum(rental.valueForKey("bathCnt") as! String)
+        cell.typeLabel.text = "\(type) \(bedCnt)B\(bathCnt)B"
+        // for image view
+        cell.rentalImageView.image = UIImage(named: "placeholder")
+        if let file = rental.valueForKey("imageFile") as? PFFile {
+            cell.rentalImageView.file = file
+            cell.rentalImageView.loadInBackground()
+        }
+        // for rent label
+        cell.rentLabel.text = "$" + String(format: "%.0f", rental.valueForKey("rent") as! Double)
+        // for address1 label: street
+        cell.address1Label.text = rental.valueForKey("street") as? String
+        // for address2 label: city, state, zip and country
+        let city = rental.valueForKey("city") as! String
+        let state = rental.valueForKey("state1") as! String
+        let zip = rental.valueForKey("zip") as! String
+        //let country = rental.valueForKey("country") as! String
+        cell.address2Label.text = "\(city) \(state) \(zip)"
+        // for phone lable
+        cell.phoneLabel.text = rental.valueForKey("phone") as? String
+        
         return cell
+    }
+    
+    func toggleEdittingMode() {
+        if editing {
+            self.navigationItem.rightBarButtonItem?.title = "Edit"
+            setEditing(false, animated: true)
+        }
+        else {
+            self.navigationItem.rightBarButtonItem?.title = "Done"
+            setEditing(true, animated: true)
+        }
+    }
+    
+    func strToNum(str: String) -> Int {
+        switch str {
+        case "one":
+            return 1
+        case "two":
+            return 2
+        case "three":
+            return 3
+        case "four":
+            return 4
+        default:
+            return 1
+        }
     }
 }

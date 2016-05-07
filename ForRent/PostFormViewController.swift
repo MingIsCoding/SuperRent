@@ -183,7 +183,7 @@ class PostFormViewController: FormViewController {
         }
         
         
-        rentalObject["phone"] = phone
+        rentalObject["phone"] = formatPhoneNum(phone)
         rentalObject["email"] = email
         rentalObject["date"] = date
         rentalObject["type"] = type
@@ -193,7 +193,8 @@ class PostFormViewController: FormViewController {
         rentalObject["description"] = description
         rentalObject["street"] = street
         rentalObject["city"] = city
-        rentalObject["state"] = state
+        rentalObject["state1"] = state
+        // state field seems to be something that PFObject already has
         rentalObject["zip"] = zip
         rentalObject["country"] = country
         rentalObject["loginEmail"] = userEmail
@@ -300,6 +301,18 @@ class PostFormViewController: FormViewController {
     
     @IBAction func toggleLeftMenuButton(sender: AnyObject) {
         toggleSideMenuView()
+    }
+    
+    func formatPhoneNum(str: String) -> String {
+        if str.characters.count == 10 {
+            let first3 = str.substringWithRange(Range<String.Index>(str.startIndex ..< str.endIndex.advancedBy(-7)))
+            let mid3 = str.substringWithRange(Range<String.Index>(str.startIndex.advancedBy(3) ..< str.endIndex.advancedBy(-4)))
+            let last4 = str.substringWithRange(Range<String.Index>(str.startIndex.advancedBy(6) ..< str.endIndex))
+            return "(\(first3)) \(mid3)-\(last4)"
+        }
+        else {
+            return str
+        }
     }
     
 }
