@@ -13,6 +13,7 @@ import Notie
 class SearchViewController: FormViewController, UISearchBarDelegate {
     
     let searchBar = UISearchBar()
+    var selectedLocation: [String]?
     
     var historyLocationList: [LocationItem] {
         get {
@@ -76,9 +77,9 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
     func showLocation(locationItem: LocationItem) {
         //locationNameTextField.text = locationItem.name
         //locationAddressTextField.text = locationItem.formattedAddressString
-        let data: [String] = formatLocationString(locationItem)
-        print(data)
-        form.setValues(["location": "\(data[0]), \(data[1])", "state": data[2], "zip": data[3], "locationFilter": "Filter location"])
+        selectedLocation = formatLocationString(locationItem)
+        print(selectedLocation)
+        form.setValues(["location": "\(selectedLocation![0]), \(selectedLocation![1])", "state": selectedLocation![2], "zip": selectedLocation![3], "locationFilter": "Filter location"])
         //form.rowByTag("location")?.updateCell()
         tableView?.reloadData()
     }
@@ -92,9 +93,7 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
     
     private func loadFilterForms() {
         
-        
         form +++ Section()
-            
             <<< MultipleSelectorRow<String>("type") {
                 $0.title = "Rental Type"
                 $0.options = ["🏡 House", "🏚 Townhouse", "🏢 Apartment", "🏤 Condo"]
@@ -194,6 +193,10 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         resultVC.queryTypes = [String](Util.houseTypeConverter(values["type"] as! Set<String>))
         if (values["priceFilter"] as! String) != "Any price" {
             resultVC.queryMaxPrice = Double(values["maxPrice"] as! Float)
+        }
+        if (values["locationFilter"] as! String) != "Default" {
+            resultVC.queryCity = selectedLocation![1]
+            resultVC.queryZip = selectedLocation![3]
         }
         
         // present the search result VC in a navigation VC

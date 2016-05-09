@@ -16,6 +16,8 @@ class SearchResultViewController: UITableViewController {
     var queryKeyword: String?
     var queryTypes: [String]?
     var queryMaxPrice: Double?
+    var queryCity = "San Jose"
+    var queryZip = "95112"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,8 @@ class SearchResultViewController: UITableViewController {
             print(price)
             query.whereKey("rent", lessThan: price)
         }
+        query.whereKey("city", equalTo: queryCity)
+        query.whereKey("zip", equalTo: queryZip)
         query.findObjectsInBackgroundWithBlock{
             (objects: [PFObject]?, error: NSError?) -> Void in
             
