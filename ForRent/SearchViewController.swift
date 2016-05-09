@@ -39,6 +39,7 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         searchBar.sizeToFit()
         searchBar.placeholder = "Search"
         searchBar.delegate = self
+        searchBar.enablesReturnKeyAutomatically = false
         navigationItem.titleView = searchBar
         
         loadFilterForms()
@@ -76,7 +77,8 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         //locationNameTextField.text = locationItem.name
         //locationAddressTextField.text = locationItem.formattedAddressString
         let data: [String] = formatLocationString(locationItem)
-        form.setValues(["location": data[0], "state": data[2], "zip": data[3]])
+        print(data)
+        form.setValues(["location": "\(data[0]), \(data[1])", "state": data[2], "zip": data[3], "locationFilter": "Filter location"])
         //form.rowByTag("location")?.updateCell()
         tableView?.reloadData()
     }
@@ -145,7 +147,7 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
     private func formatLocationString(location: LocationItem) -> [String] {
         var address: [String] = [String]()
         let dic = location.addressDictionary
-        address.append(dic!["Street"] != nil ? (dic!["Street"] as! String) : "")
+        address.append(dic!["Street"] != nil ? (dic!["Street"] as! String) : (dic!["Name"] != nil ? (dic!["Name"] as! String) : ""))
         address.append(dic!["City"] != nil ? (dic!["City"] as! String) : "")
         address.append(dic!["State"] as! String)
         address.append(dic!["ZIP"] as! String)
@@ -182,9 +184,9 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         //let resultVC = SearchResultViewController()
         //presentViewController(resultVC, animated: true, completion: nil)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        let result = mainStoryboard.instantiateViewControllerWithIdentifier("searchResultVC")
-        let navigation = UINavigationController(rootViewController: result)
-        presentViewController(navigation, animated: true, completion: nil)
+        let resultVC = mainStoryboard.instantiateViewControllerWithIdentifier("searchResultVC")
+        let navigationVC = UINavigationController(rootViewController: resultVC)
+        presentViewController(navigationVC, animated: true, completion: nil)
         
     }
 

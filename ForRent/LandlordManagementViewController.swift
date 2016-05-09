@@ -96,8 +96,8 @@ class LandlordManagementViewController: UITableViewController {
         }
         // for type label: including type + bed# & bath#
         let type = rental.valueForKey("type") as! String
-        let bedCnt = strToNum(rental.valueForKey("bedroomCnt") as! String)
-        let bathCnt = strToNum(rental.valueForKey("bathCnt") as! String)
+        let bedCnt = Util.strToNum(rental.valueForKey("bedroomCnt") as! String)
+        let bathCnt = Util.strToNum(rental.valueForKey("bathCnt") as! String)
         cell.typeLabel.text = "\(type) \(bedCnt)B\(bathCnt)B"
         // for image view
         cell.rentalImageView.image = UIImage(named: "placeholder")
@@ -129,21 +129,6 @@ class LandlordManagementViewController: UITableViewController {
         else {
             self.navigationItem.rightBarButtonItem?.title = "Done"
             setEditing(true, animated: true)
-        }
-    }
-    
-    func strToNum(str: String) -> Int {
-        switch str {
-        case "one":
-            return 1
-        case "two":
-            return 2
-        case "three":
-            return 3
-        case "four":
-            return 4
-        default:
-            return 1
         }
     }
     
