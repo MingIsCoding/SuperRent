@@ -12,6 +12,7 @@ import UIKit
 class SearchResultViewController: UITableViewController {
     
     var rentalObjects: [PFObject] = []
+    var queryKeyword: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,9 @@ class SearchResultViewController: UITableViewController {
         
         // do the query
         let query = PFQuery(className: "Rental")
+        if let keyword = queryKeyword {
+            query.whereKey("description", containsString: keyword)
+        }
         query.findObjectsInBackgroundWithBlock{
             (objects: [PFObject]?, error: NSError?) -> Void in
             

@@ -184,7 +184,9 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         //let resultVC = SearchResultViewController()
         //presentViewController(resultVC, animated: true, completion: nil)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-        let resultVC = mainStoryboard.instantiateViewControllerWithIdentifier("searchResultVC")
+        let resultVC = mainStoryboard.instantiateViewControllerWithIdentifier("searchResultVC") as! SearchResultViewController
+        // set the query params
+        resultVC.queryKeyword = keyword
         let navigationVC = UINavigationController(rootViewController: resultVC)
         presentViewController(navigationVC, animated: true, completion: nil)
         
