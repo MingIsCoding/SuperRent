@@ -8,8 +8,11 @@
 
 import LocationPicker
 import Eureka
+import Notie
 
-class SearchViewController: FormViewController {
+class SearchViewController: FormViewController, UISearchBarDelegate {
+    
+    let searchBar = UISearchBar()
     
     var historyLocationList: [LocationItem] {
         get {
@@ -33,9 +36,9 @@ class SearchViewController: FormViewController {
         // setting navigationBar to be opaque
         self.navigationController?.navigationBar.translucent = false
         
-        let searchBar = UISearchBar()
         searchBar.sizeToFit()
         searchBar.placeholder = "Search"
+        searchBar.delegate = self
         navigationItem.titleView = searchBar
         
         loadFilterForms()
@@ -151,8 +154,38 @@ class SearchViewController: FormViewController {
         return address
     }
     
-    func multipleSelectorDone(item:UIBarButtonItem) {
+    // for MultipleSelectorRow of Eureka form
+    func multipleSelectorDone(item: UIBarButtonItem) {
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    // to show a `cancel` button in the search bar
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    
+    // clear existing text and dismiss keyboard when `cancel` clicked
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+    
+    // respond to search action
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        let keyword = searchBar.text
+        print(keyword)
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        
+        //let resultVC = SearchResultViewController()
+        //presentViewController(resultVC, animated: true, completion: nil)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        let result = mainStoryboard.instantiateViewControllerWithIdentifier("searchResultVC")
+        let navigation = UINavigationController(rootViewController: result)
+        presentViewController(navigation, animated: true, completion: nil)
+        
     }
 
 }

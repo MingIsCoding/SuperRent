@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AC02EA461CD7307600A61DA9 /* TenantFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */; };
+		AC0664F61CE04FD300B8A2B3 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0664F51CE04FD300B8A2B3 /* SearchResultViewController.swift */; };
 		AC1876271CDC49F0008D8C6F /* LocationPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1876261CDC49F0008D8C6F /* LocationPicker.framework */; };
 		AC1876281CDC49F0008D8C6F /* LocationPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC1876261CDC49F0008D8C6F /* LocationPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenantFavoriteViewController.swift; sourceTree = "<group>"; };
+		AC0664F51CE04FD300B8A2B3 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		AC1876261CDC49F0008D8C6F /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LocationPicker.framework; sourceTree = "<group>"; };
 		AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		AC78218D1CD6F4A0008348EA /* tenant */ = {
 			isa = PBXGroup;
 			children = (
+				AC0664F51CE04FD300B8A2B3 /* SearchResultViewController.swift */,
 				AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */,
 				AC7821A71CD72873008348EA /* SearchViewController.swift */,
 				AC78219F1CD7191B008348EA /* TenantNavigationViewController.swift */,
@@ -344,6 +347,7 @@
 				AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */,
 				ACF065DF1CD58026004D7B57 /* LandlordMenuTableViewController.swift in Sources */,
 				AC6817FD1CD87789007483C0 /* Util.swift in Sources */,
+				AC0664F61CE04FD300B8A2B3 /* SearchResultViewController.swift in Sources */,
 				ACF121111CCFE8ED000ED06F /* PostFormViewController.swift in Sources */,
 				AC7821A21CD7198C008348EA /* TenantMenuTableViewController.swift in Sources */,
 				ACF065E11CD6ACEF004D7B57 /* LandlordManagementViewController.swift in Sources */,

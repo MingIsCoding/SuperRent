@@ -259,6 +259,35 @@
             </objects>
             <point key="canvasLocation" x="400.5" y="1526.5"/>
         </scene>
+        <!--Search Result View Controller-->
+        <scene sceneID="ebR-iI-rRf">
+            <objects>
+                <tableViewController storyboardIdentifier="searchResultVC" id="Lcr-Rv-nSD" customClass="SearchResultViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RRW-BH-1fT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fom-nd-4QY">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fom-nd-4QY" id="rca-hu-LPR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Lcr-Rv-nSD" id="P0Z-MU-XLB"/>
+                            <outlet property="delegate" destination="Lcr-Rv-nSD" id="gx1-pO-vGC"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3k-oS-ijh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="394.5" y="2335.5"/>
+        </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="s14-3m-Zab">
             <objects>
