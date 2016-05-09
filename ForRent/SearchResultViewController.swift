@@ -8,11 +8,13 @@
 
 import Foundation
 import UIKit
+import Notie
 
 class SearchResultViewController: UITableViewController {
     
     var rentalObjects: [PFObject] = []
     var queryKeyword: String?
+    var queryTypes: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +34,31 @@ class SearchResultViewController: UITableViewController {
         if let keyword = queryKeyword {
             query.whereKey("description", containsString: keyword)
         }
+        if let types = queryTypes {
+            print(types)
+            query.whereKey("type", containedIn: types)
+        }
         query.findObjectsInBackgroundWithBlock{
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             progressBar.stopAnimation()
             if error == nil {
                 print("Successfully retrieved \(objects!.count) posts.")
+                
+                // if returned 0 match, display a notification
+                if objects?.count == 0 {
+                    let notie = Notie(view: self.view, message: "No match found. Try another query.", style: .Confirm)
+                    notie.leftButtonAction = {
+                        self.dismissSelf()
+                        notie.dismiss()
+                    }
+                    notie.rightButtonAction = {
+                        notie.dismiss()
+                    }
+                    notie.show()
+                }
+                
+                // update the table view's data content
                 if let objects = objects {
                     self.rentalObjects = objects
                     self.tableView.reloadData()

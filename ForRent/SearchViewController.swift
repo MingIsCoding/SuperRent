@@ -175,8 +175,8 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
     
     // respond to search action
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        // searchBar.text is an optional: Optional("")/ Optional("Pet")
         let keyword = searchBar.text
-        print(keyword)
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
@@ -187,6 +187,14 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         let resultVC = mainStoryboard.instantiateViewControllerWithIdentifier("searchResultVC") as! SearchResultViewController
         // set the query params
         resultVC.queryKeyword = keyword
+        
+        // extract the values the user has specified in the form
+        let values = form.values()
+        // ["state": nil, "locationFilter": Optional("Default"), "zip": nil, "priceFilter": Optional("Any price"), "maxPrice": Optional(800.0), "location": nil, "type": Optional(Set(["🏡 House"]))]
+        resultVC.queryTypes = [String](Util.houseTypeConverter(values["type"] as! Set<String>))
+        
+        
+        // present the search result VC in a navigation VC
         let navigationVC = UINavigationController(rootViewController: resultVC)
         presentViewController(navigationVC, animated: true, completion: nil)
         

@@ -42,4 +42,23 @@ class Util {
             return 1
         }
     }
+    
+    static func houseTypeConverter(types: Set<String>) -> Set<String> {
+        var result = Set<String>()
+        for type in types {
+            switch type {
+            case "🏡 House":
+                result.insert("House")
+            case "🏚 Townhouse":
+                result.insert("Townhouse")
+            case "🏢 Apartment":
+                result.insert("Apartment")
+            case "🏤 Condo":
+                result.insert("Condo")
+            default:
+                break
+            }
+        }
+        return result
+    }
 }
