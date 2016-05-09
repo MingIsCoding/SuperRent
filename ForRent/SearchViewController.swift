@@ -192,7 +192,9 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         let values = form.values()
         // ["state": nil, "locationFilter": Optional("Default"), "zip": nil, "priceFilter": Optional("Any price"), "maxPrice": Optional(800.0), "location": nil, "type": Optional(Set(["🏡 House"]))]
         resultVC.queryTypes = [String](Util.houseTypeConverter(values["type"] as! Set<String>))
-        
+        if (values["priceFilter"] as! String) != "Any price" {
+            resultVC.queryMaxPrice = Double(values["maxPrice"] as! Float)
+        }
         
         // present the search result VC in a navigation VC
         let navigationVC = UINavigationController(rootViewController: resultVC)

@@ -15,6 +15,7 @@ class SearchResultViewController: UITableViewController {
     var rentalObjects: [PFObject] = []
     var queryKeyword: String?
     var queryTypes: [String]?
+    var queryMaxPrice: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,10 @@ class SearchResultViewController: UITableViewController {
         if let types = queryTypes {
             print(types)
             query.whereKey("type", containedIn: types)
+        }
+        if let price = queryMaxPrice {
+            print(price)
+            query.whereKey("rent", lessThan: price)
         }
         query.findObjectsInBackgroundWithBlock{
             (objects: [PFObject]?, error: NSError?) -> Void in
@@ -63,11 +68,11 @@ class SearchResultViewController: UITableViewController {
                     self.rentalObjects = objects
                     self.tableView.reloadData()
                 }
-                if let objects = objects {
-                    for object in objects {
-                        print(object)
-                    }
-                }
+//                if let objects = objects {
+//                    for object in objects {
+//                        print(object)
+//                    }
+//                }
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
             }
