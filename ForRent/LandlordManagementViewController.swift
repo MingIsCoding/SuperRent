@@ -169,5 +169,14 @@ class LandlordManagementViewController: UITableViewController {
             presentViewController(ac, animated: true, completion: nil)
         }
     }
+    
+    // pass the selected UITableViewCell to the detail VC so info can be displayed
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "landlordSegue" {
+            let index = tableView.indexPathForSelectedRow
+            let cell = tableView.cellForRowAtIndexPath(index!) as! RentalCell
+            (segue.destinationViewController as! DetailForLandlordViewController).cell = cell
+        }
+    }
 
 }

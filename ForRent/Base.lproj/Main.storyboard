@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MAi-kO-7eA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MAi-kO-7eA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -102,6 +102,7 @@
                                     <outlet property="rentLabel" destination="u39-th-7TI" id="4j4-mt-3yW"/>
                                     <outlet property="rentalImageView" destination="AB4-Lk-UA5" id="dSD-c2-NtB"/>
                                     <outlet property="typeLabel" destination="QkE-y7-5ck" id="gJY-6A-Kar"/>
+                                    <segue destination="smy-dl-oBc" kind="show" identifier="landlordSegue" id="FhU-MH-8Mt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -117,6 +118,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2K-g3-wft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400.5" y="-903.5"/>
+        </scene>
+        <!--Detail For Landlord View Controller-->
+        <scene sceneID="Sqq-Td-hr1">
+            <objects>
+                <viewController id="smy-dl-oBc" customClass="DetailForLandlordViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HOj-RW-hqg"/>
+                        <viewControllerLayoutGuide type="bottom" id="zBi-oA-2fl"/>
+                    </layoutGuides>
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="RYZ-OH-HlB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8AA-Jp-Rzo" customClass="PFImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="8AA-Jp-Rzo" id="i4J-FH-Y5O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aet-pG-JHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982.5" y="-903.5"/>
         </scene>
         <!--Post New Rental-->
         <scene sceneID="tne-QT-ifu">
@@ -344,6 +371,7 @@
                                     <outlet property="rentLabel" destination="k4M-be-Abq" id="vMK-KK-2HB"/>
                                     <outlet property="rentalImageView" destination="cWg-q1-bDc" id="fFY-B8-NLg"/>
                                     <outlet property="typeLabel" destination="ZsY-NU-qAX" id="5wb-hj-aFJ"/>
+                                    <segue destination="Jdk-lY-xwZ" kind="show" id="dHg-i0-1GZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -357,6 +385,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3k-oS-ijh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="394.5" y="2335.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="70X-Bz-wxc">
+            <objects>
+                <viewController id="Jdk-lY-xwZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XLj-tb-kOt"/>
+                        <viewControllerLayoutGuide type="bottom" id="TgU-ix-jSj"/>
+                    </layoutGuides>
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="gXC-UY-0sl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </stackView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbL-4n-qBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982.5" y="2335.5"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="s14-3m-Zab">

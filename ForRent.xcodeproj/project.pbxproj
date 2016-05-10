@@ -39,6 +39,7 @@
 		ACA4FA9D1CD18EB00066396E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA9C1CD18EB00066396E /* ParseUI.framework */; };
 		ACA4FAA11CD1BA010066396E /* Chewy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACA4FAA01CD1BA010066396E /* Chewy.ttf */; };
 		ACA5A2E81CDD7EAE00D659A7 /* RentalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5A2E71CDD7EAE00D659A7 /* RentalCell.swift */; };
+		ACEA0C291CE16FB2001A0694 /* DetailForLandlordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA0C281CE16FB2001A0694 /* DetailForLandlordViewController.swift */; };
 		ACF065D01CD335BC004D7B57 /* SuperRentLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */; };
 		ACF065D21CD55151004D7B57 /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065D11CD55151004D7B57 /* LinearProgressBar.swift */; };
 		ACF065D41CD55768004D7B57 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065D31CD55768004D7B57 /* TabBarViewController.swift */; };
@@ -108,6 +109,7 @@
 		ACA4FA9C1CD18EB00066396E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		ACA4FAA01CD1BA010066396E /* Chewy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chewy.ttf; sourceTree = "<group>"; };
 		ACA5A2E71CDD7EAE00D659A7 /* RentalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalCell.swift; sourceTree = "<group>"; };
+		ACEA0C281CE16FB2001A0694 /* DetailForLandlordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailForLandlordViewController.swift; sourceTree = "<group>"; };
 		ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperRentLogoView.swift; sourceTree = "<group>"; };
 		ACF065D11CD55151004D7B57 /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
 		ACF065D31CD55768004D7B57 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 		ACF065E21CD6B5AF004D7B57 /* landlord */ = {
 			isa = PBXGroup;
 			children = (
+				ACEA0C281CE16FB2001A0694 /* DetailForLandlordViewController.swift */,
 				ACF065DE1CD58026004D7B57 /* LandlordMenuTableViewController.swift */,
 				ACF065DC1CD57DDA004D7B57 /* LandlordNavigationViewController.swift */,
 				ACF121101CCFE8ED000ED06F /* PostFormViewController.swift */,
@@ -359,6 +362,7 @@
 				AC02EA461CD7307600A61DA9 /* TenantFavoriteViewController.swift in Sources */,
 				ACF065D01CD335BC004D7B57 /* SuperRentLogoView.swift in Sources */,
 				AC7821A01CD7191B008348EA /* TenantNavigationViewController.swift in Sources */,
+				ACEA0C291CE16FB2001A0694 /* DetailForLandlordViewController.swift in Sources */,
 				AC89B3C61CC59CD900965227 /* AppDelegate.swift in Sources */,
 				ACA5A2E81CDD7EAE00D659A7 /* RentalCell.swift in Sources */,
 			);
