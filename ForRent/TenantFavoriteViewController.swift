@@ -28,6 +28,7 @@ class TenantFavoriteViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 86
         
+        refreshButton.hidden = true
         self.navigationItem.title = "My Favorites"
         // add left toggle button
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_60"), style: .Plain, target: self, action: #selector(TenantFavoriteViewController.toggleSideMenu))
@@ -178,27 +179,50 @@ class TenantFavoriteViewController: UITableViewController {
             let rentalToDelete = rentalObjects[indexPath.row]
             
             let title = "Delete Favorite"
-            let message = "Are you sure you want to delete this favorite posting?"
+            let message = "Are you sure you want to delete this from your favorites?"
             let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
             
             let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
             let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) -> Void in
+//                self.rentalObjects.removeAtIndex(indexPath.row)
+//                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//                rentalToDelete.deleteInBackgroundWithBlock {
+//                    (success: Bool, error: NSError?) -> Void in
+//                    if success {
+//                        let notie = Notie(view: self.view, message: "Posting removed from my favorites.", style: .Confirm)
+//                        notie.leftButtonAction = {
+//                            // Add your left button action here
+//                            notie.dismiss()
+//                        }
+//                        
+//                        notie.rightButtonAction = {
+//                            // Add your right button action here
+//                            notie.dismiss()
+//                        }
+//                        notie.show()
+//                    }
+//                }
+                
+                // also delete it from the table view
                 self.rentalObjects.removeAtIndex(indexPath.row)
                 self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-                rentalToDelete.deleteInBackgroundWithBlock {
-                    (success: Bool, error: NSError?) -> Void in
-                    if success {
-                        let notie = Notie(view: self.view, message: "Favorite deleted from the server.", style: .Confirm)
-                        notie.leftButtonAction = {
-                            // Add your left button action here
-                            notie.dismiss()
+                
+                var favedBy = rentalToDelete.valueForKey("favedBy") as! [String]
+                if favedBy.contains(self.userEmail!) {
+                    favedBy.removeAtIndex(favedBy.indexOf(self.userEmail!)!)
+                    rentalToDelete["favedBy"] = favedBy
+                    rentalToDelete.saveInBackgroundWithBlock {
+                        (success: Bool, error: NSError?) -> Void in
+                        if success {
+                            let notie = Notie(view: self.view, message: "Successfully removed from my favorite list.", style: .Confirm)
+                            notie.leftButtonAction = {
+                                notie.dismiss()
+                            }
+                            notie.rightButtonAction = {
+                                notie.dismiss()
+                            }
+                            notie.show()
                         }
-                        
-                        notie.rightButtonAction = {
-                            // Add your right button action here
-                            notie.dismiss()
-                        }
-                        notie.show()
                     }
                 }
             })

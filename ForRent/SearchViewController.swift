@@ -195,8 +195,38 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
             resultVC.queryMaxPrice = Double(values["maxPrice"] as! Float)
         }
         if (values["locationFilter"] as! String) != "Default" {
-            resultVC.queryCity = selectedLocation![1]
-            resultVC.queryZip = selectedLocation![3]
+            // if location picker is used, city and zip will be set using these
+            if let selectedLocation = selectedLocation {
+                resultVC.queryCity = selectedLocation[1]
+                resultVC.queryZip = selectedLocation[3]
+            }
+            // if user manually changed city and zip
+            //let inputLocation = values["location"] as! String
+            var inputLocation: String! {
+                if let value = values["location"] {
+                    if let value = value {
+                        return value as! String
+                    }
+                }
+                return ""
+            }
+            if inputLocation != "" {
+                resultVC.queryCity = inputLocation
+            }
+            //let inputZip = values["zip"] as! String
+            var inputZip: String! {
+                if let value = values["zip"] {
+                    if let value = value {
+                        return value as! String
+                    }
+                }
+                return ""
+            }
+            if inputZip != "" {
+                resultVC.queryZip = inputZip
+            }
+            // otherwise, these two query fields will be default to `San Jose` and `95112`
+            // specified in SearchResultViewController.swift
         }
         
         // present the search result VC in a navigation VC
