@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AC02EA461CD7307600A61DA9 /* TenantFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */; };
 		AC0664F61CE04FD300B8A2B3 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0664F51CE04FD300B8A2B3 /* SearchResultViewController.swift */; };
+		AC2019C11CE479E800925FBB /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2019C01CE479E800925FBB /* DOFavoriteButton.swift */; };
 		AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */; };
 		AC4A7F891CD14008009A13C0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */; };
 		AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */; };
@@ -81,6 +82,7 @@
 /* Begin PBXFileReference section */
 		AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenantFavoriteViewController.swift; sourceTree = "<group>"; };
 		AC0664F51CE04FD300B8A2B3 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		AC2019C01CE479E800925FBB /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
 		AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		ACF065CC1CD33579004D7B57 /* library */ = {
 			isa = PBXGroup;
 			children = (
+				AC2019C01CE479E800925FBB /* DOFavoriteButton.swift */,
 				ACF065DA1CD57D5D004D7B57 /* ENSideMenu.swift */,
 				ACF065D81CD57D2F004D7B57 /* ENSideMenuNavigationController.swift */,
 				ACF065D11CD55151004D7B57 /* LinearProgressBar.swift */,
@@ -348,6 +351,7 @@
 				ACF065D91CD57D2F004D7B57 /* ENSideMenuNavigationController.swift in Sources */,
 				ACBB6E0C1CE3FC440098AE50 /* DetailForTenantViewController.swift in Sources */,
 				ACF065D41CD55768004D7B57 /* TabBarViewController.swift in Sources */,
+				AC2019C11CE479E800925FBB /* DOFavoriteButton.swift in Sources */,
 				AC7821A61CD71BDD008348EA /* AccountViewController.swift in Sources */,
 				ACF3D1581CD74D2C005517A0 /* CustomLocationPicker.swift in Sources */,
 				AC7821A81CD72873008348EA /* SearchViewController.swift in Sources */,

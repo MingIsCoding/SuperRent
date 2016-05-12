@@ -27,6 +27,15 @@ class DetailForTenantViewController: UIViewController {
     @IBOutlet var phoneField: UITextField!
     
     @IBOutlet var pageViewLabel: UILabel!
+
+    @IBOutlet var favButton: DOFavoriteButton!
+    @IBAction func favButtonClicked(sender: DOFavoriteButton) {
+        if sender.selected {
+            sender.deselect()
+        } else {
+            sender.select()
+        }
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

@@ -128,7 +128,11 @@ class PostFormViewController: FormViewController {
         
         var description: String! {
             if let value = values["description"] {
-                return value as! String
+                if let value = value {
+                    return value as! String
+                } else {
+                    return ""
+                }
             } else {
                 return "Not Available"
             }

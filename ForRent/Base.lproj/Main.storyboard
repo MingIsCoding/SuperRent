@@ -957,8 +957,26 @@
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Ffk-qB-qFS">
                                         <rect key="frame" x="0.0" y="524" width="311" height="91"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmv-L8-ed1">
-                                                <rect key="frame" x="311" y="46" width="0.0" height="0.0"/>
+                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="60" placeholderIntrinsicHeight="60" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBn-T7-da2" customClass="DOFavoriteButton" customModule="ForRent" customModuleProvider="target">
+                                                <rect key="frame" x="-12" y="-2" width="60" height="60"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="heart"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
+                                                        <color key="value" red="0.99607843139999996" green="0.43137254899999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                        <color key="value" red="0.99607843139999996" green="0.43137254899999999" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" red="0.8862745098" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="favButtonClicked:" destination="mK4-Tt-yQd" eventType="touchUpInside" id="tLZ-1e-PhW"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="views" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmv-L8-ed1">
+                                                <rect key="frame" x="279" y="39" width="32" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -972,7 +990,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Zgr-Tg-h6v" firstAttribute="leading" secondItem="gTZ-dG-XW9" secondAttribute="leading" id="1BK-De-IW3"/>
+                                    <constraint firstItem="RBn-T7-da2" firstAttribute="top" secondItem="1Lk-Ok-rkI" secondAttribute="bottom" constant="4" id="2gW-4s-nhJ"/>
                                     <constraint firstItem="gTZ-dG-XW9" firstAttribute="leading" secondItem="rfq-it-SXL" secondAttribute="leading" id="3ag-VS-tTe"/>
+                                    <constraint firstItem="RBn-T7-da2" firstAttribute="leading" secondItem="1Lk-Ok-rkI" secondAttribute="leading" constant="-12" id="4Ih-ET-sJm"/>
                                     <constraint firstItem="Zgr-Tg-h6v" firstAttribute="leading" secondItem="gTZ-dG-XW9" secondAttribute="leading" id="8Q0-QF-aVT"/>
                                     <constraint firstItem="VI0-Ia-JsZ" firstAttribute="leading" secondItem="214-8S-VRb" secondAttribute="leading" id="JqJ-qV-nLU"/>
                                     <constraint firstItem="gTZ-dG-XW9" firstAttribute="leading" secondItem="rfq-it-SXL" secondAttribute="leading" id="L7F-5O-X7Z"/>
@@ -1008,8 +1028,14 @@
                             <constraint firstItem="hcY-SX-QpF" firstAttribute="top" secondItem="lmM-Rr-AFO" secondAttribute="bottom" constant="16" id="1At-MV-hig"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lmM-Rr-AFO" secondAttribute="trailing" constant="16" id="GaR-cx-0HB"/>
                             <constraint firstItem="lmM-Rr-AFO" firstAttribute="leading" secondItem="gfW-xo-yA6" secondAttribute="leadingMargin" constant="16" id="KvT-FR-si2"/>
+                            <constraint firstItem="RBn-T7-da2" firstAttribute="leading" secondItem="gfW-xo-yA6" secondAttribute="leadingMargin" constant="30" id="gl9-ED-LAX"/>
                             <constraint firstItem="lmM-Rr-AFO" firstAttribute="top" secondItem="3tM-sv-Fe6" secondAttribute="bottom" constant="16" id="lov-pA-a1V"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gl9-ED-LAX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -1019,6 +1045,7 @@
                         <outlet property="bathField" destination="gC6-gq-4Qe" id="DQa-Yi-6SG"/>
                         <outlet property="bedField" destination="85I-yI-vXv" id="31S-QC-e6i"/>
                         <outlet property="emailField" destination="ocw-Lb-2yl" id="hfy-Cn-OqY"/>
+                        <outlet property="favButton" destination="RBn-T7-da2" id="13H-Ja-ccR"/>
                         <outlet property="imageView" destination="k3O-Ux-Kah" id="luj-iz-EBh"/>
                         <outlet property="noteField" destination="Zgr-Tg-h6v" id="cnr-ej-Jsi"/>
                         <outlet property="pageViewLabel" destination="gmv-L8-ed1" id="co2-1Y-Lr2"/>
@@ -1037,6 +1064,7 @@
         <image name="FB-f-Logo__blue_42" width="42" height="42"/>
         <image name="armchair-50" width="25" height="25"/>
         <image name="btn_google_light_normal_ios" width="46" height="46"/>
+        <image name="heart" width="42" height="42"/>
         <image name="ic_location_on" width="27" height="27"/>
         <image name="ic_menu_60" width="30" height="30"/>
         <image name="launch" width="851" height="1286"/>
