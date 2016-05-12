@@ -8,9 +8,13 @@
 
 import Foundation
 import UIKit
+import Notie
 
 class DetailForTenantViewController: UIViewController {
     var cell: RentalCell!
+    var objRef: PFObject!
+    var userEmail: String!
+    var favedBy: [String]!
     
     @IBOutlet var imageView: PFImageView!
     
@@ -33,7 +37,36 @@ class DetailForTenantViewController: UIViewController {
         if sender.selected {
             sender.deselect()
         } else {
+            // checking for login
+            if userEmail == "not available" {
+                let notie = Notie(view: self.view, message: "Please sign in before saving favorites.", style: .Confirm)
+                notie.leftButtonAction = {
+                    Util.askForLoggingIn()
+                    notie.dismiss()
+                }
+                notie.rightButtonAction = {
+                    notie.dismiss()
+                }
+                notie.show()
+                return
+            }
+            
             sender.select()
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let email = Util.checkUserEmail() {
+            userEmail = email
+        } else {
+            userEmail = "not available"
+        }
+        
+        favedBy = objRef.valueForKey("favedBy") as! [String]
+        if favedBy.contains(userEmail) {
+            favButton.select()
         }
     }
     
@@ -71,5 +104,24 @@ class DetailForTenantViewController: UIViewController {
         rentField.enabled = false
         emailField.enabled = false
         phoneField.enabled = false
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if favButton.selected {
+            if !favedBy.contains(userEmail) {
+                favedBy.append(userEmail)
+                objRef["favedBy"] = favedBy
+                objRef.saveInBackground()
+            }
+        }
+        else {
+            if favedBy.contains(userEmail) {
+                favedBy.removeAtIndex(favedBy.indexOf(userEmail)!)
+                objRef["favedBy"] = favedBy
+                objRef.saveInBackground()
+            }
+        }
     }
 }

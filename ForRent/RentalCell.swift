@@ -26,4 +26,5 @@ class RentalCell: UITableViewCell {
     var footage: Double!
     var email: String!
     var pageView: Int!
+    var favedBy: [String]!
 }

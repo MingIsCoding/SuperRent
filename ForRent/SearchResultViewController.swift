@@ -142,6 +142,7 @@ class SearchResultViewController: UITableViewController {
         cell.footage = rental.valueForKey("footage") as! Double
         cell.email = rental.valueForKey("email") as! String
         cell.pageView = rental.valueForKey("pageView") as! Int
+        cell.favedBy = rental.valueForKey("favedBy") as! [String]
         
         return cell
     }
@@ -151,12 +152,15 @@ class SearchResultViewController: UITableViewController {
         if segue.identifier == "tenantSegue" {
             let index = tableView.indexPathForSelectedRow
             let cell = tableView.cellForRowAtIndexPath(index!) as! RentalCell
-            (segue.destinationViewController as! DetailForTenantViewController).cell = cell
+            let controller = segue.destinationViewController as! DetailForTenantViewController
+            
+            controller.cell = cell
             
             // increment the page view field
             let object = rentalObjects[index!.row]
             object.incrementKey("pageView")
             object.saveInBackground()
+            controller.objRef = object
         }
     }
     
