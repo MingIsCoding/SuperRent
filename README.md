@@ -7,7 +7,7 @@ We used [Carthage](https://github.com/Carthage/Carthage) (a simple, decentralize
 
 ##### Dependency libraries
 
-+ [Eureka](https://github.com/xmartlabs/Eureka): a library to create dynamic table-view forms from a [DSL] specification in Swift.
++ [Eureka](https://github.com/xmartlabs/Eureka): a library to create dynamic table-view forms from a DSL specification in Swift.
 + [Notie](https://github.com/thii/Notie): in-app notification in Swift, with customizable buttons and input text field.
 + [Parse](https://github.com/ParsePlatform/Parse-SDK-iOS-OSX): a library that gives you access to the powerful Parse cloud platform from your iOS or OS X app.
 + [LocationPicker](https://github.com/JeromeTan1997/LocationPicker): a library for ready-to-use and fully customizable location picker.

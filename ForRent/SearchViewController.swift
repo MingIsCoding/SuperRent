@@ -41,6 +41,7 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         searchBar.placeholder = "Search"
         searchBar.delegate = self
         searchBar.enablesReturnKeyAutomatically = false
+        searchBar.autocorrectionType = .Yes
         navigationItem.titleView = searchBar
         
         loadFilterForms()
@@ -195,11 +196,7 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
             resultVC.queryMaxPrice = Double(values["maxPrice"] as! Float)
         }
         if (values["locationFilter"] as! String) != "Default" {
-            // if location picker is used, city and zip will be set using these
-            if let selectedLocation = selectedLocation {
-                resultVC.queryCity = selectedLocation[1]
-                resultVC.queryZip = selectedLocation[3]
-            }
+            
             // if user manually changed city and zip
             //let inputLocation = values["location"] as! String
             var inputLocation: String! {
@@ -225,6 +222,13 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
             if inputZip != "" {
                 resultVC.queryZip = inputZip
             }
+            
+            // if location picker is used, city and zip will be set using these
+            if let selectedLocation = selectedLocation {
+                resultVC.queryCity = selectedLocation[1]
+                resultVC.queryZip = selectedLocation[3]
+            }
+            
             // otherwise, these two query fields will be default to `San Jose` and `95112`
             // specified in SearchResultViewController.swift
         }
