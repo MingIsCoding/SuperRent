@@ -133,7 +133,26 @@ class SearchResultViewController: UITableViewController {
         // for phone lable
         cell.phoneLabel.text = rental.valueForKey("phone") as? String
         
+        
+        // for extra fields in RentalCell; to be consumed by detail VC
+        cell.bathCnt = bathCnt
+        cell.bedCnt = bedCnt
+        cell.type = type
+        cell.des = rental.valueForKey("description1") as! String
+        cell.footage = rental.valueForKey("footage") as! Double
+        cell.email = rental.valueForKey("email") as! String
+        cell.pageView = rental.valueForKey("pageView") as! Int
+        
         return cell
+    }
+    
+    // pass the selected UITableViewCell to the detail VC so info can be displayed
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "tenantSegue" {
+            let index = tableView.indexPathForSelectedRow
+            let cell = tableView.cellForRowAtIndexPath(index!) as! RentalCell
+            (segue.destinationViewController as! DetailForTenantViewController).cell = cell
+        }
     }
     
 }

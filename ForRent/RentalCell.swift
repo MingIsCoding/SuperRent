@@ -25,4 +25,5 @@ class RentalCell: UITableViewCell {
     var des: String!
     var footage: Double!
     var email: String!
+    var pageView: Int!
 }

@@ -26,6 +26,8 @@ class DetailForLandlordViewController: UIViewController {
     @IBOutlet var emailField: UITextField!
     @IBOutlet var phoneField: UITextField!
     
+    @IBOutlet var pageViewLabel: UILabel!
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // to hide the tab bar
@@ -43,6 +45,6 @@ class DetailForLandlordViewController: UIViewController {
         rentField.text = cell.rentLabel.text
         emailField.text = cell.email
         phoneField.text = cell.phoneLabel.text
-        
+        pageViewLabel.text = "\(cell.pageView) views"
     }
 }

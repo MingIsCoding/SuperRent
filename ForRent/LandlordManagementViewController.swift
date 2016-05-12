@@ -161,6 +161,7 @@ class LandlordManagementViewController: UITableViewController {
         cell.des = rental.valueForKey("description1") as! String
         cell.footage = rental.valueForKey("footage") as! Double
         cell.email = rental.valueForKey("email") as! String
+        cell.pageView = rental.valueForKey("pageView") as! Int
         
         return cell
     }

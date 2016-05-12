@@ -206,6 +206,7 @@ class PostFormViewController: FormViewController {
         rentalObject["footage"] = footage
         rentalObject["country"] = country
         rentalObject["loginEmail"] = userEmail
+        rentalObject["pageView"] = 0
         rentalObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             if (success) {
                 print("saved!")
