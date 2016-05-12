@@ -29,11 +29,19 @@
                             <rect key="frame" x="0.0" y="114" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3V-7X-znY">
-                                    <rect key="frame" x="164" y="7" width="46" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3V-7X-znY">
+                                    <rect key="frame" x="161" y="7" width="53" height="30"/>
+                                    <state key="normal" title="Refresh"/>
+                                    <connections>
+                                        <action selector="refreshButtonClicked:" destination="47I-QE-1Tn" eventType="touchUpInside" id="AnI-p3-3sq"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="P3V-7X-znY" firstAttribute="centerY" secondItem="RnM-UJ-MU3" secondAttribute="centerY" id="1wg-I7-U3i"/>
+                                <constraint firstItem="P3V-7X-znY" firstAttribute="centerX" secondItem="RnM-UJ-MU3" secondAttribute="centerX" id="2A7-98-u76"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RentalCell" rowHeight="86" id="9ly-NB-ST5" customClass="RentalCell" customModule="ForRent" customModuleProvider="target">
@@ -124,6 +132,9 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="refreshButton" destination="P3V-7X-znY" id="thK-fV-GKd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2K-g3-wft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

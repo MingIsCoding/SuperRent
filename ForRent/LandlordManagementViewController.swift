@@ -14,6 +14,12 @@ class LandlordManagementViewController: UITableViewController {
     
     var userEmail: String?
     var rentalObjects: [PFObject] = []
+    @IBOutlet var refreshButton: UIButton!
+    
+    @IBAction func refreshButtonClicked(sender: UIButton) {
+        sender.hidden = true
+        requestForData()
+    }
 
     func toggleMenuButton(sender: AnyObject) {
         toggleSideMenuView()
@@ -22,12 +28,6 @@ class LandlordManagementViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 86
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        // to reveal the tab bar, otherwise it'll remain hidden since it's hidden in the detail page
-        self.tabBarController?.tabBar.hidden = false
         
         self.navigationItem.title = "My Posts"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_60"), style: .Plain, target: self, action: #selector(LandlordManagementViewController.toggleMenuButton(_:)))
@@ -35,6 +35,19 @@ class LandlordManagementViewController: UITableViewController {
         // add a 'Edit' button in the navigation bar
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(LandlordManagementViewController.toggleEdittingMode))
         
+        checkLogin()
+        refreshButton.hidden = true
+        requestForData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // to reveal the tab bar, otherwise it'll remain hidden since it's hidden in the detail page
+        self.tabBarController?.tabBar.hidden = false
+    }
+    
+    func checkLogin() {
         if let value = Util.checkUserEmail() {
             userEmail = value
         } else {
@@ -50,7 +63,9 @@ class LandlordManagementViewController: UITableViewController {
             notie.show()
             return
         }
-        
+    }
+    
+    func requestForData() {
         let progressBar = LinearProgressBar()
         self.view.addSubview(progressBar)
         progressBar.startAnimation()
@@ -59,25 +74,25 @@ class LandlordManagementViewController: UITableViewController {
         query.whereKey("loginEmail", equalTo: userEmail!)
         query.findObjectsInBackgroundWithBlock{
             (objects: [PFObject]?, error: NSError?) -> Void in
-
+            
             progressBar.stopAnimation()
+            self.refreshButton.hidden = false
             if error == nil {
                 print("Successfully retrieved \(objects!.count) posts.")
                 if let objects = objects {
                     self.rentalObjects = objects
                     self.tableView.reloadData()
                 }
-//                if let objects = objects {
-//                    for object in objects {
-//                        print(object)
-//                    }
-//                }
+                //                if let objects = objects {
+                //                    for object in objects {
+                //                        print(object)
+                //                    }
+                //                }
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
     }
-    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rentalObjects.count
@@ -144,10 +159,8 @@ class LandlordManagementViewController: UITableViewController {
         cell.bedCnt = bedCnt
         cell.type = type
         cell.des = rental.valueForKey("description1") as! String
-        print(cell.des)
         cell.footage = rental.valueForKey("footage") as! Double
         cell.email = rental.valueForKey("email") as! String
-        
         
         return cell
     }
