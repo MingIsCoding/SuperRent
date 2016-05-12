@@ -18,4 +18,8 @@ class RentalCell: UITableViewCell {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var rentLabel: UILabel!
+    
+    var bedCnt: Int!
+    var bathCnt: Int!
+    var type: String!
 }

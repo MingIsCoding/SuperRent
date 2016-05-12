@@ -31,7 +31,7 @@ class PostFormViewController: FormViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.tabBarController?.tabBar.hidden = false
     }
     
     func submit(_: UIBarButtonItem!) {

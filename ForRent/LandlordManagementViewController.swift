@@ -26,6 +26,8 @@ class LandlordManagementViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        // to reveal the tab bar, otherwise it'll remain hidden since it's hidden in the detail page
+        self.tabBarController?.tabBar.hidden = false
         
         self.navigationItem.title = "My Posts"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_60"), style: .Plain, target: self, action: #selector(LandlordManagementViewController.toggleMenuButton(_:)))
@@ -65,11 +67,11 @@ class LandlordManagementViewController: UITableViewController {
                     self.rentalObjects = objects
                     self.tableView.reloadData()
                 }
-                if let objects = objects {
-                    for object in objects {
-                        print(object)
-                    }
-                }
+//                if let objects = objects {
+//                    for object in objects {
+//                        print(object)
+//                    }
+//                }
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
             }
@@ -83,6 +85,25 @@ class LandlordManagementViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RentalCell", forIndexPath: indexPath) as! RentalCell
+        // reference for format of retrieved object
+//            <Rental: 0x144ddbbc0, objectId: FAVhHIzVhv, localId: (null)> {
+//            bathCnt = four;
+//            bedroomCnt = four;
+//            city = "San Jose";
+//            country = US;
+//            date = "2016-09-14 20:09:02 +0000";
+//            description = "";
+//            email = "michael@gmail.com";
+//            imageFile = "<PFFile: 0x144f065a0>";
+//            imageName = "Rental Image";
+//            loginEmail = "chienshin1@gmail.com";
+//            phone = "(480) 125-8863";
+//            rent = 1250;
+//            state1 = CA;
+//            street = "458 Floyd Rd";
+//            type = House;
+//            zip = 95112;
+//        }
         
         let rental = rentalObjects[indexPath.row]
         // for date label
@@ -117,6 +138,10 @@ class LandlordManagementViewController: UITableViewController {
         cell.address2Label.text = "\(city) \(state) \(zip)"
         // for phone lable
         cell.phoneLabel.text = rental.valueForKey("phone") as? String
+        
+        // for extra fields in RentalCell; to be consumed by detail VC
+        cell.bathCnt = bathCnt
+        cell.bedCnt = bedCnt
         
         return cell
     }

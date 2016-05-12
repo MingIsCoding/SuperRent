@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		AC02EA461CD7307600A61DA9 /* TenantFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */; };
 		AC0664F61CE04FD300B8A2B3 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0664F51CE04FD300B8A2B3 /* SearchResultViewController.swift */; };
-		AC1876271CDC49F0008D8C6F /* LocationPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC1876261CDC49F0008D8C6F /* LocationPicker.framework */; };
-		AC1876281CDC49F0008D8C6F /* LocationPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC1876261CDC49F0008D8C6F /* LocationPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC4A7F731CD0849A009A13C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */; };
 		AC4A7F891CD14008009A13C0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */; };
 		AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */; };
 		AC4A7F8C1CD142DC009A13C0 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC4A7F8B1CD142DC009A13C0 /* GoogleSignIn.bundle */; };
 		AC4A7F901CD14534009A13C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC4A7F8F1CD14534009A13C0 /* GoogleService-Info.plist */; };
 		AC6817FD1CD87789007483C0 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6817FC1CD87789007483C0 /* Util.swift */; };
+		AC6D71A11CE428870044D18B /* LocationPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC6D71A01CE428870044D18B /* LocationPicker.framework */; };
+		AC6D71A21CE428870044D18B /* LocationPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC6D71A01CE428870044D18B /* LocationPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC78218F1CD6F4CE008348EA /* ZYTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC78218E1CD6F4CE008348EA /* ZYTT.framework */; };
 		AC7821901CD6F4CE008348EA /* ZYTT.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC78218E1CD6F4CE008348EA /* ZYTT.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC7821A01CD7191B008348EA /* TenantNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC78219F1CD7191B008348EA /* TenantNavigationViewController.swift */; };
@@ -39,6 +39,7 @@
 		ACA4FA9D1CD18EB00066396E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA4FA9C1CD18EB00066396E /* ParseUI.framework */; };
 		ACA4FAA11CD1BA010066396E /* Chewy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACA4FAA01CD1BA010066396E /* Chewy.ttf */; };
 		ACA5A2E81CDD7EAE00D659A7 /* RentalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5A2E71CDD7EAE00D659A7 /* RentalCell.swift */; };
+		ACBB6E0C1CE3FC440098AE50 /* DetailForTenantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB6E0B1CE3FC440098AE50 /* DetailForTenantViewController.swift */; };
 		ACEA0C291CE16FB2001A0694 /* DetailForLandlordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEA0C281CE16FB2001A0694 /* DetailForLandlordViewController.swift */; };
 		ACF065D01CD335BC004D7B57 /* SuperRentLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */; };
 		ACF065D21CD55151004D7B57 /* LinearProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF065D11CD55151004D7B57 /* LinearProgressBar.swift */; };
@@ -70,7 +71,7 @@
 				ACF065D71CD57391004D7B57 /* Notie.framework in Embed Frameworks */,
 				AC7821901CD6F4CE008348EA /* ZYTT.framework in Embed Frameworks */,
 				ACA0FA061CD027B500DE066E /* Bolts.framework in Embed Frameworks */,
-				AC1876281CDC49F0008D8C6F /* LocationPicker.framework in Embed Frameworks */,
+				AC6D71A21CE428870044D18B /* LocationPicker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +81,6 @@
 /* Begin PBXFileReference section */
 		AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenantFavoriteViewController.swift; sourceTree = "<group>"; };
 		AC0664F51CE04FD300B8A2B3 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
-		AC1876261CDC49F0008D8C6F /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LocationPicker.framework; sourceTree = "<group>"; };
 		AC4A7F721CD0849A009A13C0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC4A7F831CD13949009A13C0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AC4A7F841CD13949009A13C0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -89,6 +89,7 @@
 		AC4A7F8F1CD14534009A13C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC4A7F911CD161AE009A13C0 /* ForRent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForRent-Bridging-Header.h"; sourceTree = "<group>"; };
 		AC6817FC1CD87789007483C0 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		AC6D71A01CE428870044D18B /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationPicker.framework; path = Carthage/Build/iOS/LocationPicker.framework; sourceTree = "<group>"; };
 		AC78218E1CD6F4CE008348EA /* ZYTT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZYTT.framework; path = Carthage/Build/iOS/ZYTT.framework; sourceTree = "<group>"; };
 		AC78219F1CD7191B008348EA /* TenantNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenantNavigationViewController.swift; sourceTree = "<group>"; };
 		AC7821A11CD7198C008348EA /* TenantMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TenantMenuTableViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		ACA4FA9C1CD18EB00066396E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		ACA4FAA01CD1BA010066396E /* Chewy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chewy.ttf; sourceTree = "<group>"; };
 		ACA5A2E71CDD7EAE00D659A7 /* RentalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalCell.swift; sourceTree = "<group>"; };
+		ACBB6E0B1CE3FC440098AE50 /* DetailForTenantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailForTenantViewController.swift; sourceTree = "<group>"; };
 		ACEA0C281CE16FB2001A0694 /* DetailForLandlordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailForLandlordViewController.swift; sourceTree = "<group>"; };
 		ACF065CF1CD335BC004D7B57 /* SuperRentLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperRentLogoView.swift; sourceTree = "<group>"; };
 		ACF065D11CD55151004D7B57 /* LinearProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearProgressBar.swift; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 				AC4A7F8A1CD14008009A13C0 /* FBSDKCoreKit.framework in Frameworks */,
 				ACF1210D1CCFE889000ED06F /* Eureka.framework in Frameworks */,
 				ACA0FA031CD027AA00DE066E /* Bolts.framework in Frameworks */,
-				AC1876271CDC49F0008D8C6F /* LocationPicker.framework in Frameworks */,
+				AC6D71A11CE428870044D18B /* LocationPicker.framework in Frameworks */,
 				ACF065D61CD57391004D7B57 /* Notie.framework in Frameworks */,
 				ACA0FA041CD027AA00DE066E /* Parse.framework in Frameworks */,
 			);
@@ -155,7 +157,6 @@
 		AC78218B1CD6F43E008348EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AC1876261CDC49F0008D8C6F /* LocationPicker.framework */,
 				AC78218E1CD6F4CE008348EA /* ZYTT.framework */,
 				ACA4FA9A1CD17A400066396E /* libz.tbd */,
 				ACA4FA9C1CD18EB00066396E /* ParseUI.framework */,
@@ -185,6 +186,7 @@
 		AC78218D1CD6F4A0008348EA /* tenant */ = {
 			isa = PBXGroup;
 			children = (
+				ACBB6E0B1CE3FC440098AE50 /* DetailForTenantViewController.swift */,
 				AC0664F51CE04FD300B8A2B3 /* SearchResultViewController.swift */,
 				AC02EA451CD7307600A61DA9 /* TenantFavoriteViewController.swift */,
 				AC7821A71CD72873008348EA /* SearchViewController.swift */,
@@ -197,6 +199,7 @@
 		AC89B3B91CC59CD900965227 = {
 			isa = PBXGroup;
 			children = (
+				AC6D71A01CE428870044D18B /* LocationPicker.framework */,
 				AC78218C1CD6F46D008348EA /* Font */,
 				AC78218B1CD6F43E008348EA /* Frameworks */,
 				AC89B3C41CC59CD900965227 /* ForRent */,
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACF065D91CD57D2F004D7B57 /* ENSideMenuNavigationController.swift in Sources */,
+				ACBB6E0C1CE3FC440098AE50 /* DetailForTenantViewController.swift in Sources */,
 				ACF065D41CD55768004D7B57 /* TabBarViewController.swift in Sources */,
 				AC7821A61CD71BDD008348EA /* AccountViewController.swift in Sources */,
 				ACF3D1581CD74D2C005517A0 /* CustomLocationPicker.swift in Sources */,
