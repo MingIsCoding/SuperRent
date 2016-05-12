@@ -152,6 +152,11 @@ class SearchResultViewController: UITableViewController {
             let index = tableView.indexPathForSelectedRow
             let cell = tableView.cellForRowAtIndexPath(index!) as! RentalCell
             (segue.destinationViewController as! DetailForTenantViewController).cell = cell
+            
+            // increment the page view field
+            let object = rentalObjects[index!.row]
+            object.incrementKey("pageView")
+            object.saveInBackground()
         }
     }
     

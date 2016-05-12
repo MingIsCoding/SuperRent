@@ -46,5 +46,21 @@ class DetailForTenantViewController: UIViewController {
         emailField.text = cell.email
         phoneField.text = cell.phoneLabel.text
         pageViewLabel.text = "\(cell.pageView) views"
+        
+        disableFieldsEdit()
+    }
+    
+    func disableFieldsEdit() {
+        typeField.enabled = false
+        bedField.enabled = false
+        bathField.enabled = false
+        address1Field.enabled = false
+        address2Field.enabled = false
+        noteField.enabled = false
+        availableDateField.enabled = false
+        sfField.enabled = false
+        rentField.enabled = false
+        emailField.enabled = false
+        phoneField.enabled = false
     }
 }

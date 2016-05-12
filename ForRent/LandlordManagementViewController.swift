@@ -35,9 +35,10 @@ class LandlordManagementViewController: UITableViewController {
         // add a 'Edit' button in the navigation bar
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: #selector(LandlordManagementViewController.toggleEdittingMode))
         
-        checkLogin()
         refreshButton.hidden = true
-        requestForData()
+        if checkLogin() {
+            requestForData()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,9 +48,10 @@ class LandlordManagementViewController: UITableViewController {
         self.tabBarController?.tabBar.hidden = false
     }
     
-    func checkLogin() {
+    func checkLogin() -> Bool {
         if let value = Util.checkUserEmail() {
             userEmail = value
+            return true
         } else {
             let notie = Notie(view: self.view, message: "Please sign in to manage your posts.", style: .Confirm)
             notie.leftButtonAction = {
@@ -61,7 +63,7 @@ class LandlordManagementViewController: UITableViewController {
                 notie.dismiss()
             }
             notie.show()
-            return
+            return false
         }
     }
     
