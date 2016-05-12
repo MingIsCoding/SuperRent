@@ -118,6 +118,14 @@ class PostFormViewController: FormViewController {
             }
         }
         
+        var footage: Double! {
+            if let value = values["footage"] {
+                return value as! Double
+            } else {
+                return 0.0
+            }
+        }
+        
         var description: String! {
             if let value = values["description"] {
                 return value as! String
@@ -125,8 +133,6 @@ class PostFormViewController: FormViewController {
                 return "Not Available"
             }
         }
-        
-        
         
         var address: Eureka.PostalAddress! = values["address"]! as! PostalAddress
         
@@ -190,12 +196,14 @@ class PostFormViewController: FormViewController {
         rentalObject["bedroomCnt"] = bedroomCnt
         rentalObject["bathCnt"] = bathCnt
         rentalObject["rent"] = rent
-        rentalObject["description"] = description
+        // description field seems to be used by PFObject
+        rentalObject["description1"] = description
         rentalObject["street"] = street
         rentalObject["city"] = city
         rentalObject["state1"] = state
-        // state field seems to be something that PFObject already has
+        // state field seems to be something that PFObject already has, also
         rentalObject["zip"] = zip
+        rentalObject["footage"] = footage
         rentalObject["country"] = country
         rentalObject["loginEmail"] = userEmail
         rentalObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
@@ -265,6 +273,15 @@ class PostFormViewController: FormViewController {
                 let formatter = CurrencyFormatter()
                 formatter.locale = .currentLocale()
                 formatter.numberStyle = .CurrencyStyle
+                $0.formatter = formatter
+            }
+            <<< DecimalRow("footage"){
+                $0.useFormatterDuringInput = true
+                $0.title = "Square Foot"
+                $0.value = 0
+                let formatter = CurrencyFormatter()
+                formatter.locale = .currentLocale()
+                formatter.numberStyle = .DecimalStyle
                 $0.formatter = formatter
             }
             <<< ImageRow("image"){

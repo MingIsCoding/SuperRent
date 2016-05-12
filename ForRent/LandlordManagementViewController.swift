@@ -142,6 +142,12 @@ class LandlordManagementViewController: UITableViewController {
         // for extra fields in RentalCell; to be consumed by detail VC
         cell.bathCnt = bathCnt
         cell.bedCnt = bedCnt
+        cell.type = type
+        cell.des = rental.valueForKey("description1") as! String
+        print(cell.des)
+        cell.footage = rental.valueForKey("footage") as! Double
+        cell.email = rental.valueForKey("email") as! String
+        
         
         return cell
     }

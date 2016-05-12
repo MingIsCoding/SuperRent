@@ -22,4 +22,7 @@ class RentalCell: UITableViewCell {
     var bedCnt: Int!
     var bathCnt: Int!
     var type: String!
+    var des: String!
+    var footage: Double!
+    var email: String!
 }

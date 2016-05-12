@@ -35,7 +35,7 @@ class SearchResultViewController: UITableViewController {
         // do the query
         let query = PFQuery(className: "Rental")
         if let keyword = queryKeyword {
-            query.whereKey("description", containsString: keyword)
+            query.whereKey("description1", containsString: keyword)
         }
         if let types = queryTypes {
             print(types)

@@ -157,6 +157,7 @@
 		AC78218B1CD6F43E008348EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC6D71A01CE428870044D18B /* LocationPicker.framework */,
 				AC78218E1CD6F4CE008348EA /* ZYTT.framework */,
 				ACA4FA9A1CD17A400066396E /* libz.tbd */,
 				ACA4FA9C1CD18EB00066396E /* ParseUI.framework */,
@@ -199,7 +200,6 @@
 		AC89B3B91CC59CD900965227 = {
 			isa = PBXGroup;
 			children = (
-				AC6D71A01CE428870044D18B /* LocationPicker.framework */,
 				AC78218C1CD6F46D008348EA /* Font */,
 				AC78218B1CD6F43E008348EA /* Frameworks */,
 				AC89B3C41CC59CD900965227 /* ForRent */,

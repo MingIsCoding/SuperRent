@@ -25,6 +25,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="RnM-UJ-MU3">
+                            <rect key="frame" x="0.0" y="114" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3V-7X-znY">
+                                    <rect key="frame" x="164" y="7" width="46" height="30"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RentalCell" rowHeight="86" id="9ly-NB-ST5" customClass="RentalCell" customModule="ForRent" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="86"/>
@@ -144,13 +154,13 @@
                                         <rect key="frame" x="0.0" y="236" width="311" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9J-Sy-M5f">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQA-OT-6iH">
-                                                <rect key="frame" x="74" y="0.0" width="98" height="30"/>
+                                                <rect key="frame" x="69" y="0.0" width="102" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -182,13 +192,13 @@
                                         <rect key="frame" x="0.0" y="272" width="311" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZY0-qx-9Y6">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZ9-b8-bjq">
-                                                <rect key="frame" x="74" y="0.0" width="238" height="30"/>
+                                                <rect key="frame" x="69" y="0.0" width="242" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -198,13 +208,13 @@
                                         <rect key="frame" x="0.0" y="308" width="311" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG6-Ik-7Eq">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bEL-WO-Xca">
-                                                <rect key="frame" x="74" y="0.0" width="238" height="30"/>
+                                                <rect key="frame" x="69" y="0.0" width="242" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -214,13 +224,13 @@
                                         <rect key="frame" x="0.0" y="344" width="311" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyQ-Bc-2fd">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NjJ-wF-Xxx">
-                                                <rect key="frame" x="74" y="0.0" width="238" height="30"/>
+                                                <rect key="frame" x="69" y="0.0" width="242" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -230,13 +240,13 @@
                                         <rect key="frame" x="0.0" y="380" width="311" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6H-8o-YEI">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3MB-2B-S3f">
-                                                <rect key="frame" x="74" y="0.0" width="238" height="30"/>
+                                                <rect key="frame" x="69" y="0.0" width="242" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -246,13 +256,13 @@
                                         <rect key="frame" x="0.0" y="416" width="311" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNr-6R-L8h">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCB-bC-Qfp">
-                                                <rect key="frame" x="74" y="0.0" width="112" height="30"/>
+                                                <rect key="frame" x="69" y="0.0" width="116" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -272,14 +282,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HsH-dS-bHG">
                                         <rect key="frame" x="0.0" y="452" width="311" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGL-U0-Grg">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGL-U0-Grg">
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lql-EJ-31e">
-                                                <rect key="frame" x="74" y="0.0" width="238" height="30"/>
+                                                <rect key="frame" x="69" y="0.0" width="242" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -289,13 +299,13 @@
                                         <rect key="frame" x="0.0" y="488" width="311" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cen-f3-ZSc">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9fc-3O-JTh">
-                                                <rect key="frame" x="74" y="0.0" width="238" height="30"/>
+                                                <rect key="frame" x="69" y="0.0" width="242" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -720,7 +730,7 @@
         <scene sceneID="R0b-hJ-mcj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="91O-zG-H28" customClass="LandlordNavigationViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Landlord" image="ic_location_city_48pt" id="jbf-Q4-ehY"/>
+                    <tabBarItem key="tabBarItem" title="Landlord" image="roofing-50" id="jbf-Q4-ehY"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="crP-13-2Tc">
@@ -740,7 +750,7 @@
         <scene sceneID="bWb-lY-ZGp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EkA-Md-Uqx" customClass="TenantNavigationViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tenant" image="ic_person_pin_48pt" id="nMs-KZ-p9V"/>
+                    <tabBarItem key="tabBarItem" title="Tenant" image="armchair-50" id="nMs-KZ-p9V"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="F2S-cJ-Rk0">
@@ -759,11 +769,11 @@
     </scenes>
     <resources>
         <image name="FB-f-Logo__blue_42" width="42" height="42"/>
+        <image name="armchair-50" width="25" height="25"/>
         <image name="btn_google_light_normal_ios" width="46" height="46"/>
-        <image name="ic_location_city_48pt" width="34" height="34"/>
         <image name="ic_location_on" width="27" height="27"/>
         <image name="ic_menu_60" width="30" height="30"/>
-        <image name="ic_person_pin_48pt" width="34" height="34"/>
         <image name="launch" width="851" height="1286"/>
+        <image name="roofing-50" width="25" height="25"/>
     </resources>
 </document>

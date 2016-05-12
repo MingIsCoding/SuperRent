@@ -15,6 +15,6 @@ class TenantNavigationViewController: ENSideMenuNavigationController {
         sideMenu = ENSideMenu(sourceView: self.view, menuViewController: TenantMenuTableViewController(), menuPosition:.Left)
         //sideMenu?.menuWidth = 180.0
         // show the navigation bar over the side menu view
-        view.bringSubviewToFront(navigationBar)
+        //view.bringSubviewToFront(navigationBar)
     }
 }

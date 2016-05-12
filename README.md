@@ -28,5 +28,3 @@ carthage update
 ```
 
 This will fetch dependencies into a (project_path)/Carthage/Checkouts folder and build each one. Built .framework files can be found in (project_path)/Carthage/Build/iOS/ folder.
-
-Note that LocationPicker library can only be compiled for an actualy iOS device and not emulators.
