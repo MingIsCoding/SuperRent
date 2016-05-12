@@ -13,6 +13,7 @@ We used [Carthage](https://github.com/Carthage/Carthage) (a simple, decentralize
 + [LocationPicker](https://github.com/JeromeTan1997/LocationPicker): a library for ready-to-use and fully customizable location picker.
 + [Linear Progress Bar](https://github.com/PhilippeBoisney/LinearProgressBar): a simple Linear Progress Bar for IOS (Swift 2.0), inspired by Material Design.
 + [DOFavoriteButton](https://github.com/okmr-d/DOFavoriteButton): cute Animated Button written in Swift.
++ [ENSwiftSideMenu](https://github.com/evnaz/ENSwiftSideMenu): a simple side menu for iOS written in Swift.
 
 ##### Instructions
 
