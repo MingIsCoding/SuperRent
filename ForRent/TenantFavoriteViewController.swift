@@ -28,7 +28,6 @@ class TenantFavoriteViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = 86
         
-        refreshButton.hidden = true
         self.navigationItem.title = "My Favorites"
         // add left toggle button
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu_60"), style: .Plain, target: self, action: #selector(TenantFavoriteViewController.toggleSideMenu))
@@ -52,6 +51,7 @@ class TenantFavoriteViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        refreshButton.hidden = true
         
         // to reveal the tab bar, otherwise it'll remain hidden since it's hidden in the detail page
         self.tabBarController?.tabBar.hidden = false
@@ -86,12 +86,23 @@ class TenantFavoriteViewController: UITableViewController {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             progressBar.stopAnimation()
-            self.refreshButton.hidden = false
             if error == nil {
                 print("Successfully retrieved \(objects!.count) favorite posts.")
                 if let objects = objects {
                     self.rentalObjects = objects
                     self.tableView.reloadData()
+                    if objects.count > 0 {
+                        self.refreshButton.hidden = false
+                    } else {
+                        let notie = Notie(view: self.view, message: "No favorite yet.", style: .Confirm)
+                        notie.leftButtonAction = {
+                            notie.dismiss()
+                        }
+                        notie.rightButtonAction = {
+                            notie.dismiss()
+                        }
+                        notie.show()
+                    }
                 }
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
