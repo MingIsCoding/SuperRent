@@ -96,78 +96,83 @@ class PostFormViewController: FormViewController {
         
         var phone: String! {
             if let value = values["phone"] {
-                return value as! String!
-            } else {
-                return "Not Available"
+                if let value = value {
+                    return value as! String
+                }
             }
+            return ""
         }
         
         var email: String! {
             if let value = values["email"] {
-                return value as! String!
-            } else {
-                return "Not Available"
+                if let value = value {
+                    return value as! String
+                }
             }
+            return ""
         }
         
         var date: NSDate! {
             if let value = values["date"] {
-                return value as! NSDate!
-            } else {
-                return NSDate()
+                if let value = value {
+                    return value as! NSDate
+                }
             }
+            return NSDate()
         }
         
         var type: String! {
             if let value = values["type"] {
-                return value as! String!
-            } else {
-                return "House"
+                if let value = value {
+                    return value as! String
+                }
             }
+            return "House"
         }
         
         var bedroomCnt: String! {
             if let value = values["bedroom"] {
-                return value! as! String
-            } else {
-                return "one"
+                if let value = value {
+                    return value as! String
+                }
             }
+            return "one"
         }
         
         var bathCnt: String! {
             if let value = values["bathroom"] {
-                return value as! String
-            } else {
-                return "one"
+                if let value = value {
+                    return value as! String
+                }
             }
+            return "one"
         }
         
         var rent: Double! {
             if let value = values["rent"] {
-                return value as! Double
-            } else {
-                return 0.0
+                if let value = value {
+                    return value as! Double
+                }
             }
+            return 0.0
         }
         
         var footage: Double! {
             if let value = values["footage"] {
-                return value as! Double
-            } else {
-                return 0.0
+                if let value = value {
+                    return value as! Double
+                }
             }
+            return 0.0
         }
         
         var description: String! {
             if let value = values["description"] {
                 if let value = value {
                     return value as! String
-                } else {
-                    return ""
                 }
-            } else {
-                return "Not Available"
             }
+            return ""
         }
         
         var address: Eureka.PostalAddress! = values["address"]! as! PostalAddress
