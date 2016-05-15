@@ -64,3 +64,5 @@ fastlane/test_output
 GoogleService-Info.plist
 
 ForRent/Info.plist
+
+*.storyboard
