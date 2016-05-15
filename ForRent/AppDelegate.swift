@@ -17,13 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        let notiftypes:UIUserNotificationType = UIUserNotificationType.Badge //| UIUserNotificationType.Alert //| UIUserNotificationType.Sound
+        
+        let notifiSettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notiftypes,categories: nil)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(notifiSettings)
+        
         let configuration = ParseClientConfiguration {
             $0.applicationId = "myAppId"
-            $0.server = "https://superrent.herokuapp.com/parse"
+            $0.server = "http://10.2.11.50:1337/parse"//"https://superrent.herokuapp.com/parse"
         }
         Parse.initializeWithConfiguration(configuration)
         

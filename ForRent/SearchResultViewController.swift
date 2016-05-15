@@ -32,6 +32,29 @@ class SearchResultViewController: UITableViewController {
         self.view.addSubview(progressBar)
         progressBar.startAnimation()
         
+        //------save search begin-----
+        let searchCondition = PFObject(className:"Search")
+        //searchCondition["keyWord"] = queryKeyword
+        //searchCondition["type"] = queryTypes
+        //searchCondition["maxPrice"] = queryMaxPrice
+        //searchCondition["city"] = queryMaxPrice
+        searchCondition["zip"] = 95112//queryMaxPrice
+        searchCondition["owner"] = "ming.tang@sjsu.edu"
+        searchCondition["state"] = 0
+        print("begin to save")
+        searchCondition.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                print("saved on cloud")
+            } else {
+                // There was a problem, check error.description
+                print("erro:")
+            }
+        }
+        
+        
+        //------save search end -----
+        
         // do the query
         let query = PFQuery(className: "Rental")
         if let keyword = queryKeyword {
