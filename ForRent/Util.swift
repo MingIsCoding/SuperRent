@@ -42,6 +42,21 @@ class Util {
         }
     }
     
+    static func numToStr(num: String) -> String {
+        switch num {
+        case "1":
+            return "one"
+        case "2":
+            return "two"
+        case "3":
+            return "three"
+        case "4":
+            return "four"
+        default:
+            return "one"
+        }
+    }
+    
     static func houseTypeConverter(types: Set<String>) -> Set<String> {
         var result = Set<String>()
         for type in types {

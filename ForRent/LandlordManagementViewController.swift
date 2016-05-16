@@ -222,7 +222,9 @@ class LandlordManagementViewController: UITableViewController {
         if segue.identifier == "landlordSegue" {
             let index = tableView.indexPathForSelectedRow
             let cell = tableView.cellForRowAtIndexPath(index!) as! RentalCell
-            (segue.destinationViewController as! DetailForLandlordViewController).cell = cell
+            let vc = segue.destinationViewController as! DetailForLandlordViewController
+            vc.cell = cell
+            vc.objectRef = self.rentalObjects[index!.row]
         }
     }
 
