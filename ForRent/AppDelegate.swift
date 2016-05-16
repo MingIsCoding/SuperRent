@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import FBSDKCoreKit
 import FBSDKLoginKit
-
+import Notie
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -91,7 +91,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    
+    func application(application: UIApplication,
+                     didReceiveLocalNotification notification: UILocalNotification) {
+        let info = notification.userInfo
+        let rentalID = info!["rentalID"] as! String
+        let query = PFQuery(className:"Rental")
+        query.getObjectInBackgroundWithId(rentalID) {
+            (rental: PFObject?, error: NSError?) -> Void in
+            if error == nil && rental != nil {
+                print("Rental from notification found in database.")
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+                // present the rental's detail screen
+                let resultVC = mainStoryboard.instantiateViewControllerWithIdentifier("tenantDetailVC") as! DetailForTenantViewController
+                let cell = RentalCell()
+                SearchResultViewController.matchRentalObjectWithRentalCell(cell, rental: rental!)
+                resultVC.cell = cell
+                resultVC.objRef = rental
+                
+                let navigationVC = UINavigationController(rootViewController: resultVC)
+                self.window?.rootViewController?.presentViewController(navigationVC, animated: true, completion: nil)
+            } else {
+                print(error)
+            }
+        }
+    }
 
 
 }

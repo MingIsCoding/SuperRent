@@ -225,6 +225,7 @@
 				AC78218D1CD6F4A0008348EA /* tenant */,
 				ACF065E31CD6D13A004D7B57 /* AppConstants.swift */,
 				ACF065E21CD6B5AF004D7B57 /* landlord */,
+				ACB5EFF01CE9A253007F0550 /* notification */,
 				ACF065CC1CD33579004D7B57 /* library */,
 				AC89B3C51CC59CD900965227 /* AppDelegate.swift */,
 				AC6817FC1CD87789007483C0 /* Util.swift */,
@@ -239,6 +240,13 @@
 				AC89B3D11CC59CD900965227 /* Info.plist */,
 			);
 			path = ForRent;
+			sourceTree = "<group>";
+		};
+		ACB5EFF01CE9A253007F0550 /* notification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = notification;
 			sourceTree = "<group>";
 		};
 		ACF065CC1CD33579004D7B57 /* library */ = {

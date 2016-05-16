@@ -871,7 +871,7 @@
         <!--Detail For Tenant View Controller-->
         <scene sceneID="yTQ-tl-pQO">
             <objects>
-                <viewController id="mK4-Tt-yQd" customClass="DetailForTenantViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tenantDetailVC" id="mK4-Tt-yQd" customClass="DetailForTenantViewController" customModule="ForRent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3tM-sv-Fe6"/>
                         <viewControllerLayoutGuide type="bottom" id="hcY-SX-QpF"/>
@@ -1170,6 +1170,6 @@
         <image name="roofing-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s6U-jo-Taa"/>
+        <segue reference="Ieq-AP-oaM"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -20,7 +20,7 @@ class SearchResultViewController: UITableViewController {
     var queryZip = "95112"
     var saveSearch = false
     var scheduleType: Int = 0
-    var nextPushTime: Double = NSDate().timeIntervalSince1970
+    var nextPushTime: Double = NSDate().timeIntervalSince1970 * 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +138,12 @@ class SearchResultViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("RentalCell", forIndexPath: indexPath) as! RentalCell
         
         let rental = rentalObjects[indexPath.row]
+        SearchResultViewController.matchRentalObjectWithRentalCell(cell, rental: rental)
+        return cell
+    }
+    
+    // make it static so notificaiton can also use it
+    static func matchRentalObjectWithRentalCell(cell: RentalCell, rental: PFObject) {
         // for date label
         if let date = rental.valueForKey("date") as? NSDate {
             let df = NSDateFormatter()
@@ -181,8 +187,6 @@ class SearchResultViewController: UITableViewController {
         cell.email = rental.valueForKey("email") as! String
         cell.pageView = rental.valueForKey("pageView") as! Int
         cell.favedBy = rental.valueForKey("favedBy") as! [String]
-        
-        return cell
     }
     
     // pass the selected UITableViewCell to the detail VC so info can be displayed

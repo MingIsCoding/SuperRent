@@ -14,28 +14,29 @@ import Notie
 
 
 class PostFormViewController: FormViewController {
+    
+    var userEmail: String?
+    
     //---- pull notifications from server
-    func pullNotification(){
+    func pullNotification() {
         print("execute")
-        let query = PFQuery(className:"Search")
-        query.whereKey("owner", equalTo:"ming.tang@sjsu.edu")
+        let query = PFQuery(className:"Notification")
+        query.whereKey("receiver", equalTo: userEmail!)
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) scores.")
-                if(objects!.count > 0){
-                    print("begin to show notification")
-                    let notification:UILocalNotification = UILocalNotification()
-                    notification.alertBody="There are "+String(objects!.count)+" retals avaiable."
-                    notification.fireDate = NSDate()//NSCalendarDate.date() //NSDate(timeIntervalSinceNow: 1);
-                    UIApplication.sharedApplication().scheduleLocalNotification(notification)
-                }
-                // Do something with the found objects
+                print("Successfully retrieved \(objects!.count) notifications.")
                 if let objects = objects {
                     for object in objects {
-                        print(object.objectId)
+                        let notification:UILocalNotification = UILocalNotification()
+                        var userInfo = [String: String]()
+                        userInfo["rentalID"] = object.valueForKey("rentalID") as! String
+                        notification.userInfo = userInfo
+                        notification.alertBody = object.valueForKey("content") as? String
+                        notification.fireDate = NSDate()//NSCalendarDate.date() //NSDate(timeIntervalSinceNow: 1);
+                        UIApplication.sharedApplication().scheduleLocalNotification(notification)
                     }
                 }
             } else {
@@ -56,8 +57,11 @@ class PostFormViewController: FormViewController {
         // add a 'Submit' button in the navigation bar
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .Plain, target: self, action: #selector(PostFormViewController.submit(_:)))
     
-        timer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector:#selector(PostFormViewController.pullNotification),
-            userInfo:nil,repeats: true)
+        if let user = Util.checkUserEmail() {
+            userEmail = user
+            timer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector:#selector(PostFormViewController.pullNotification), userInfo:nil,repeats: true)
+        }
+        
         loadForms()
     }
     

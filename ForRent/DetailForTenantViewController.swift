@@ -64,6 +64,8 @@ class DetailForTenantViewController: UIViewController {
             userEmail = "not available"
         }
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: #selector(DetailForTenantViewController.dismissSelf))
+        
         favedBy = objRef.valueForKey("favedBy") as! [String]
         if favedBy.contains(userEmail) {
             favButton.select()
@@ -123,5 +125,10 @@ class DetailForTenantViewController: UIViewController {
                 objRef.saveInBackground()
             }
         }
+    }
+    
+    // method to dismiss this view itself, called when `done` button clicked
+    func dismissSelf() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
