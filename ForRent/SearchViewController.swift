@@ -95,6 +95,22 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
     private func loadFilterForms() {
         
         form +++ Section()
+            
+            // section for feature of saving this search
+            <<< SwitchRow("Save This Search"){
+                $0.title = $0.tag
+            }
+            
+            <<< SegmentedRow<String>("notificationFrequency"){
+                $0.options = ["Real-time", "Daily", "Weekly"]
+                $0.value = "Real-time"
+                $0.hidden = .Function(["Save This Search"], { form -> Bool in
+                    let row: RowOf<Bool>! = form.rowByTag("Save This Search")
+                    return row.value ?? false == false
+                })
+            }
+            // end of saving search
+            
             <<< MultipleSelectorRow<String>("type") {
                 $0.title = "Rental Type"
                 $0.options = ["🏡 House", "🏚 Townhouse", "🏢 Apartment", "🏤 Condo"]
@@ -141,7 +157,6 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
                 $0.steps = 17
                 $0.disabled = "$priceFilter = 'Any price'"
             }
-        
     }
     
     private func formatLocationString(location: LocationItem) -> [String] {
@@ -190,7 +205,7 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         
         // extract the values the user has specified in the form
         let values = form.values()
-        // ["state": nil, "locationFilter": Optional("Default"), "zip": nil, "priceFilter": Optional("Any price"), "maxPrice": Optional(800.0), "location": nil, "type": Optional(Set(["🏡 House"]))]
+        // ["Save This Search": Optional(true), "state": nil, "notificationFrequency": Optional("Real-time"), "type": Optional(Set(["🏡 House"])), "zip": nil, "priceFilter": Optional("Any price"), "maxPrice": Optional(800.0), "location": nil, "locationFilter": Optional("Default")]
         resultVC.queryTypes = [String](Util.houseTypeConverter(values["type"] as! Set<String>))
         if (values["priceFilter"] as! String) != "Any price" {
             resultVC.queryMaxPrice = Double(values["maxPrice"] as! Float)
@@ -231,6 +246,13 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
             
             // otherwise, these two query fields will be default to `San Jose` and `95112`
             // specified in SearchResultViewController.swift
+        }
+        
+        // retrieve whether user indicated to save this search
+        if let value = values["Save This Search"] {
+            if let value = value {
+                resultVC.saveSearch = value as! Bool
+            }
         }
         
         // present the search result VC in a navigation VC

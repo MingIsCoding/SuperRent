@@ -18,7 +18,6 @@ class Util {
         //            return nil
         //        }
         return userDefaults.valueForKey(AppConstants.userEmailKey) as? String
-        
     }
     
     

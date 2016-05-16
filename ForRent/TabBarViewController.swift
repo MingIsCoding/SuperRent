@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController, LoginViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //NSUserDefaults.standardUserDefaults().removeObjectForKey("asGuest")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("asGuest")
     }
     
     override func viewDidAppear(animated: Bool) {
