@@ -18,4 +18,6 @@ struct AppConstants {
         static let Facebook = "Facebook"
         static let Guest = "Guest"
     }
+    
+    static let oneDayTimeInMiliSecond: Double = 24 * 60 * 60 * 1000
 }

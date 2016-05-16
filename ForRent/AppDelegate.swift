@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let configuration = ParseClientConfiguration {
             $0.applicationId = "myAppId"
-            //$0.server = "http://10.2.11.50:1337/parse"
+            //$0.server = "https://8725dd4b.ngrok.io/parse"
             $0.server = "https://superrent.herokuapp.com/parse"
 
         }

@@ -75,4 +75,17 @@ class Util {
         }
         return result
     }
+    
+    static func frequencyOfNotification(str: String) -> Int {
+        switch str {
+        case "Real-time":
+            return 0
+        case "Daily":
+            return 1
+        case "Weekly":
+            return 2
+        default:
+            return 0
+        }
+    }
 }

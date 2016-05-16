@@ -19,6 +19,8 @@ class SearchResultViewController: UITableViewController {
     var queryCity = "San Jose"
     var queryZip = "95112"
     var saveSearch = false
+    var scheduleType: Int = 0
+    var nextPushTime: Double = NSDate().timeIntervalSince1970
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,41 +38,24 @@ class SearchResultViewController: UITableViewController {
         // retrieve logged in user's email
         let userEmail: String = Util.checkUserEmail() ?? "NA"
         
-        //------save search begin-----
-        if saveSearch {
-            let searchCondition = PFObject(className:"Search")
-            //searchCondition["keyWord"] = queryKeyword
-            //searchCondition["type"] = queryTypes
-            //searchCondition["maxPrice"] = queryMaxPrice
-            //searchCondition["city"] = queryMaxPrice
-            searchCondition["zip"] = 95112//queryMaxPrice
-            searchCondition["owner"] = userEmail
-            searchCondition["state"] = 0
-            print("begin to save")
-            searchCondition.saveInBackgroundWithBlock {
-                (success: Bool, error: NSError?) -> Void in
-                if (success) {
-                    print("saved on cloud")
-                } else {
-                    // There was a problem, check error.description
-                    print("erro:")
-                }
-            }
-        }
-        //------save search end -----
+        // for saved search functionality
+        let searchCondition = PFObject(className:"Search")
         
         // do the query
         let query = PFQuery(className: "Rental")
         if let keyword = queryKeyword {
             query.whereKey("description1", containsString: keyword)
+            searchCondition["keyword"] = keyword
         }
         if let types = queryTypes {
             print(types)
             query.whereKey("type", containedIn: types)
+            searchCondition["type"] = types
         }
         if let price = queryMaxPrice {
             print(price)
             query.whereKey("rent", lessThan: price)
+            searchCondition["maxPrice"] = queryMaxPrice
         }
         query.whereKey("city", equalTo: queryCity)
         query.whereKey("zip", equalTo: queryZip)
@@ -108,6 +93,32 @@ class SearchResultViewController: UITableViewController {
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
+        
+        //------save search begin-----
+        if saveSearch {
+            searchCondition["zip"] = queryZip
+            searchCondition["owner"] = userEmail
+            searchCondition["city"] = queryCity
+            
+            searchCondition["scheduleType"] = scheduleType
+            if scheduleType == 1 {
+                nextPushTime += AppConstants.oneDayTimeInMiliSecond
+            } else if scheduleType == 2 {
+                nextPushTime += AppConstants.oneDayTimeInMiliSecond * 7
+            }
+            searchCondition["nextPushTime"] = nextPushTime
+            print("begin to save")
+            searchCondition.saveInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    print("saved on cloud")
+                } else {
+                    // There was a problem, check error.description
+                    print(error?.description)
+                }
+            }
+        }
+        //------save search end -----
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -252,6 +252,8 @@ class SearchViewController: FormViewController, UISearchBarDelegate {
         if let value = values["Save This Search"] {
             if let value = value {
                 resultVC.saveSearch = value as! Bool
+                
+                resultVC.scheduleType = Util.frequencyOfNotification(values["notificationFrequency"] as! String)
             }
         }
         
