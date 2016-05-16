@@ -19,15 +19,18 @@ class PostFormViewController: FormViewController {
     
     //---- pull notifications from server
     func pullNotification() {
-        print("execute")
+        let nextPushTime: Double = NSDate().timeIntervalSince1970 * 1000
+        //print("execute")
         let query = PFQuery(className:"Notification")
         query.whereKey("receiver", equalTo: userEmail!)
+        query.whereKey("pushTime", greaterThan: nextPushTime-(1000*120))
+        query.whereKey("pushTime", lessThan: nextPushTime+(1000*180))
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             if error == nil {
                 // The find succeeded.
-                print("Successfully retrieved \(objects!.count) notifications.")
+                //print("Successfully retrieved \(objects!.count) notifications.")
                 if let objects = objects {
                     for object in objects {
                         let notification: UILocalNotification = UILocalNotification()
@@ -37,6 +40,24 @@ class PostFormViewController: FormViewController {
                         notification.alertBody = object.valueForKey("content") as? String
                         notification.fireDate = NSDate()//NSCalendarDate.date() //NSDate(timeIntervalSinceNow: 1);
                         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                        //---begin update nextpushtime of the search
+                        let querySearch = PFQuery(className:"Search")
+                        querySearch.getObjectInBackgroundWithId((object.valueForKey("searchID") as? String)!) {
+                            (search: PFObject?, error: NSError?) -> Void in
+                            if error != nil {
+                                print(error)
+                            } else if let search = search {
+                                search["lastPushTime"] = nextPushTime
+                                if(search["scheduleType"] as! Int == 0){
+                                    search["nextPushTime"] = nextPushTime + 10*1000} // add ten second
+                                if(search["scheduleType"] as! Int == 1){
+                                    search["nextPushTime"] = nextPushTime + 1000*60*60*24} // add one day
+                                if(search["scheduleType"] as! Int == 2){
+                                    search["nextPushTime"] = nextPushTime + 1000*60*60*24*7 }// add ten second
+                                search.saveInBackground()
+                            }
+                        }
+                        //---end upadte search
                         
                         // to delete the record from the Notification collection in database
                         object.deleteInBackground()
