@@ -95,27 +95,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didReceiveLocalNotification notification: UILocalNotification) {
         let info = notification.userInfo
         let rentalID = info!["rentalID"] as! String
-        let query = PFQuery(className:"Rental")
-        query.getObjectInBackgroundWithId(rentalID) {
-            (rental: PFObject?, error: NSError?) -> Void in
-            if error == nil && rental != nil {
-                print("Rental from notification found in database.")
-                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
-                // present the rental's detail screen
-                let resultVC = mainStoryboard.instantiateViewControllerWithIdentifier("tenantDetailVC") as! DetailForTenantViewController
-                let cell = RentalCell()
-                SearchResultViewController.matchRentalObjectWithRentalCell(cell, rental: rental!)
-                resultVC.cell = cell
-                resultVC.objRef = rental
-                
-                let navigationVC = UINavigationController(rootViewController: resultVC)
-                self.window?.rootViewController?.presentViewController(navigationVC, animated: true, completion: nil)
-            } else {
-                print(error)
-            }
+        let notie = Notie(view: self.window!, message: "New rental that matches your saved search is posted. View details?", style: .Confirm)
+        notie.leftButtonAction = {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+            let resultVC = mainStoryboard.instantiateViewControllerWithIdentifier("searchResultVC") as! SearchResultViewController
+            resultVC.fromNotificationWithRentalID = rentalID
+            // present the search result VC in a navigation VC
+            let navigationVC = UINavigationController(rootViewController: resultVC)
+            self.window!.rootViewController!.presentViewController(navigationVC, animated: true, completion: nil)
+            notie.dismiss()
         }
+        notie.rightButtonAction = {
+            notie.dismiss()
+        }
+        notie.show()
     }
-
 
 }
 

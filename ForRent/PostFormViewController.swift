@@ -30,13 +30,16 @@ class PostFormViewController: FormViewController {
                 print("Successfully retrieved \(objects!.count) notifications.")
                 if let objects = objects {
                     for object in objects {
-                        let notification:UILocalNotification = UILocalNotification()
+                        let notification: UILocalNotification = UILocalNotification()
                         var userInfo = [String: String]()
-                        userInfo["rentalID"] = object.valueForKey("rentalID") as! String
+                        userInfo["rentalID"] = object.valueForKey("rentalID") as? String
                         notification.userInfo = userInfo
                         notification.alertBody = object.valueForKey("content") as? String
                         notification.fireDate = NSDate()//NSCalendarDate.date() //NSDate(timeIntervalSinceNow: 1);
                         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+                        
+                        // to delete the record from the Notification collection in database
+                        object.deleteInBackground()
                     }
                 }
             } else {

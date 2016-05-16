@@ -18,6 +18,7 @@ class SearchResultViewController: UITableViewController {
     var queryMaxPrice: Double?
     var queryCity = "San Jose"
     var queryZip = "95112"
+    var fromNotificationWithRentalID: String?
     var saveSearch = false
     var scheduleType: Int = 0
     var nextPushTime: Double = NSDate().timeIntervalSince1970 * 1000
@@ -43,56 +44,73 @@ class SearchResultViewController: UITableViewController {
         
         // do the query
         let query = PFQuery(className: "Rental")
-        if let keyword = queryKeyword {
-            query.whereKey("description1", containsString: keyword)
-            searchCondition["keyword"] = keyword
-        }
-        if let types = queryTypes {
-            print(types)
-            query.whereKey("type", containedIn: types)
-            searchCondition["type"] = types
-        }
-        if let price = queryMaxPrice {
-            print(price)
-            query.whereKey("rent", lessThan: price)
-            searchCondition["maxPrice"] = queryMaxPrice
-        }
-        query.whereKey("city", equalTo: queryCity)
-        query.whereKey("zip", equalTo: queryZip)
-        query.findObjectsInBackgroundWithBlock{
-            (objects: [PFObject]?, error: NSError?) -> Void in
-            
-            progressBar.stopAnimation()
-            if error == nil {
-                print("Successfully retrieved \(objects!.count) posts.")
-                
-                // if returned 0 match, display a notification
-                if objects?.count == 0 {
-                    let notie = Notie(view: self.view, message: "No match found. Try another query.", style: .Confirm)
-                    notie.leftButtonAction = {
-                        self.dismissSelf()
-                        notie.dismiss()
-                    }
-                    notie.rightButtonAction = {
-                        notie.dismiss()
-                    }
-                    notie.show()
-                }
-                
-                // update the table view's data content
-                if let objects = objects {
-                    self.rentalObjects = objects
+        
+        // tell if it's from notification
+        if let rentalID = fromNotificationWithRentalID {
+            query.getObjectInBackgroundWithId(rentalID) {
+                (rental: PFObject?, error: NSError?) -> Void in
+                progressBar.stopAnimation()
+                if error == nil && rental != nil {
+                    print("Rental from notification found in database.")
+                    self.rentalObjects.append(rental!)
                     self.tableView.reloadData()
+                } else {
+                    print(error)
                 }
-//                if let objects = objects {
-//                    for object in objects {
-//                        print(object)
-//                    }
-//                }
-            } else {
-                print("Error: \(error!) \(error!.userInfo)")
+            }
+        } else {
+            if let keyword = queryKeyword {
+                query.whereKey("description1", containsString: keyword)
+                searchCondition["keyword"] = keyword
+            }
+            if let types = queryTypes {
+                print(types)
+                query.whereKey("type", containedIn: types)
+                searchCondition["type"] = types
+            }
+            if let price = queryMaxPrice {
+                print(price)
+                query.whereKey("rent", lessThan: price)
+                searchCondition["maxPrice"] = queryMaxPrice
+            }
+            query.whereKey("city", equalTo: queryCity)
+            query.whereKey("zip", equalTo: queryZip)
+            query.findObjectsInBackgroundWithBlock{
+                (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                progressBar.stopAnimation()
+                if error == nil {
+                    print("Successfully retrieved \(objects!.count) posts.")
+                    
+                    // if returned 0 match, display a notification
+                    if objects?.count == 0 {
+                        let notie = Notie(view: self.view, message: "No match found. Try another query.", style: .Confirm)
+                        notie.leftButtonAction = {
+                            self.dismissSelf()
+                            notie.dismiss()
+                        }
+                        notie.rightButtonAction = {
+                            notie.dismiss()
+                        }
+                        notie.show()
+                    }
+                    
+                    // update the table view's data content
+                    if let objects = objects {
+                        self.rentalObjects = objects
+                        self.tableView.reloadData()
+                    }
+                    //                if let objects = objects {
+                    //                    for object in objects {
+                    //                        print(object)
+                    //                    }
+                    //                }
+                } else {
+                    print("Error: \(error!) \(error!.userInfo)")
+                }
             }
         }
+        
         
         //------save search begin-----
         if saveSearch {
@@ -138,12 +156,11 @@ class SearchResultViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("RentalCell", forIndexPath: indexPath) as! RentalCell
         
         let rental = rentalObjects[indexPath.row]
-        SearchResultViewController.matchRentalObjectWithRentalCell(cell, rental: rental)
+        matchRentalObjectWithRentalCell(cell, rental: rental)
         return cell
     }
     
-    // make it static so notificaiton can also use it
-    static func matchRentalObjectWithRentalCell(cell: RentalCell, rental: PFObject) {
+    func matchRentalObjectWithRentalCell(cell: RentalCell, rental: PFObject) {
         // for date label
         if let date = rental.valueForKey("date") as? NSDate {
             let df = NSDateFormatter()
